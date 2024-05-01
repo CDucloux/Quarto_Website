@@ -1,0 +1,317 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Corentin Ducloux",
+    "section": "",
+    "text": "Data Engineer, jeune diplômé, et adepte de Python,  et SQL, je suis passionné par l’ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l’ingénierie logicielle et l’intégration continue.\nTélécharger mon CV"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "blog",
+    "section": "",
+    "text": "About this site\ndes tests\n\n\n\n\n\n\nUn titre\n\n\n\nUn callout"
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "A propos de moi",
+    "section": "",
+    "text": "This is a Quarto website.\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github\n  \n\n\n\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#section",
+    "href": "index.html#section",
+    "title": "A propos de moi",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#hey",
+    "href": "index.html#hey",
+    "title": "A propos de moi",
+    "section": "",
+    "text": "To learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#expérience-professionnelle",
+    "href": "index.html#expérience-professionnelle",
+    "title": "Corentin Ducloux",
+    "section": " Expérience professionnelle",
+    "text": "Expérience professionnelle\n\nData Engineer (Avril – Septembre 2024) | EDF\nData Analyst & BI Dev. (Avril – Août 2023) | Safran Seats\nData Analyst (Juin – Août 2022) | Crédit Agricole Titres"
+  },
+  {
+    "objectID": "index.html#bonjour-et-bienvenue-sur-mon-site-web",
+    "href": "index.html#bonjour-et-bienvenue-sur-mon-site-web",
+    "title": "Corentin Ducloux",
+    "section": "",
+    "text": "Data Engineer, jeune diplômé, et adepte de Python,  et SQL, je suis passionné par l’ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l’ingénierie logicielle et l’intégration continue."
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Corentin Ducloux",
+    "section": " Education",
+    "text": "Education\n\nMaster Data Science / Business Econ. (2022 – 2024)  Université de Tours\nLicence d’économie d’entreprise (2018 – 2022)  Université de Tours\nBaccalauréat S, section Edifice (2015 – 2018)  Lycée Pothier, Orléans"
+  },
+  {
+    "objectID": "index.html#this-section-bonjour-et-bienvenue-sur-mon-site-web",
+    "href": "index.html#this-section-bonjour-et-bienvenue-sur-mon-site-web",
+    "title": "Corentin Ducloux",
+    "section": "",
+    "text": "Data Engineer, jeune diplômé, et adepte de Python,  et SQL, je suis passionné par l’ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l’ingénierie logicielle et l’intégration continue."
+  },
+  {
+    "objectID": "index.html#bonjour-bienvenue-sur-mon-site-web",
+    "href": "index.html#bonjour-bienvenue-sur-mon-site-web",
+    "title": "Corentin Ducloux",
+    "section": "",
+    "text": "Data Engineer, jeune diplômé, et adepte de Python,  et SQL, je suis passionné par l’ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l’ingénierie logicielle et l’intégration continue."
+  },
+  {
+    "objectID": "index.html#bonjour-et-bienvenue",
+    "href": "index.html#bonjour-et-bienvenue",
+    "title": "Corentin Ducloux",
+    "section": "",
+    "text": "Data Engineer, jeune diplômé, et adepte de Python,  et SQL, je suis passionné par l’ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l’ingénierie logicielle et l’intégration continue.\nTélécharger mon CV"
+  },
+  {
+    "objectID": "sections/blog.html",
+    "href": "sections/blog.html",
+    "title": "Data Tips",
+    "section": "",
+    "text": "🚧 Comming Soon !\n\n\n\n\n\n\n\nUn titre\n\n\n\nUn callout"
+  },
+  {
+    "objectID": "sections/projects.html",
+    "href": "sections/projects.html",
+    "title": "Projets",
+    "section": "",
+    "text": "💻 Streamlit\n\n\n\n\n\n\nBuk, Guig's, le H et le Coc's\n\n\n2 mai 2024\n\n\n\n\n\n\n\n\n\n\n\n\n📱 Smart Specs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "sections/projects/presentation.html",
+    "href": "sections/projects/presentation.html",
+    "title": "💻 Streamlit",
+    "section": "",
+    "text": "Un framework python récent, lancé en 2019.\n\nEt avant Streamlit, qu’est ce qu’il y avait ?\n\nFlask \\(\\Rightarrow\\) Prise en main très complexe, plus adaptée pour les Software Engineers.\nPlotly Dash \\(\\Rightarrow\\) Prise en main plus simple que Flask, concept assez similaire à Shiny avec séparation des composants UI et server.\n\n\nCorentin\n\nFlask \\(\\Rightarrow\\) Super Framework pour faire une appli web scalable mais si vous venez d’un background Data c’est vraiment très très galère, il faut savoir ce qu’on fait.\nPlotly Dash \\(\\Rightarrow\\) Configuration des inputs, outputs, callbacks."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#présentation",
+    "href": "sections/projects/presentation.html#présentation",
+    "title": "💻 Streamlit",
+    "section": "",
+    "text": "Un framework python récent, lancé en 2019.\n\nEt avant Streamlit, qu’est ce qu’il y avait ?\n\nFlask \\(\\Rightarrow\\) Prise en main très complexe, plus adaptée pour les Software Engineers.\nPlotly Dash \\(\\Rightarrow\\) Prise en main plus simple que Flask, concept assez similaire à Shiny avec séparation des composants UI et server.\n\n\nCorentin\n\nFlask \\(\\Rightarrow\\) Super Framework pour faire une appli web scalable mais si vous venez d’un background Data c’est vraiment très très galère, il faut savoir ce qu’on fait.\nPlotly Dash \\(\\Rightarrow\\) Configuration des inputs, outputs, callbacks."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#pourquoi-streamlit",
+    "href": "sections/projects/presentation.html#pourquoi-streamlit",
+    "title": "💻 Streamlit",
+    "section": "Pourquoi Streamlit ?",
+    "text": "Pourquoi Streamlit ?\nObjectif : Simplifier au maximum le développement d’applications Data.\n\n\nUser Interface ?\n\n\nInputs ?\n\n\nOutputs ?\n\n\nInteractions ?\n\n\nCallbacks ?\n\n\n\n\nEt pourquoi pas juste un script  ?\n\n\n\nCorentin\nA dire après l’objectif : \nA l’époque un Data Scientist il faisait son petit Boosting en utilisant sklearn, il faisait une cross-validation, il regardait ses métriques et puis si c’était bien il passait à un autre projet.\nEt puis…c’est tout.\nEn bref il restait souvent dans son notebook, le modèle était assez peu exploitable, et surtout, il était interprétable uniquement par les équipes Data qui l’avaient fait. Et les Data Scientists ils avaient pas particulièrement envie de s’embêter à apprendre Dash ou même Flask. Niveau communication des résultats on a vu mieux.\nEt c’est là que Streamlit arrive avec une idée toute simple : au lieu de séparer tous les composants logiciels de l’interface utilisateur, on fait juste un script."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#installation",
+    "href": "sections/projects/presentation.html#installation",
+    "title": "💻 Streamlit",
+    "section": "Installation",
+    "text": "Installation\n\n\n\n\n\n\nOn passe à l’installation ?\n\n\n\n\n\nLancement d’un terminal : \nEt ensuite on installe via pip avec la commande\n\n\npython -m pip install streamlit\n\n\n\nAybuké\nEst-ce que tt le monde a réussi à installer du coup ?"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#prise-en-main",
+    "href": "sections/projects/presentation.html#prise-en-main",
+    "title": "💻 Streamlit",
+    "section": "Prise en main",
+    "text": "Prise en main\n\\(\\Rightarrow\\) Lançons la démo pour voir de quoi Streamlit est capable.\n\n\n\n\n\n\n👋 Hello Streamlit\n\n\n\npython -m streamlit hello\n\n\n\nAybuké\nVous pouvez regarder en détail la démo mais on va pas vraiment se concentrer dessus étant donné qu’on va construire une petite app nous-même, on trouve que c’est quand même plus intéressant."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#un-premier-jet",
+    "href": "sections/projects/presentation.html#un-premier-jet",
+    "title": "💻 Streamlit",
+    "section": "Un premier jet !",
+    "text": "Un premier jet !\n\n\napp.py\n\nimport streamlit as st\n\nst.set_page_config(page_icon=\"🐍\", page_title=\"PyApp\")\nst.title(\"😎 Ma première app super stylée\")\n\nst.markdown(\"Du *markdown* dans l'app ? **Rien de plus simple !**\")\nst.markdown(\"- Lien vers [`streamlit`](https://streamlit.io/)\")\nst.markdown(\n    \"\"\"\n    &gt; Des couleurs ? :orange[orange], :red[rouge], :green[vert]\n    \"\"\"\n)\n\nst.code(\n    \"\"\"\n    [[i for i in range(5)] for j in range(2)] \n    # Du code non-exécutable\n    \"\"\",\n    language=\"python\"\n)\n\nst.divider()\n\n\n🚀 et pour lancer l’appli :\n\npython -m streamlit run app.py\n\nAybuké"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#ce-quon-a-vu-jusquici",
+    "href": "sections/projects/presentation.html#ce-quon-a-vu-jusquici",
+    "title": "💻 Streamlit",
+    "section": "Ce qu’on a vu jusqu’ici",
+    "text": "Ce qu’on a vu jusqu’ici\n\nst.set_page_config() pour configurer le favicon et le titre de l’onglet dans le navigateur\nst.title() pour donner un titre à notre app\nst.markdown() pour ajouter du texte avec différents types de formattage : italique, gras, ajout de liens, etc.\nst.code() pour inclure du code non-exécutable provenant de différents langages : python, SQL, CSS, etc.\nst.divider() pour tracer une ligne horizontale\n\n\nAybuké"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#intégration-de-latex",
+    "href": "sections/projects/presentation.html#intégration-de-latex",
+    "title": "💻 Streamlit",
+    "section": "Intégration de LaTeX",
+    "text": "Intégration de LaTeX\nIdentité D’Euler\n\\[\ne^{i \\pi} + 1 = 0\n\\]\nAjoutons ces quelques lignes de code.\nst.header(\"Ajoutons du LaTeX\")\nst.subheader(\"Identité d'*Euler*\", divider=\"blue\")\nst.latex(\"e^{i \\pi} + 1 = 0\")\nst.caption(\n    \"\"\"\n    L'identité d'*Euler* est souvent citée comme\n    un exemple de beauté mathématique.\n    \"\"\"\n)\n\nCorentin\nCa c’est quelque chose qui va certainement plaire à madame Scholler."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#présentation-de-widgets",
+    "href": "sections/projects/presentation.html#présentation-de-widgets",
+    "title": "💻 Streamlit",
+    "section": "Présentation de widgets",
+    "text": "Présentation de widgets\n\nTestons quelques widgets !\n\n\n\nst.selectbox()\nst.button()\n\n\nfruit = st.selectbox(\n    \"Fruit\",\n    (\"🍓 Fraise\", \"🍊 Orange\", \"🥭 Mangue\", \"🍌 Banane\", \"🍏 Pomme\"),\n    index = None,\n    placeholder = \"Sélectionner un fruit\"\n)\n\nbouton = st.button(\"Voir les détails du fruit sélectionné\")\n\nif bouton:\n    st.write(f\"T'as la dalle ! Tu veux manger une **{fruit}**\")\n\nGuillaume\nNotez qu’une fois que vous changez l’input de la selectbox dans l’application, l’ensemble du script est ré-éxécuté, et donc, le bouton est re-caché par défaut.\nCe rerun total qui est la signature de streamlit peut faciliter le développement de certaines applis mais peut parfois être assez contraignant."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#options-de-layout",
+    "href": "sections/projects/presentation.html#options-de-layout",
+    "title": "💻 Streamlit",
+    "section": "Options de layout",
+    "text": "Options de layout\n\nst.columns() \\(\\Rightarrow\\) Colonnes\nst.container() \\(\\Rightarrow\\) Conteneur\nst.expander() \\(\\Rightarrow\\) Expandeur\nst.tabs() \\(\\Rightarrow\\) Tabs\nst.sidebar() \\(\\Rightarrow\\) Sidebar\nst.popover() \\(\\Rightarrow\\) Popover\n\n\nHassan\nDe nombreuses options de layout sont disponibles pour modifier l’application.\nOn peut ajouter des colonnes, créer des boites flexbox avec les containers, des tabs, une sidebar, etc."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#colonnes",
+    "href": "sections/projects/presentation.html#colonnes",
+    "title": "💻 Streamlit",
+    "section": "Colonnes",
+    "text": "Colonnes\ncolonne_1, colonne_2 = st.columns(2)\nExplication visuelle par Donald J. Trump\n\n\n\n\n\n\nHassan\nLa je vais d’abord vous présenter la création de colonnes avec le futur président des Etats-Unis.\nIl y a plusieurs moyens de gérer la taille des colonnes, par défaut si on ne met qu’un chiffre qui indique le nombre de colonnes ça va diviser la page en 2,3,4, etc.\nMais on peut aussi passer une liste avec des floats du type [0.1, 0.4, 0.4, 0.1]"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#sidebar",
+    "href": "sections/projects/presentation.html#sidebar",
+    "title": "💻 Streamlit",
+    "section": "Sidebar",
+    "text": "Sidebar\n\nOn va changer notre interface utilisateur pour ajouter une Sidebar et regrouper nos widgets.\n\nwith st.sidebar:\n    prenom = st.text_input(\"🤠 Ecris ton prénom *cow-boy* !\")\n    reussite = st.checkbox(\"Tu penses avoir ton année ?\")\n    note_pf = st.number_input(\n        \"Ta note en Concurrence et Innovation\",\n        min_value=0,\n        max_value=5,\n        step=1\n    )\n    epanouissement = st.select_slider(\n        \"Ton épanouissement en master\",\n        range(11)\n    )\n\nAybuké\nLa notation with permet de dire avec quel objet du layout on travaille. La, on voit qu’on travaille avec notre sidebar et qu’on lui ajoute des inputs."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#tabs",
+    "href": "sections/projects/presentation.html#tabs",
+    "title": "💻 Streamlit",
+    "section": "Tabs",
+    "text": "Tabs\n\nOn va ajouter quelques onglets (Tabs) à notre application pour diversifier l’interface.\n\ntab_1, tab_2, tab_3 = st.tabs(\n    [\"🔎 Infos sur l'année\", \"📄 DataFrame\", \"📊 Graphiques\"]\n)\n\nif prenom:\n    with tab_1:\n        if reussite:\n            st.balloons()\n            st.write(f\"Félicitations pour ton année *{prenom}* ! 🎈\")\n        else:\n            st.snow()\n            st.write(\n                f\"**Aie Aie Aie**... 🥶 va falloir taffer *{prenom}*\"\n            )\n\nGuillaume\nOn va en plus vous faire crouler sous les ballons et la neige maintenant."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#des-messages-de-statut",
+    "href": "sections/projects/presentation.html#des-messages-de-statut",
+    "title": "💻 Streamlit",
+    "section": "Des messages de statut",
+    "text": "Des messages de statut\n\nℹ️ st.info()\n❌ st.error()\n\n⚠️ st.warning()\n✅ st.success()\n\nwith st.sidebar:\n    with st.expander(\"On regarde quelques messages ?\"):\n        st.info(\n            f\"Ton épanouissement en master : {epanouissement}/10\",\n            icon=\"👨‍🏫\"\n        )\n        st.error(\n            f\"Ta note en Concurrence et Innovation : {note_pf}\",\n            icon=\"👀\"\n        )\n        st.warning(\"Ceci est un avertissement générique\", icon=\"⚠\")\n        st.success(\"Message de réussite.\", icon=\"✅\")\n\nHassan\nSur Streamlit, il existe aussi des conteneurs colorés spéciaux qui sont adaptés pour l’affichage d’erreurs, d’infos, d’avertissements. On va les rergarder un petit peu ensemble."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#et-avec-des-vraies-données-i",
+    "href": "sections/projects/presentation.html#et-avec-des-vraies-données-i",
+    "title": "💻 Streamlit",
+    "section": "Et avec des vraies données ? (I)",
+    "text": "Et avec des vraies données ? (I)\n\nOn a vu tout un tas d’éléments d’UI, mais on a pas vraiment interragi avec des données dignes de ce nom.\n\n\n\n\n\n\n\\(\\Rightarrow\\) Morale de l’histoire : Installe polars\n\nCorentin\nQuand on pense manipulation de données en python, on pense pandas, mais il est temps de passer à la vitesse supérieure et d’avoir un truc vraiment rapide."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#et-avec-des-vraies-données-ii",
+    "href": "sections/projects/presentation.html#et-avec-des-vraies-données-ii",
+    "title": "💻 Streamlit",
+    "section": "Et avec des vraies données ? (II)",
+    "text": "Et avec des vraies données ? (II)\n\nExemple avec des données de cas de COVID-19 aux Etats-Unis entre 2020 et 2022 : + 2.5 millions de lignes !\n\nimport polars as pl\n\ndf_covid = pl.read_csv(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nProblèmes\n\n\n\n\nL’import met trois ans\nEn plus, chaque action dans l’appli relance l’import…\n\n\n\n\nCorentin"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#on-est-pas-rendus",
+    "href": "sections/projects/presentation.html#on-est-pas-rendus",
+    "title": "💻 Streamlit",
+    "section": "On est pas rendus…",
+    "text": "On est pas rendus…\n\n\n\n\n\n\nCorentin"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#solution-i",
+    "href": "sections/projects/presentation.html#solution-i",
+    "title": "💻 Streamlit",
+    "section": "Solution (I)",
+    "text": "Solution (I)\n\n\n\n\n\nDeux décorateurs très utiles :\n@st.cache_data et @st.cache_resource\n\nCorentin\nPour le premier décorateur, imaginez que vous ayez un dataframe de 2,5 millions lignes, ça va devenir assez encombrant que chaque interaction relance entièrement l’appli, et donc l’import des données peut se faire en une fois, et ensuite les données vont rester dans le cache du navigateur."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#solution-ii",
+    "href": "sections/projects/presentation.html#solution-ii",
+    "title": "💻 Streamlit",
+    "section": "Solution (II)",
+    "text": "Solution (II)\n@st.cache_data\ndef import_covid_usa(link: str) -&gt; pl.DataFrame:\n    \"\"\"Fonction d'import des données optimisée.\"\"\"\n    return pl.read_csv(link)\n💡 Et maintenant, observons la différence !\ndf_covid = import_covid_usa(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nNote\n\n\n\nOn attend une seule fois pour l’import des données, ce qui est beaucoup plus satisfaisant pour l’utilisateur.\n\nSolution la plus optimale ici : base de données\n\n\n\n\nCorentin"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#affichage-dun-tableau",
+    "href": "sections/projects/presentation.html#affichage-dun-tableau",
+    "title": "💻 Streamlit",
+    "section": "Affichage d’un tableau",
+    "text": "Affichage d’un tableau\n\nOn a maintenant envie d’afficher nos données sous forme de tableau.\n\nwith tab_2:\n    st.dataframe(\n        df_covid,\n        hide_index=True,\n        use_container_width=True,\n        column_config={\n            \"date\": st.column_config.DateColumn(\"📅 Date\", format=\"DD/MM/YYYY\")\n        },\n    )\n\\(\\Rightarrow\\) Grande flexibilité dans l’affichage.\n\nHassan\nL’option hide_index permet de cacher la colonne d’indice qui est associée au dataframe.\nLa seconde option permet de forcer le tableau à prendre la taille complète du conteneur. La dernière option est probablement la plus intéressante parce qu’elle permet de passer un schéma de configuration de colonnes pour les personnaliser."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#et-pour-les-graphiques",
+    "href": "sections/projects/presentation.html#et-pour-les-graphiques",
+    "title": "💻 Streamlit",
+    "section": "📊 Et pour les graphiques ?",
+    "text": "📊 Et pour les graphiques ?\n\nOn va chercher à visualiser le nombre de morts par état à une certaine date (un peu macabre 😷).\n\nwith tab_3:\n    st.subheader(\"Nombre de personnes mortes de COVID-19 *(Noël 2020)*\")\n\n    deaths_by_state_christmas = (\n        df_covid.filter(pl.col(\"date\") == \"2020-12-25\")\n        .group_by(\"state\")\n        .agg(pl.col(\"deaths\").sum())\n    )\n\n    st.bar_chart(deaths_by_state_christmas, x=\"state\", y=\"deaths\")\nDe nombreuses options de visualisation à la volée :\n\nst.line_chart()\nst.scatter_chart()\nst.map()\netc.\n\n\nAybuké\nDans notre code ici, on retrouve un peu de polars mais rien de compliqué vous voyez que ça ressemble à la syntaxe de SQL.\nPour plus de contrôle sur les visualisations on peut utiliser plotly, altair ou matplotlib avec d’autres commandes."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#deltagenerator",
+    "href": "sections/projects/presentation.html#deltagenerator",
+    "title": "💻 Streamlit",
+    "section": "DeltaGenerator",
+    "text": "DeltaGenerator\n\n\n\n\n\n\nMais comment tout ça marche ?\n\n\n\nAu coeur de tous ces composants permettant de créer l’interface utilisateur, il y a une classe : le DeltaGenerator.\n\nSystème basé sur  protobuf, crée par GOOGLE\n\n\n\n\nCorentin\nEt comme évidemment les devs de chez Streamlit ils ont pas réinventé la roue ils ont utilisé un système de sérialisation et désérialisation de données qui a été crée à la base par Google.\nLes messages Delta protobuf dans Streamlit en gros c’est donc des messages qui décrivent les modifications à apporter à l’interface utilisateur de l’application. Ces messages contiennent des instructions sur la façon de mettre à jour ou de modifier les éléments.\nPar exemple les messages d’alerte, la sidebar, ou même les tabs, ce sont tous des composants DeltaGenerator qui sont des conteneurs, on peut le voir si on s’amuse à utiliser F12 pour inspecter l’appli."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#pour-aller-loin",
+    "href": "sections/projects/presentation.html#pour-aller-loin",
+    "title": "💻 Streamlit",
+    "section": "Pour aller + loin",
+    "text": "Pour aller + loin\nSecrets management\ndef check_password():\n    \"\"\"Returns `True` if the user had the correct password.\"\"\"\n\n    def password_entered():\n        \"\"\"Checks whether a password entered by the user is correct.\"\"\"\n        if hmac.compare_digest(st.session_state[\"password\"], st.secrets[\"password\"]):\n            st.session_state[\"password_correct\"] = True\n            del st.session_state[\"password\"]  # Don't store the password.\n        else:\n            st.session_state[\"password_correct\"] = False\n\n    # Return True if the password is validated.\n    if st.session_state.get(\"password_correct\", False):\n        return True\n\n    # Show input for password.\n    st.text_input(\n        \"Mot de passe\",\n        type=\"password\",\n        on_change=password_entered,\n        key=\"password\",\n        placeholder=\"Veuillez insérer le mot de passe pour accéder à l'application.\",\n    )\n    if \"password_correct\" in st.session_state:\n        st.error(\"😕 Mot de passe incorrect\")\n    return False\n\n\nif not check_password():\n    st.stop()\n\nHassan"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#exemples-dappli-complètes",
+    "href": "sections/projects/presentation.html#exemples-dappli-complètes",
+    "title": "💻 Streamlit",
+    "section": "Exemples d’appli complètes",
+    "text": "Exemples d’appli complètes\n\n🍷 Projet de Machine Learning du Coc's & du Guig's : Wine Scraping\n🚗 Projet de Machine Learning de Buk & du H : EstimyCar\n\n\nAPI Reference : https://docs.streamlit.io/library/api-reference\n\nGuillaume"
+  },
+  {
+    "objectID": "sections/projects/presentation.html#fin",
+    "href": "sections/projects/presentation.html#fin",
+    "title": "💻 Streamlit",
+    "section": "FIN",
+    "text": "FIN\n\n\n\n\n\n\nHassan\nStreamlit devient de plus en plus omniprésent dans le domaine de la data et vous aurez peut-être à l’utiliser, et en tout cas nous on vous le conseille fortement, et surtout on espère que ça vous a plu et que ça vous sera utile."
+  },
+  {
+    "objectID": "sections/projects/presentation.html#un-dernier-meme-pour-la-route",
+    "href": "sections/projects/presentation.html#un-dernier-meme-pour-la-route",
+    "title": "💻 Streamlit",
+    "section": "(Un dernier meme pour la route)",
+    "text": "(Un dernier meme pour la route)"
+  },
+  {
+    "objectID": "sections/skills.html",
+    "href": "sections/skills.html",
+    "title": "Compétences",
+    "section": "",
+    "text": "PYTHON\n\n\n\n\n\n\nMaîtrise de streamlit et taipy pour rapidement prototyper puis déployer des applications data.\nGestion des dépendances et isolation avec poetry, conteneurisation avec  Docker.\nData Wrangling avec polars, pandas ou duckdb.\nUtilisation de pydantic pour faire de la validation de données\nOrchestration de pipelines avec airflow.\nData Visualisation avec plotly et seaborn.\nWeb Scraping avec beautifulsoup.\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nMaîtrise des packages de Data Manipulation du tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nConception de tableaux statiques ou interactifs “qui claquent” avec {gt}.\nData Visualisation avec {ggplot2} et {plotly}.\nCréation d’applications web modernes et robustes en production avec {shiny} + {bslib} + {golem}.1\nCréation de packages sur .\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\nToolkit d’économétrie et de micro-économétrie : {micEcon}, {sfa}, etc.\nUtilisation d’outils de formatage, de linting de code et d’automatisation de tâches sur  : {lintr}, {styler} et {usethis}.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nWindow Functions.\nCommon Table Expressions (CTE).\nCréation de vues et procédures stockées.\nDBT pour faire des transformations de données."
+  },
+  {
+    "objectID": "sections/skills.html#python",
+    "href": "sections/skills.html#python",
+    "title": "Compétences",
+    "section": "",
+    "text": "blabla"
+  },
+  {
+    "objectID": "sections/skills.html#r",
+    "href": "sections/skills.html#r",
+    "title": "Compétences",
+    "section": "",
+    "text": "blabla"
+  },
+  {
+    "objectID": "sections/skills.html#python-1",
+    "href": "sections/skills.html#python-1",
+    "title": "Compétences",
+    "section": "",
+    "text": "blabla"
+  },
+  {
+    "objectID": "sections/skills.html#python-2",
+    "href": "sections/skills.html#python-2",
+    "title": "Compétences",
+    "section": "",
+    "text": "blabla"
+  },
+  {
+    "objectID": "sections/skills.html#footnotes",
+    "href": "sections/skills.html#footnotes",
+    "title": "Compétences",
+    "section": "Notes de bas de page",
+    "text": "Notes de bas de page\n\n\nNote : {golem} est une librairie particulièrement intéressante car elle permet de packager une application Shiny. Pour plus de détails, je recommande de naviguer vers le projet ShinyBricks.↩︎"
+  }
+]

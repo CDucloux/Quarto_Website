@@ -1,0 +1,44 @@
+---
+title: "Corentin Ducloux"
+toc: false
+about:
+    id: hero-heading
+    template: trestles
+    image: imgs/me.jpg
+    image-shape: round
+    image-width: 20em
+    links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/corentin-ducloux-4b9793213/
+    - icon: github
+      text: GitHub
+      href: https://github.com/CDucloux/
+    - icon: envelope
+      text: Email
+      href: mailto:corentin_ducloux@outlook.fr
+---
+
+## [👋]{.wave} Bonjour, et bienvenue !
+
+**Data Engineer**, jeune diplômé, et adepte de *Python*, {{< fa brands r-project >}} et *SQL*, je suis passionné par l'ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l'ingénierie logicielle et l'intégration continue. 
+
+[Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
+
+***
+
+## {{< fa briefcase >}} Expérience professionnelle
+
+- [**Data Engineer**]{style="color:#ff7edb;"} *(Avril -- Septembre 2024)* | **EDF**
+- [**Data Analyst & BI Dev.**]{style="color:#ff7edb;"} *(Avril -- Août 2023)* | **Safran Seats**
+- [**Data Analyst**]{style="color:#ff7edb;"} *(Juin -- Août 2022)* | **Crédit Agricole Titres**
+
+***
+
+## {{< fa graduation-cap >}} Education
+
+- **Master Data Science / Business Econ.** *(2022 -- 2024)* <br> *Université de Tours*
+
+- **Licence d'économie d'entreprise** *(2018 -- 2022)* <br> *Université de Tours*
+
+- **Baccalauréat S, section Edifice** *(2015 -- 2018)* <br> *Lycée Pothier, Orléans*

@@ -1,0 +1,68 @@
+/* css styles */
+
+/* Transforme en majuscule mon nom et prénom */
+span.navbar-title {
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+
+/* Transforme en majuscule le texte des menus de navigation */
+span.menu-text {
+    text-transform: uppercase;
+}
+
+/* Gère le soulignement du texte des menus de navigation (1) */
+a.nav-link {
+    text-decoration: underline 0.15em rgba(0, 0, 0, 0);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 300ms, text-underline-offset 300ms;
+}
+
+/* Gère le soulignement du texte des menus de navigation (2) */
+a.nav-link:hover {
+    text-decoration-color: #2fe8f0;
+    text-underline-offset: 0.4em;
+}
+
+/* Gère l'animation de la main */
+.wave {
+    animation-name: wave-animation;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 70% 70%;
+    display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
