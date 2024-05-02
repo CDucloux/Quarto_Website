@@ -2,15 +2,23 @@
 title: "Compétences"
 ---
 
+> Vous souhaitez découvrir mes compétences plus en détail ? C'est par ici !
+
+::: {.chevron-styling}
+{{< iconify pixelarticons:chevron-down size=5x >}}
+:::
+
 ### Langages
 
-::: {.callout-important icon=false collapse="false"}
+***
+
+::: {.callout-important icon=false collapse="true"}
 ## {{< fa brands python >}} PYTHON
 
 - Maîtrise de `streamlit` et `taipy` pour rapidement prototyper puis déployer des applications data.
 - Gestion des dépendances et isolation avec `poetry`, conteneurisation avec {{< fa brands docker >}} **Docker**.
 - *Data Wrangling* avec `polars`, `pandas` ou `duckdb`.
-- Utilisation de `pydantic` pour faire de la validation de données
+- Utilisation de `pydantic` pour faire de la validation de données.
 - Orchestration de pipelines avec `airflow`.
 - *Data Visualisation* avec `plotly` et `seaborn`.
 - *Web Scraping* avec `beautifulsoup`.
@@ -18,12 +26,12 @@ title: "Compétences"
 :::
 
 
-::: {.callout-important icon=false collapse="false"}
+::: {.callout-important icon=false collapse="true"}
 ## {{< fa brands r-project >}} R
 - Maîtrise des packages de *Data Manipulation* du **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
 - Conception de tableaux statiques ou interactifs *"qui claquent"* avec `{gt}`.
 - *Data Visualisation* avec `{ggplot2}` et `{plotly}`.
-- Création d'applications web modernes et robustes en production avec `{shiny}` + `{bslib}` + `{golem}`.^[*Note* : `{golem}` est une librairie particulièrement intéressante car elle permet de **packager** une application *Shiny*. Pour plus de détails, je recommande de naviguer vers le projet **ShinyBricks**.]
+- Création d'applications web modernes et robustes en production avec `{shiny}` + `{bslib}` + `{golem}`.^[`{golem}` est une librairie particulièrement intéressante car elle permet de **packager** une application *Shiny*. Pour plus de détails, je recommande de naviguer vers le projet **ShinyBricks**.]
 - Création de packages sur {{< fa brands r-project >}}.
 - *Machine Learning* avec `{tidymodels}`.
 - Analyse de données exploratoire et analyse factorielle : ACP -- AFC -- ACM -- AFDM.
@@ -31,34 +39,78 @@ title: "Compétences"
 - Utilisation d'outils de formatage, de linting de code et d'automatisation de tâches sur {{< fa brands r-project >}} : `{lintr}`, `{styler}` et `{usethis}`.
 :::
 
-::: {.callout-important icon=false collapse="false"}
+::: {.callout-important icon=false collapse="true"}
 ## {{< fa database >}} SQL
 - Window Functions.
 - Common Table Expressions (CTE).
 - Création de vues et procédures stockées.
-- **DBT** pour faire des transformations de données.
+- **DBT**.
 :::
 
 ### Outils
 
-::: {.callout-tip icon=false collapse="false"}
+***
+
+::: {.callout-tip icon=false collapse="true"}
 ## {{< fa code-compare >}} Git
+
 :::
 
-::: {.callout-tip icon=false collapse="false"}
+::: {.callout-tip icon=false collapse="true"}
 ## {{< fa book >}} Quarto
+- Production de documents paramétrables et automatisés (HTML, PDF).
+- Création de sites webs.^[J'ai par exemple créé ce site avec **Quarto**, tout en tirant profit de `SASS` et de `CSS` pour en améliorer le rendu.]
+- Documentation de packages.^[🚧 Pas encore fait, mais très prometteur, notamment grâce au package `quartodoc`.]
+- Et surtout, surtout, adieu aux présentations **PowerPoint** grâce à [`reveal.js`](https://revealjs.com/).
 :::
 
-::: {.callout-tip icon=false collapse="false"}
-## {{< fa gauge >}} PowerBI
+::: {.callout-tip icon=false collapse="true"}
+## {{< iconify simple-icons:powerbi >}} PowerBI
 - *Data Modeling* -- Star & Snowflake schema.
 - DAX et fonctions de Time Intelligence.
-- Manipulation de tables : jointures, pivots et aggrégations avec *PowerQuery*.
+- Manipulation de tables : jointures, pivots et aggrégations avec **PowerQuery**.
 - Construction de KPI.
-- Déploiement, gestion et maintenance de rapports sur *PowerBI Report Server*.
+- Déploiement, gestion et maintenance de rapports sur **PowerBI Report Server**.
 - Report Design. 
 :::
 
-::: {.callout-tip icon=false collapse="false"}
+::: {.callout-tip icon=false collapse="true"}
 ## {{< fa file-excel >}} Excel
+- Maîtrise des tableaux et graphiques croisés dynamiques.
+- Automatisation et requêtage avec **PowerQuery**.
+- Listes dynamiques et gestionnaire de noms.
+- `VBA` (Création d'Interfaces Utilisateur avancées et utilisation pour **Outlook** et **Word**).
 :::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< iconify gravity-ui:logo-mermaid >}} Mermaid
+:::
+
++ ajouter typst aussi avec le logo !
+
+```{mermaid}
+journey
+    title My working day
+    section Go to work
+      Make tea: 5: Me
+      Go upstairs: 3: Me
+      Do work: 1: Me, Cat
+    section Go home
+      Go downstairs: 5: Me
+      Sit down: 5: Me
+
+```
+
+
+```{mermaid}
+gantt
+    title A Gantt Diagram
+    %% This is a comment
+    dateFormat YYYY-MM-DD
+    section Section
+        A task          :a1, 2014-01-01, 30d
+        Another task    :after a1, 20d
+    section Another
+        Task in Another :2014-01-12, 12d
+        another task    :24d
+```

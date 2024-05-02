@@ -1,5 +1,10 @@
 /* css styles */
 
+/* Change la couleur du texte mis en surbrillance de bleu vers gris */
+::selection {
+    background: rgb(232, 231, 229);
+}
+
 /* Transforme en majuscule mon nom et prénom */
 span.navbar-title {
     text-transform: uppercase;
@@ -33,6 +38,12 @@ a.nav-link:hover {
     display: inline-block;
 }
 
+.chevron-styling {
+    text-align: center;
+    animation: chevron-animation 2s ease-in-out infinite;
+}
+
+/* Définition des keyframes */
 @keyframes wave-animation {
     0% {
         transform: rotate(0.0deg)
@@ -64,5 +75,19 @@ a.nav-link:hover {
 
     100% {
         transform: rotate(0.0deg)
+    }
+}
+
+@keyframes chevron-animation {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(0.75em);
+    }
+
+    100% {
+        transform: translateY(0);
     }
 }

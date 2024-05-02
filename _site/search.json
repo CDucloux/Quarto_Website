@@ -88,7 +88,7 @@
     "href": "sections/projects.html",
     "title": "Projets",
     "section": "",
-    "text": "💻 Streamlit\n\n\n\n\n\n\nBuk, Guig's, le H et le Coc's\n\n\n2 mai 2024\n\n\n\n\n\n\n\n\n\n\n\n\n📱 Smart Specs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAucun article correspondant"
+    "text": "💻 Streamlit\n\n\n\n\n\n\nBuk, Guig's, le H et le Coc's\n\n\n3 mai 2024\n\n\n\n\n\n\n\n\n\n\n\n\n📱 Smart Specs\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAucun article correspondant"
   },
   {
     "objectID": "sections/projects/presentation.html",
@@ -101,8 +101,8 @@
     "objectID": "sections/projects/presentation.html#présentation",
     "href": "sections/projects/presentation.html#présentation",
     "title": "💻 Streamlit",
-    "section": "",
-    "text": "Un framework python récent, lancé en 2019.\n\nEt avant Streamlit, qu’est ce qu’il y avait ?\n\nFlask \\(\\Rightarrow\\) Prise en main très complexe, plus adaptée pour les Software Engineers.\nPlotly Dash \\(\\Rightarrow\\) Prise en main plus simple que Flask, concept assez similaire à Shiny avec séparation des composants UI et server.\n\n\nCorentin\n\nFlask \\(\\Rightarrow\\) Super Framework pour faire une appli web scalable mais si vous venez d’un background Data c’est vraiment très très galère, il faut savoir ce qu’on fait.\nPlotly Dash \\(\\Rightarrow\\) Configuration des inputs, outputs, callbacks."
+    "section": "Présentation",
+    "text": "Présentation\n\nUn framework python récent, lancé en 2019.\n\nEt avant Streamlit, qu’est ce qu’il y avait ?\n\nFlask \\(\\Rightarrow\\) Prise en main très complexe, plus adaptée pour les Software Engineers.\nPlotly Dash \\(\\Rightarrow\\) Prise en main plus simple que Flask, concept assez similaire à Shiny avec séparation des composants UI et server.\n\n\nCorentin\n\nFlask \\(\\Rightarrow\\) Super Framework pour faire une appli web scalable mais si vous venez d’un background Data c’est vraiment très très galère, il faut savoir ce qu’on fait.\nPlotly Dash \\(\\Rightarrow\\) Configuration des inputs, outputs, callbacks."
   },
   {
     "objectID": "sections/projects/presentation.html#pourquoi-streamlit",
@@ -116,14 +116,14 @@
     "href": "sections/projects/presentation.html#installation",
     "title": "💻 Streamlit",
     "section": "Installation",
-    "text": "Installation\n\n\n\n\n\n\nOn passe à l’installation ?\n\n\n\n\n\nLancement d’un terminal : \nEt ensuite on installe via pip avec la commande\n\n\npython -m pip install streamlit\n\n\n\nAybuké\nEst-ce que tt le monde a réussi à installer du coup ?"
+    "text": "Installation\n\n\n\n\n\n\nOn passe à l’installation ?\n\n\n\n\nLancement d’un terminal : \nEt ensuite on installe via pip avec la commande\n\n\npython -m pip install streamlit\n\n\n\n\nAybuké\nEst-ce que tt le monde a réussi à installer du coup ?"
   },
   {
     "objectID": "sections/projects/presentation.html#prise-en-main",
     "href": "sections/projects/presentation.html#prise-en-main",
     "title": "💻 Streamlit",
     "section": "Prise en main",
-    "text": "Prise en main\n\\(\\Rightarrow\\) Lançons la démo pour voir de quoi Streamlit est capable.\n\n\n\n\n\n\n👋 Hello Streamlit\n\n\n\npython -m streamlit hello\n\n\n\nAybuké\nVous pouvez regarder en détail la démo mais on va pas vraiment se concentrer dessus étant donné qu’on va construire une petite app nous-même, on trouve que c’est quand même plus intéressant."
+    "text": "Prise en main\n\\(\\Rightarrow\\) Lançons la démo pour voir de quoi Streamlit est capable.\n\n\n\n\n\n\n👋 Hello Streamlit\n\n\npython -m streamlit hello\n\n\n\n\nAybuké\nVous pouvez regarder en détail la démo mais on va pas vraiment se concentrer dessus étant donné qu’on va construire une petite app nous-même, on trouve que c’est quand même plus intéressant."
   },
   {
     "objectID": "sections/projects/presentation.html#un-premier-jet",
@@ -165,7 +165,7 @@
     "href": "sections/projects/presentation.html#colonnes",
     "title": "💻 Streamlit",
     "section": "Colonnes",
-    "text": "Colonnes\ncolonne_1, colonne_2 = st.columns(2)\nExplication visuelle par Donald J. Trump\n\n\n\n\n\n\nHassan\nLa je vais d’abord vous présenter la création de colonnes avec le futur président des Etats-Unis.\nIl y a plusieurs moyens de gérer la taille des colonnes, par défaut si on ne met qu’un chiffre qui indique le nombre de colonnes ça va diviser la page en 2,3,4, etc.\nMais on peut aussi passer une liste avec des floats du type [0.1, 0.4, 0.4, 0.1]"
+    "text": "Colonnes\ncolonne_1, colonne_2 = st.columns(2)\nExplication visuelle par Donald J. Trump\n\n\nHassan\nLa je vais d’abord vous présenter la création de colonnes avec le futur président des Etats-Unis.\nIl y a plusieurs moyens de gérer la taille des colonnes, par défaut si on ne met qu’un chiffre qui indique le nombre de colonnes ça va diviser la page en 2,3,4, etc.\nMais on peut aussi passer une liste avec des floats du type [0.1, 0.4, 0.4, 0.1]"
   },
   {
     "objectID": "sections/projects/presentation.html#sidebar",
@@ -193,35 +193,35 @@
     "href": "sections/projects/presentation.html#et-avec-des-vraies-données-i",
     "title": "💻 Streamlit",
     "section": "Et avec des vraies données ? (I)",
-    "text": "Et avec des vraies données ? (I)\n\nOn a vu tout un tas d’éléments d’UI, mais on a pas vraiment interragi avec des données dignes de ce nom.\n\n\n\n\n\n\n\\(\\Rightarrow\\) Morale de l’histoire : Installe polars\n\nCorentin\nQuand on pense manipulation de données en python, on pense pandas, mais il est temps de passer à la vitesse supérieure et d’avoir un truc vraiment rapide."
+    "text": "Et avec des vraies données ? (I)\n\nOn a vu tout un tas d’éléments d’UI, mais on a pas vraiment interragi avec des données dignes de ce nom.\n\n\n\\(\\Rightarrow\\) Morale de l’histoire : Installe polars\n\nCorentin\nQuand on pense manipulation de données en python, on pense pandas, mais il est temps de passer à la vitesse supérieure et d’avoir un truc vraiment rapide."
   },
   {
     "objectID": "sections/projects/presentation.html#et-avec-des-vraies-données-ii",
     "href": "sections/projects/presentation.html#et-avec-des-vraies-données-ii",
     "title": "💻 Streamlit",
     "section": "Et avec des vraies données ? (II)",
-    "text": "Et avec des vraies données ? (II)\n\nExemple avec des données de cas de COVID-19 aux Etats-Unis entre 2020 et 2022 : + 2.5 millions de lignes !\n\nimport polars as pl\n\ndf_covid = pl.read_csv(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nProblèmes\n\n\n\n\nL’import met trois ans\nEn plus, chaque action dans l’appli relance l’import…\n\n\n\n\nCorentin"
+    "text": "Et avec des vraies données ? (II)\n\nExemple avec des données de cas de COVID-19 aux Etats-Unis entre 2020 et 2022 : + 2.5 millions de lignes !\n\nimport polars as pl\n\ndf_covid = pl.read_csv(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nProblèmes\n\n\n\nL’import met trois ans\nEn plus, chaque action dans l’appli relance l’import…\n\n\n\n\n\nCorentin"
   },
   {
     "objectID": "sections/projects/presentation.html#on-est-pas-rendus",
     "href": "sections/projects/presentation.html#on-est-pas-rendus",
     "title": "💻 Streamlit",
     "section": "On est pas rendus…",
-    "text": "On est pas rendus…\n\n\n\n\n\n\nCorentin"
+    "text": "On est pas rendus…\n\n\nCorentin"
   },
   {
     "objectID": "sections/projects/presentation.html#solution-i",
     "href": "sections/projects/presentation.html#solution-i",
     "title": "💻 Streamlit",
     "section": "Solution (I)",
-    "text": "Solution (I)\n\n\n\n\n\nDeux décorateurs très utiles :\n@st.cache_data et @st.cache_resource\n\nCorentin\nPour le premier décorateur, imaginez que vous ayez un dataframe de 2,5 millions lignes, ça va devenir assez encombrant que chaque interaction relance entièrement l’appli, et donc l’import des données peut se faire en une fois, et ensuite les données vont rester dans le cache du navigateur."
+    "text": "Solution (I)\n\nDeux décorateurs très utiles :\n@st.cache_data et @st.cache_resource\n\nCorentin\nPour le premier décorateur, imaginez que vous ayez un dataframe de 2,5 millions lignes, ça va devenir assez encombrant que chaque interaction relance entièrement l’appli, et donc l’import des données peut se faire en une fois, et ensuite les données vont rester dans le cache du navigateur."
   },
   {
     "objectID": "sections/projects/presentation.html#solution-ii",
     "href": "sections/projects/presentation.html#solution-ii",
     "title": "💻 Streamlit",
     "section": "Solution (II)",
-    "text": "Solution (II)\n@st.cache_data\ndef import_covid_usa(link: str) -&gt; pl.DataFrame:\n    \"\"\"Fonction d'import des données optimisée.\"\"\"\n    return pl.read_csv(link)\n💡 Et maintenant, observons la différence !\ndf_covid = import_covid_usa(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nNote\n\n\n\nOn attend une seule fois pour l’import des données, ce qui est beaucoup plus satisfaisant pour l’utilisateur.\n\nSolution la plus optimale ici : base de données\n\n\n\n\nCorentin"
+    "text": "Solution (II)\n@st.cache_data\ndef import_covid_usa(link: str) -&gt; pl.DataFrame:\n    \"\"\"Fonction d'import des données optimisée.\"\"\"\n    return pl.read_csv(link)\n💡 Et maintenant, observons la différence !\ndf_covid = import_covid_usa(\n    \"https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv\"\n)\n\n\n\n\n\n\nNote\n\n\nOn attend une seule fois pour l’import des données, ce qui est beaucoup plus satisfaisant pour l’utilisateur.\n\nSolution la plus optimale ici : base de données\n\n\n\n\n\nCorentin"
   },
   {
     "objectID": "sections/projects/presentation.html#affichage-dun-tableau",
@@ -242,7 +242,7 @@
     "href": "sections/projects/presentation.html#deltagenerator",
     "title": "💻 Streamlit",
     "section": "DeltaGenerator",
-    "text": "DeltaGenerator\n\n\n\n\n\n\nMais comment tout ça marche ?\n\n\n\nAu coeur de tous ces composants permettant de créer l’interface utilisateur, il y a une classe : le DeltaGenerator.\n\nSystème basé sur  protobuf, crée par GOOGLE\n\n\n\n\nCorentin\nEt comme évidemment les devs de chez Streamlit ils ont pas réinventé la roue ils ont utilisé un système de sérialisation et désérialisation de données qui a été crée à la base par Google.\nLes messages Delta protobuf dans Streamlit en gros c’est donc des messages qui décrivent les modifications à apporter à l’interface utilisateur de l’application. Ces messages contiennent des instructions sur la façon de mettre à jour ou de modifier les éléments.\nPar exemple les messages d’alerte, la sidebar, ou même les tabs, ce sont tous des composants DeltaGenerator qui sont des conteneurs, on peut le voir si on s’amuse à utiliser F12 pour inspecter l’appli."
+    "text": "DeltaGenerator\n\n\n\n\n\n\nMais comment tout ça marche ?\n\n\nAu coeur de tous ces composants permettant de créer l’interface utilisateur, il y a une classe : le DeltaGenerator.\n\nSystème basé sur  protobuf, crée par GOOGLE\n\n\n\n\n\nCorentin\nEt comme évidemment les devs de chez Streamlit ils ont pas réinventé la roue ils ont utilisé un système de sérialisation et désérialisation de données qui a été crée à la base par Google.\nLes messages Delta protobuf dans Streamlit en gros c’est donc des messages qui décrivent les modifications à apporter à l’interface utilisateur de l’application. Ces messages contiennent des instructions sur la façon de mettre à jour ou de modifier les éléments.\nPar exemple les messages d’alerte, la sidebar, ou même les tabs, ce sont tous des composants DeltaGenerator qui sont des conteneurs, on peut le voir si on s’amuse à utiliser F12 pour inspecter l’appli."
   },
   {
     "objectID": "sections/projects/presentation.html#pour-aller-loin",
@@ -263,21 +263,21 @@
     "href": "sections/projects/presentation.html#fin",
     "title": "💻 Streamlit",
     "section": "FIN",
-    "text": "FIN\n\n\n\n\n\n\nHassan\nStreamlit devient de plus en plus omniprésent dans le domaine de la data et vous aurez peut-être à l’utiliser, et en tout cas nous on vous le conseille fortement, et surtout on espère que ça vous a plu et que ça vous sera utile."
+    "text": "FIN\n\n\nHassan\nStreamlit devient de plus en plus omniprésent dans le domaine de la data et vous aurez peut-être à l’utiliser, et en tout cas nous on vous le conseille fortement, et surtout on espère que ça vous a plu et que ça vous sera utile."
   },
   {
     "objectID": "sections/projects/presentation.html#un-dernier-meme-pour-la-route",
     "href": "sections/projects/presentation.html#un-dernier-meme-pour-la-route",
     "title": "💻 Streamlit",
     "section": "(Un dernier meme pour la route)",
-    "text": "(Un dernier meme pour la route)"
+    "text": "(Un dernier meme pour la route)\n\n\n\n\n\n\n\n\n\nPrésentation de Streamlit"
   },
   {
     "objectID": "sections/skills.html",
     "href": "sections/skills.html",
     "title": "Compétences",
     "section": "",
-    "text": "PYTHON\n\n\n\n\n\n\nMaîtrise de streamlit et taipy pour rapidement prototyper puis déployer des applications data.\nGestion des dépendances et isolation avec poetry, conteneurisation avec  Docker.\nData Wrangling avec polars, pandas ou duckdb.\nUtilisation de pydantic pour faire de la validation de données\nOrchestration de pipelines avec airflow.\nData Visualisation avec plotly et seaborn.\nWeb Scraping avec beautifulsoup.\nDéveloppement de code de qualité industrielle : mypy pour le typage statique, ruff pour le linting et le formatage du code, pytest pour les tests.\n\n\n\n\n\n\n\n\n\n\n R\n\n\n\n\n\n\nMaîtrise des packages de Data Manipulation du tidyverse : {dplyr}, {purrr}, {stringr}, etc.\nConception de tableaux statiques ou interactifs “qui claquent” avec {gt}.\nData Visualisation avec {ggplot2} et {plotly}.\nCréation d’applications web modernes et robustes en production avec {shiny} + {bslib} + {golem}.1\nCréation de packages sur .\nMachine Learning avec {tidymodels}.\nAnalyse de données exploratoire et analyse factorielle : ACP – AFC – ACM – AFDM.\nToolkit d’économétrie et de micro-économétrie : {micEcon}, {sfa}, etc.\nUtilisation d’outils de formatage, de linting de code et d’automatisation de tâches sur  : {lintr}, {styler} et {usethis}.\n\n\n\n\n\n\n\n\n\n\n SQL\n\n\n\n\n\n\nWindow Functions.\nCommon Table Expressions (CTE).\nCréation de vues et procédures stockées.\nDBT pour faire des transformations de données."
+    "text": "Vous souhaitez découvrir mes compétences plus en détail ? C’est par ici !"
   },
   {
     "objectID": "sections/skills.html#python",
@@ -312,6 +312,6 @@
     "href": "sections/skills.html#footnotes",
     "title": "Compétences",
     "section": "Notes de bas de page",
-    "text": "Notes de bas de page\n\n\nNote : {golem} est une librairie particulièrement intéressante car elle permet de packager une application Shiny. Pour plus de détails, je recommande de naviguer vers le projet ShinyBricks.↩︎"
+    "text": "Notes de bas de page\n\n\n{golem} est une librairie particulièrement intéressante car elle permet de packager une application Shiny. Pour plus de détails, je recommande de naviguer vers le projet ShinyBricks.↩︎\nJ’ai par exemple créé ce site avec Quarto, tout en tirant profit de SASS et de CSS pour en améliorer le rendu.↩︎\n🚧 Pas encore fait, mais très prometteur, notamment grâce au package quartodoc.↩︎"
   }
 ]

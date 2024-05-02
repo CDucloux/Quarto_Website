@@ -1,0 +1,17 @@
+/*-- scss:defaults --*/
+
+
+// font imports
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+//font settings
+$font-family-monospace: "Fira Code";
+$font-family-sans-serif: "IBM Plex Sans", sans-serif;
+$font-color: #262730;
+
+// headings
+$presentation-heading-font: "IBM Plex Sans", sans-serif !default;
+$presentation-heading-color: #f63366 !default;
+
+$link-color: #f63366 !default;
