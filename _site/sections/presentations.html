@@ -30,7 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../imgs/fav/favicon_disquette.png" rel="icon" type="image/png">
+<link href="../imgs/fav/favicon_floppy.svg" rel="icon" type="image/svg+xml">
+<script src="../site_libs/quarto-listing/list.min.js"></script>
+<script src="../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -40,6 +42,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -66,7 +70,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Recherche"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-subtitle','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-subtitle","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -93,16 +155,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Accueil</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../sections/blog.html"> 
-<span class="menu-text">Blog</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../sections/skills.html"> 
 <span class="menu-text">Compétences</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../sections/projects.html"> 
 <span class="menu-text">Projets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../sections/blog.html"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../sections/presentations.html" aria-current="page"> 
@@ -121,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    </div>
+    <h5 class="quarto-listing-category-title">Catégories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">Tous <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Docker">Docker <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Machine Learning">Machine Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Python">Python <span class="quarto-category-count">(2)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Shiny">Shiny <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Streamlit">Streamlit <span class="quarto-category-count">(2)</span></div></div></div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -147,7 +209,128 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="R,Shiny" data-listing-date-sort="1711407600000" data-listing-file-modified-sort="1714845103808" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2034">
+<div class="thumbnail">
+<p><a href="../sections/presentations/lego_presentation.html" class="no-external"></a></p><a href="../sections/presentations/lego_presentation.html" class="no-external">
+<p><img src="../sections/presentations/LEGO_presentation/imgs/shinybricks.png" class="thumbnail-image"></p>
+</a><p><a href="../sections/presentations/lego_presentation.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../sections/presentations/lego_presentation.html" class="no-external">Shinybricks</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../sections/presentations/lego_presentation.html" class="no-external">Découvrez des sets </a><a href="LEGO"><strong>LEGO®</strong></a> brique par brique
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
+R
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Shiny'); return false;">
+Shiny
+</div>
+</div>
+<div class="listing-description">
+<a href="../sections/presentations/lego_presentation.html" class="no-external">Slides de présentation de l’application <strong>LEGO</strong> <em>ShinyBricks</em> réalisée sur <i class="fa-brands fa-r-project" aria-label="r-project"></i> dans le cadre du cours de <strong>Big Data</strong> de Master 2.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../sections/presentations/lego_presentation.html" class="no-external">
+<div class="listing-date">
+26 mars 2024
+</div>
+<div class="listing-author">
+<code>Hassan TILKI</code> et <code>Corentin DUCLOUX</code>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="Python,Streamlit" data-listing-date-sort="1710889200000" data-listing-file-modified-sort="1714837272682" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2127">
+<div class="thumbnail">
+<p><a href="../sections/presentations/streamlit_presentation.html" class="no-external"></a></p><a href="../sections/presentations/streamlit_presentation.html" class="no-external">
+<p><img src="../sections/presentations/streamlit_presentation/imgs/streamlit_mark.png" class="thumbnail-image"></p>
+</a><p><a href="../sections/presentations/streamlit_presentation.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../sections/presentations/streamlit_presentation.html" class="no-external">💻 Streamlit</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../sections/presentations/streamlit_presentation.html" class="no-external"><em>Boostez le développement de vos applis data !</em></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Streamlit'); return false;">
+Streamlit
+</div>
+</div>
+<div class="listing-description">
+<a href="../sections/presentations/streamlit_presentation.html" class="no-external">Présentation du package <code>streamlit</code> et de ses fonctionnalités à la promotion de Master 2 <em>Mécen</em>.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../sections/presentations/streamlit_presentation.html" class="no-external">
+<div class="listing-date">
+20 mars 2024
+</div>
+<div class="listing-author">
+<code>Corentin DUCLOUX</code>
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="Python,Streamlit,Docker,Machine Learning" data-listing-date-sort="1704495600000" data-listing-file-modified-sort="1714837500900" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4181">
+<div class="thumbnail">
+<p><a href="../sections/presentations/wine_presentation.html" class="no-external"></a></p><a href="../sections/presentations/wine_presentation.html" class="no-external">
+<p><img src="../sections/presentations/wine_presentation/imgs/wine_scraping.png" class="thumbnail-image"></p>
+</a><p><a href="../sections/presentations/wine_presentation.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="../sections/presentations/wine_presentation.html" class="no-external">🍷 Wine Scraping</a>
+</h3>
+<div class="listing-subtitle">
+<a href="../sections/presentations/wine_presentation.html" class="no-external"><em>Le breuvage contre-attaque</em></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Python'); return false;">
+Python
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Streamlit'); return false;">
+Streamlit
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Docker'); return false;">
+Docker
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Machine Learning'); return false;">
+Machine Learning
+</div>
+</div>
+<div class="listing-description">
+<a href="../sections/presentations/wine_presentation.html" class="no-external">Slides de présentation de l’application <em>Wine Scraping</em> dans le cadre du cours de <strong>Machine Learning</strong> de Master 2.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="../sections/presentations/wine_presentation.html" class="no-external">
+<div class="listing-date">
+6 janv. 2024
+</div>
+<div class="listing-author">
+<code>Guillaume DEVANT</code> et <code>Corentin DUCLOUX</code>
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+Aucun article correspondant
+</div>
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -564,7 +747,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
     <a class="nav-link" href="https://quarto.org/docs/reference/projects/websites.html">
-<p>Créé avec <strong>Quarto</strong></p>
+<p>🛠️ Créé avec <strong>Quarto</strong></p>
 </a>
   </li>  
 </ul>

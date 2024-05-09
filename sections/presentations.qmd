@@ -1,3 +1,10 @@
 ---
 title: "Présentations"
+listing: 
+    contents: presentations
+    type: default
+    categories: numbered
+    sort:
+        - "date desc"
+        - "title desc"
 ---

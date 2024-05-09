@@ -1,0 +1,694 @@
+---
+title: "🍷 Wine Scraping"
+subtitle: "*Le breuvage contre-attaque*"
+author: "`Guillaume DEVANT` et `Corentin DUCLOUX`"
+categories: ["Python", "Streamlit", "Docker", "Machine Learning"]
+description: "Slides de présentation de l'application *Wine Scraping* dans le cadre du cours de **Machine Learning** de Master 2."
+date: 01-06-2024
+date-format: DD/MM/YYYY
+image: "wine_presentation/imgs/wine_scraping.png"
+title-slide-attributes:
+    data-notes: "Ce projet de Machine Learning est l'aboutissement de plus de 3 mois de travail sur un sujet éminemment important à nos yeux : le vin. Il y a de cela plus de 2 millénaires, **Aristote** éclairait déjà l'antiquité avec sa philosophie en énonçant : **L’art et le vin sont les joies supérieures des hommes libres.** Une citation qui, il faut le dire, a résonné en nous. Mais pourquoi en sommes-nous arrivé là *Guillaume* ?"
+format: 
+    revealjs:
+        theme: [serif, wine_presentation/custom.scss]
+        background-transition: fade
+        transition: slide
+        navigation-mode: linear
+        footer: "**Machine Learning**"
+        logo: https://corentinducloux.fr/dossier_img/mecen_transparent.png
+        include-in-header: 
+            - text: | 
+                <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+---
+
+## Le *Pourquoi* du *Comment* {background-image="wine_presentation\imgs\bouteille_dieu.png" background-opacity="0.5"}
+
+- Le 18 janvier approche, une date en apparence anodine mais très importante pour nos deux compères.
+- Pour cette journée festive, nos 2 protagonistes se rendirent sur `vinatis.com` pour trouver un breuvage.
+- Et c'est à ce moment que l'histoire prend **racine**...
+
+::: {.fragment}
+::: {.fragment .grow}
+![](wine_presentation\imgs\racine.jpg){fig-align="center" height="120"}
+:::
+::: {.fragment}
+**On parle de moi ?**
+:::
+:::
+
+::: {.notes}
+**GUILLAUME**
+
+- Nous avons commencé à rechercher notre proie dès fin septembre pour faire quelques tests, notamment sur la partie scraping.
+:::
+
+## Scraping {background-image="wine_presentation\imgs\bouteille_scrap.png" background-opacity="0.5"}
+
+> *“Pour savoir qu'un verre était de trop, encore faut-il avoir scrapé son vin !”* $-$ **Inconnu**
+
+::: {.notes}
+**CORENTIN**
+
+Eh non Jean ! On ne parle pas de toi mais bien du scraping de vin. D'ailleurs on voit au tableau ce magnifique proverbe indonéso-inconnu qui énonce que **Pour savoir qu'un verre était de trop, encore faut-il avoir scrapé son vin !**
+
+Ca t'a ouvert les chakras Guillaume ? Ouais, non ? Bon moi non plus, et si on passait à la partie technique plutôt ?
+:::
+
+## Scraping, Partie I {.smaller}
+
+`scraping_functions.py` $\Rightarrow$ Le coeur du scraper
+
+1. Construit des URL avec *query parameters* en utilisant le package `yarl`.
+
+```python
+URL_INIT = URL.build(scheme="https", host="vinatis.com")
+WHITE = "achat-vin-blanc"
+RED = "achat-vin-rouge"
+ROSE = "achat-vin-rose"
+
+>>> URL_INIT / WHITE % {"page": 1, "tri": 7}
+... URL('https://vinatis.com/achat-vin-blanc?page=1&tri=7')
+```
+
+2. `create_session` crée une session HTML avec un User-Agent et un Proxy aléatoire, pouvant changer entre les requêtes.
+3. Possède un décorateur `@random_waiter(min, max)` permettant de générer un temps d'attente aléatoire entre les deux bornes spécifiées entre chaque requête **GET** pour éviter d'envoyer trop de requêtes dans un laps de temps réduit.
+4. `create_all_wine_urls` permet de créer l'ensemble des liens **href**.
+5. `export_wine_links` permet d'exporter ces liens dans un fichier CSV.
+
+::: {.notes}
+**CORENTIN**
+
+Pour un peu de mise en contexte, initialement on avait commencé par scraper les pages de vente de vins où une trentaine de vins sont affichés...mais on s'est rapidement rendu compte que dans ces pages, il manquait beaucoup d'informations. On s'est plutôt mis en tête de récupérer les caractéristiques sur chaque page individuelle de vin, qu'on peut facilement récupérer sur les pages de recherche grâce à des liens href. Et initialement, on l'avait fait avec `Selenium` mais ça prenait un temps monstre donc on a changé d'idée.
+
+*Note* : On aurait pu construire les URL à la main mais c'était beaucoup moins élégant que de le faire comme ça.
+
+- Ensuite on a voulu introduire un User Agent réaliste quand on effectue notre requête get, pour éviter que le site ne finisse par comprendre que c'est un bot. Ca permet simplement d'envoyer des en-têtes que renvoierai un navigateur comme Firefox, Chrome ou Edge. 
+- Le proxy permet quant à lui de masquer son adresse IP, au cas où on finirait par se faire bannir.
+- On a aussi voulu éviter de surcharger les serveurs en envoyant trop de requêtes en même temps donc on a utilisé un décorateur (**point 3**)
+
+Cela étant, on a eu aucun problème jusqu'ici chaque fois qu'on a fait le scraping. 
+:::
+
+## Scraping, Partie II {.smaller}
+
+1. On va ensuite requêter ces liens **href** avec `create_json` et récupérer les pages brutes en HTML.
+2. La fonction `scraping` du module `mystical_soup` va permettre d'extraire toutes les informations intéressantes de la page brute et renvoyer la dataclass `Vin` sérialisable en *JSON*.
+
+<i class="fa-solid fa-wine-bottle"></i> *Exemple* d'un `Vin` et ses caractéristiques sérialisés en *JSON* :
+
+```json
+{
+        "name": "PINOT NOIR 2019 LAS PIZARRAS - ERRAZURIZ",
+        "capacity": "0,75 L",
+        "price": "94,90 €",
+        "price_bundle": null,
+        "characteristics": "Vin Rouge / Chili / Central Valley / Aconcagua Valley DO / 13,5 % vol / 100% Pinot noir",
+        "note": null,
+        "keywords": [
+            "Elégance",
+            "Finesse",
+            "Harmonie"
+        ],
+        "others": null,
+        "picture": "https://www.vinatis.com/67234-detail_default/pinot-noir-2019-las-pizarras-errazuriz.png",
+        "classification": null,
+        "millesime": "2019",
+        "cepage": "100% Pinot noir",
+        "gouts": "Rouge Charnu et fruité",
+        "par_gouts": "Puissant",
+        "oeil": "Robe rubis aux reflets violets.",
+        "nez": "Nez complexe sur la griotte, les épices et les champignons (truffe).",
+        "bouche": "Bouche fruitée et florale. Tanins structurés, élégants et fins. finale harmonieuse et persistante.",
+        "temperature": "8-10°C",
+        "service": "En bouteille ou en carafe",
+        "conservation_1": "2026",
+        "conservation_2": "A boire et à garder",
+        "accords_vins": "Apéritif, Entrée, Charcuterie, Viande rouge, Viande blanche, Volaille, Gibier, Champignon, Barbecue, Cuisine du monde, Fromage, Dessert fruité, Dessert chocolaté",
+        "accords_reco": "Gigot d'agneau aux herbes de Provence; Tikka massala; Plateau de fromages."
+    }
+```
+
+::: {.notes}
+**GUILLAUME**
+
+Une fois que l'on a récupéré tous les URLs des pages des vins, on va scraper chaque page avec le module `mystical_soup`. Toutes les informations qui nous intéresse sont stocké dans un fichier JSON.
+
+:::
+
+## 🧹 Cleaning {.smaller background-image="wine_presentation\imgs\pandas_vs_polars.png" background-opacity="0.25"}
+
+Mais ce *JSON* **brut** doit être nettoyé et considérablement restructuré !
+
+1. Nous avons choisi d'utiliser `polars` 🐻 et non pas `pandas` 🐼 pour le faire.
+2. Toutes les fonctions de nettoyage sont contenues dans `bear_cleaner.py`.
+3. La fonction `super_pipe` permet de chainer toutes les transformations dans un pipeline propre pour structurer notre **Dataframe**.
+4. Nous obtenons ainsi un **Dataframe** de taille `(4006,40)` prêt pour le Machine Learning 
+
+![](wine_presentation\imgs\bear_data.png){fig-align="center"}
+
+::: {.notes}
+**CORENTIN**
+
+On l'a vu avec l'exemple d'un vin sérialisé en json sur la slide précédente, les entrées ne sont pas nettoyées : les valeurs numériques sont stockées sous forme de texte, etc.
+
+**Pourquoi polars ?** $\Rightarrow$ Les expressions polars nous permettent de faire tout un tas d'opérations sans jamais utiliser des lambda functions, l'API est mieux documentée.
+
+- En sortie : 4006 vins distincts et 40 variables !
+:::
+
+## Machine Learning {background-image="wine_presentation\imgs\bouteille_ecole.png" background-opacity="0.25"}
+
+> *“2024 sera un millésime français !”* $-$ **Emmanuel Macron**
+
+::: {.notes}
+**GUILLAUME**
+:::
+
+## Machine Learning - Procédure {.smaller background-image="wine_presentation\imgs\pipeline.png" background-opacity="0.25"}
+
+1. Deux variables à prédire : *unit_price* & *type*
+2. Utilisation de 6 modèles de **Machine Learning**
+3. ➶ Optimisation des hyperparamètres $\Rightarrow$ `models.py`
+4. 🏹 Prédiction sur les données de test $\Rightarrow$ `prediction.py`
+5. 🧪 Utilisation d'un **pipeline** `sklearn`
+    - Evite le Data Leakage
+    - Procédure standardisée pour l'ensemble des modèles.
+
+::: {.notes}
+**CORENTIN**
+
+Mais Guillaume dis-moi, si on peut facilement voir l'intérêt de prédire le prix d'une bouteille de vin, quel est l'intérêt de prédire le type de vin ? Je veux dire, une fois qu'on regarde la bouteille, à la couleur on peut savoir, ça semble un peu bête non ?
+
+**GUILLAUME**
+
+Eh bien Corentin, la réponse était à Noel ! Quand, dans un repas de famille, on nous présente pas moins d'une dizaine de vins et qu'on commence à tous les goûter, il arrive ce moment inéluctable ou on dépasse les 2 grammes par litre, et à ce moment... difficile de distinguer ce qu'on boit. Nos modèles viennent en aide à ce moment là ! Enfin, si l'utilisateur arrive à utiliser son ordinateur...
+
+**CORENTIN**
+
+***
+
+Le *Data Leakage* se produit lorsque des informations qui sont indisponibles au moment de la prédiction sont utilisées pendant la construction du modèle. Se traduit par des estimations de performances trop optimistes, et donc de moins bonnes performances quand le modèle est utilisé sur de nouvelles données.
+
+- 80%/20% train/test
+:::
+
+## ➶ ML : Optimisation {.smaller}
+
+1. Choix des **21 variables explicatives**
+2. Preprocessing : `OneHotEncoder()`, Imputation NA, `MinMaxScaler()`
+3. Optimisation des hyperparamètres par Cross-Validation
+
+- Avec `optimisation_script.py` on optimise les hyperparamètres des modèles et on récupère sous forme de CSV :
+    - Les scores de test et d'entrainement
+    - Les écarts-type $\sigma_{\text{test}}$ et $\sigma_{\text{train}}$
+    - Les hyperparamètres optimaux pour chaque modèle
+
+```CSV
+Modèle,Score Test,Score Entrainement,Ecart-Type Test,Ecart-Type Train,Paramètres,Score Test data,Mode
+Random Forest,0.934,0.941,0.007,0.007,"{'entrainement__max_depth': 9, 'entrainement__n_estimators': 30, 'imputation__strategy': 'median'}",0.9301745635910225,classification
+K Neighbors,0.954,0.965,0.012,0.003,"{'entrainement__n_neighbors': 5, 'imputation__strategy': 'median'}",0.9600997506234414,classification
+Réseaux de neurones,0.976,0.997,0.007,0.001,"{'entrainement__hidden_layer_sizes': (100,), 'entrainement__max_iter': 1000, 'entrainement__solver': 'adam', 'imputation__strategy': 'median'}",0.9800498753117207,classification
+Boosting,0.975,1.0,0.009,0.0,"{'entrainement__learning_rate': 0.5, 'entrainement__n_estimators': 200, 'imputation__strategy': 'median'}",0.9812967581047382,classification
+Ridge,0.979,0.983,0.009,0.002,"{'entrainement__alpha': 0.015625, 'imputation__strategy': 'mean'}",0.9812967581047382,classification
+Support Vector,0.981,0.992,0.008,0.002,"{'entrainement__C': 3.281341424030552, 'imputation__strategy': 'median'}",0.9825436408977556,classification
+```
+
+::: {.notes}
+**GUILLAUME**
+
+- variables & modèles qui serviront dans nos modèles 
+- 6 modèles pour ne pas être trop exhaustif (RF, Boosting, Ridge, MLP, KNN, SVM). 
+
+- transforme une colonne catégorielle en plusieurs colonnes binaires
+
+- optimisation des paramètres  et strategie d'imputation par CV
+- Pour chaque modèle on a decidé d'optimiser entre 2 et 3 hyperparamètre.
+
+- résultats stockés dans un CSV avec les score, et valeur des hyperparamètres.
+:::
+
+## 🏹 ML : Prédiction {.smaller} 
+
+- Deux types de prédictions :
+    - **Classification** sur le type de vin (Vin Rouge / Blanc / Rosé)
+    - **Régression** sur le prix d'une bouteille de vin
+- Avec `prediction_script.py` on réalise les prédictions avec tous les modèles
+
+```csv
+name,type,random_forest,boosting,ridge,knn,mlp,support_vector
+LES CARLINES 2021 - MAS HAUT BUIS,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge
+LA BARGEMONE ROSE 2022 - COMMANDERIE DE LA BARGEMONE,Vin Rosé,Vin Blanc,Vin Rosé,Vin Rosé,Vin Rosé,Vin Rosé,Vin Rosé
+TEMPRANILLO 2021- VEGA DEMARA,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge
+CHÂTEAUNEUF DU PAPE - ALCHIMIE 2020 - DOMAINE DES 3 CELLIER,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge,Vin Rouge
+```
+
+- Pour les 800 vins qui n'ont pas servi dans notre Cross Validation on réalise une prédiction par chacun de nos 6 modèles, le tout stocké dans un fichier CSV !
+
+::: {.notes}
+**GUILLAUME**
+
+- prédiction sur les 800 vins restants
+
+- stock tous les résultats dans un CSV, pour chaque vin on a la valeur réel et la prédiction pour chaqu'un des modèles.
+- 1 fichier pour la régression et 1 pour classification
+
+- Evaluation des modèles avec des métriques
+
+:::
+
+## 🔬 Metrics {.smaller background-image="wine_presentation\imgs\metrics.jpeg" background-opacity="0.20"}
+
+- **Regression**:
+    - Erreur moyenne absolue : MAE($y$,$\hat{y}$) = $\frac{1}{n}\sum|y_i - \hat{y_i}|$
+    - Erreur quadratique moyenne : MSE($y$,$\hat{y}$) = $\frac{1}{n}\sum(y_i - \hat{y_i})^2$
+    - Erreur Résiduelle Maximale : MaxError($y$, $\hat{y}$) = $\max\left(|y_i-\hat{y_i}|\right)$
+    - $R^2$ Score = $1- \frac{\sum(y_i-\hat{y_i})^2}{\sum(y_i-\bar{y_i})^2}$
+
+- **Classification**:
+    - Accuracy Score : AS($y$,$\hat{y}$) = $\frac{1}{n}\sum(\hat{y_i} = y_i)$
+    - Precision = $\frac{\text{true positive}}{\text{true positive + false positive}}$
+    - Recall = $\frac{\text{true positive}}{\text{true positive + false negative}}$
+    - $F_1$ Score = $2 \times \frac{\text{precision } \times \text{ recall}}{\text{precision + recall}}$
+
+::: {.notes}
+**CORENTIN**
+
+Nous avons utilisé un certains nombre de métriques implémentées dans `sklearn` pour évaluer la qualité de nos modèles :
+
+- La $MAE$ est en fait simplement la somme des erreurs absolues divisée par la taille de l'échantillon. 
+- La $MSE$ mesure la moyenne des carrés des erreurs, c'est-à-dire la différence quadratique moyenne entre la valeur estimée et la valeur réelle.
+- L'erreur résiduelle maximale est une métrique qui capture l'erreur la plus importante entre la valeur prédite et la valeur réelle.
+- Le $R^2$ représente la proportion de variance de la variable à prédire expliquée par les variables indépendantes du modèle. Il fournit une indication de la qualité de l'ajustement.
+
+Afin de visualiser tous nos résultats une application serait idéale...
+:::
+
+## 💻 Application {.smaller background-image="wine_presentation\imgs\st.png" background-opacity="0.25"}
+🕵 **Framework** utilisé : `streamlit`
+
+- 🤷 Pourquoi ? Facilité de mise en oeuvre
+    - Base de données 
+    - Statistiques descriptives (corrélations, répartition, etc.)
+    - Machine Learning 
+- 👨‍🏭 Comment ? Forte flexibilité $\rightarrow$ L'utilisateur peut jouer avec les données
+    - Sidebar avec de nombreux sélecteurs
+
+<iframe src="https://giphy.com/embed/T7QRkgGzYdQju" width="480" height="240" frameBorder="0" class="giphy-embed" allowFullScreen style="display:block; margin:auto;"></iframe><p><a href="https://giphy.com/gifs/franceinfo-wtf-citation-T7QRkgGzYdQju"></a></p>
+
+::: {.notes}
+**GUILLAUME**
+
+- Facilité d'utilisation, jeu de lego, bloc que l'on combine
+- Parfait pour l'analyse de données, intégration des plotly aisé
+- l'utilisateur peut intéragir facilement avec les élements de l'app
+
+Encore une fois aussi, l'API de `streamlit` est très bien documentée.
+
+On peut arriver à un rendu qui est vraiment convaincant niveau interface utilisateur sans utiliser de CSS ou de javascript !
+
+Ecoute Arnaud, avant de passer au p'tit coup, on va parler de stockage avant !
+:::
+
+## Choix du stockage, Partie I
+
+<i class="fa-solid fa-database"></i> `duckdb` : La base de données qui fait *"coin coin"* 🦆
+
+```python
+def db_connector() -> DuckDBPyConnection:
+    """Se connecte à la base de données."""
+    connection = duckdb.connect(database=":memory:")
+    return connection
+```
+
+- `:memory:` $\Rightarrow$ Base de données **in-memory**
+- La base de données en mémoire stocke les informations directement dans la mémoire vive plutôt que sur un disque.
+- Réduit le temps nécessaire au stockage et à la consultation des données, et accélère l’exécution des requêtes.
+
+:::{.notes}
+**CORENTIN**
+
+Comme on l'a vu dans la partie **Optimisation** et **Prédiction** du Machine Learning, on a des résultats en CSV. Mais une fois qu'on a 4-5 csv ça commence à devenir encombrant...du coup on a plutôt opté pour une base de données. Et pas n'importe laquelle !
+
+Une base de données *in-memory* est donc idéale pour une application effectuant de l’analyse de données en temps réel comme la notre.
+:::
+
+## Choix du stockage, Partie II {.smaller background-image="wine_presentation\imgs\homme_en_couple.jpeg" background-opacity="0.25"}
+
+- 5 tables de résultats de Machine Learning sont obtenues grâce à l'exécution de `ml_trigger` qui se charge d'éxécuter l'ensemble des scripts d'export. 
+
+*Voici un schéma du processus d'ingestion des tables :*
+
+```{mermaid}
+graph LR;
+A("👨‍🔬 pred_classification")-->F;
+B("👨‍🔬 pred_regression")-->F;
+C("👩‍🏫 result_ml_regression")-->F;
+D("👩‍🏫 result_ml_classification")-->F;
+E("🕵️‍♂️ importance")-->F[("🦆 In Memory Database")];
+
+style A stroke:#adbac7,stroke-width:3px, fill:white;
+style B stroke:#adbac7,stroke-width:3px, fill:white;
+style C stroke:#adbac7,stroke-width:3px, fill:white;
+style D stroke:#adbac7,stroke-width:3px, fill:white;
+style E stroke:#adbac7,stroke-width:3px, fill:white;
+style F stroke:#fff100,stroke-width:3px, fill:white;
+```
+
+:::{.notes}
+**CORENTIN**
+:::
+
+## 🚀 Démonstration {background-image="wine_presentation\imgs\fusee.jpeg" background-opacity="0.25"}
+
+**Lancement de l'application, 2 Méthodes.** 
+
+:::{.callout-note}
+
+## **Depuis un terminal** :
+
+- *Lancement du shell poetry* : 
+
+```powershell
+py -m poetry shell
+```
+
+- *Lancement de l'application* :
+
+```powershell
+python -m streamlit run "streamlit_app.py"
+```
+:::
+
+
+:::{.callout-note}
+
+## **Depuis le lien de l'application déployée sur le cloud `streamlit`** :
+
+- **Lien** : [https://wine-scraping.streamlit.app/ <i class="fa-solid fa-up-right-from-square"></i>](https://wine-scraping.streamlit.app/)
+
+:::
+
+:::{.notes}
+**GUILLAUME**
+
+On a deux méthodes pour lancer notre application. Je dirais même, comme un vieil adage le dit : **Jamais deux sans trois** ! Sauf que la troisième méthode on va la garder pour plus tard en bonus. 
+
+La différence entre les deux premières méthodes c'est que l'une va tourner en local alors que l'autre est sur le cloud streamlit. Le déploiement sur le cloud est assez simple : on link le repo Github, `poetry`  installe les dépendances et c'est parti 🚀.
+:::
+
+
+## Un code de *Deutsche Qualität* {.smaller background-image="wine_presentation\imgs\deutsche_qualitat.png" background-opacity="0.25"}
+
+- Annotations de type claires
+- Docstrings explicites et soignées
+- Gestion des dépendances avec Poetry
+- Modularité
+- Docker
+- Tests des features de l'application 
+- Git pour versionner notre projet
+- Black pour formater notre code
+- Un beau *README*
+
+**Code certifié conforme par l'*Agent Smith$^*$***
+
+$^*$ *L'Agent Smith tient par ailleurs à préciser qu'il n'a reçu aucun pot-de-vin de notre part pour ce diagnostic malgré son enrichissement personnel fulgurant...*
+
+:::{.notes}
+**CORENTIN**
+
+- On a eu une démonstration de ce que notre application était capable de faire, mais on a pas vraiment eu le temps de regarder en détail comment nous avions conçu ça. Et pourtant, l'agent Smith nous a confirmé que notre code était de Deutsche Qualitat !
+:::
+
+## Annotations de type {.smaller}
+
+```python
+def model_rf(x_train: pd.DataFrame, y_train: pd.Series, mode: str) -> GridSearchCV:
+    ...
+```
+
+- Expliciter au maximum les types d'entrée et de sortie des fonctions.
+- On peut parler de **documentation implicite** $\Rightarrow$ on cherche à éviter à un utilisateur d'utiliser des objets incompatibles avec ce qui a été établi.
+
+:::{.callout-note}
+
+`mypy` va nous permettre d'effectuer ce contrôle *(static type checking)*, c'est à dire de vérifier si les valeurs assignées aux variables, les arguments passés aux fonctions et les valeurs de retour correspondent aux types attendus.
+
+:::
+
+:::{.notes}
+**GUILLAUME** 
+:::
+
+## Docstrings {.smaller}
+
+- Chaque fonction à interface publique possède une docstring structurée :
+    - Nom de la fonction et description succinte
+    - Paramètre(s) d'entrée et paramètre(s) de sortie  
+    - Levée d'exception (si il y en a)
+    - Au minimum un exemple d'utilisation
+
+*Exemple* avec la fonction `model_rf` du module `models.py` : 
+
+```python
+"""`model_rf`: Effectue une recherche exhaustive (Cross-Validation) des meilleurs paramètres
+    en utilisant une Random Forest. Les paramètres optimisés sont :
+
+    - n_estimators
+    - max_depth
+
+    ---------
+    `Parameters`
+    --------- ::
+
+        x_train (pd.DataFrame): # L'ensemble d'entrainement
+        y_train (pd.Series): # La variable à prédire
+        mode (str): # regression | classification
+
+    `Raises`
+    --------- ::
+
+        ValueError: # Une erreur est levée quand le mode est invalide
+
+    `Returns`
+    --------- ::
+
+        GridSearchCV
+
+    `Example(s)`
+    ---------
+
+    >>> model_rf(x_train=X_train, y_train=y_train, mode = "regression")
+    ... Entrainement du modèle : Random Forest
+    ... GridSearchCV(estimator=Pipeline(steps=[('imputation', SimpleImputer()),
+    ...                                   ('echelle', MinMaxScaler()),
+    ...                                   ('entrainement',
+    ...                                    RandomForestRegressor())]),
+    ...         n_jobs=-1,
+    ...         param_grid={'entrainement__max_depth': range(1, 10),
+    ...                     'entrainement__n_estimators': range(10, 50, 10),
+    ...                     'imputation__strategy': ['mean', 'median',
+    ...                                              'most_frequent']},
+    ...         return_train_score=True)
+    """
+```
+
+::: {.notes}
+**GUILLAUME**
+
+- Un vrai petit tutoriel pour chaque fonction
+- Description 
+- Paramètres
+- Raises en cas de potentiel erreur
+- Return
+- Exemple d'utilisation
+
+Mais bon c'est bien beau ces lignes de description, pourrais-tu être un peu plus poétique ?
+:::
+
+## 🧙‍♂️ Poetry {.smaller}
+
+**Gestion des dépendances** : `poetry` simplifie la gestion des dépendances en utilisant un fichier de configuration pyproject.toml. Il permet de spécifier les dépendances directes et les dépendances de développement requises pour le projet.
+
+**Environnement Virtuel** : venv isolé pour le projet, aidant à maintenir un environnement de développement propre et évitant les conflits entre les versions des packages.
+
+**Installation de dépendances** : Facilite l'installation des dépendances définies dans le fichier de configuration en utilisant la commande `poetry install`.
+
+```powershell
+py -m poetry install
+```
+
+::: {.notes}
+**CORENTIN**
+
+Eh bien Guillaume, avec `poetry` on va faire rimer nos dépendances !
+
+Rapidement, on a décidé d'opter pour `poetry` car le moment fatidique ou un d'entre nous décide d'installer localemet un package et que l'autre ne l'a pas arrivait un peu trop souvent et ça c'était pas super poétique justement.
+:::
+
+
+## 🚢 Modulaire !{.smaller}
+
+Séparation des composants du projet :
+
+```
+├───data
+│   ├───🍷vins.json
+│   ├───💾wine_links.csv
+│   └───tables
+│       ├───💾pred_classification.csv
+│       ├───💾pred_regression.csv
+│       ├───💾result_ml_classification.csv
+│       └───💾result_ml_regression.csv
+│       └───💾importance.csv
+├───src
+│   └───📦modules
+│       ├───⚙app
+│       │   ├───🐍st_functions.py
+│       │   ├───🐍st_plots.py
+│       │   ├───🐍st_selectors.py
+│       │   ├───🐍st_tables.py
+│       │   └───🐍st_tables.py
+│       ├───⚙ml_models
+│       │   ├───🐍importance_script.py
+│       │   ├───🐍models.py
+│       │   ├───🐍optimisation_script.py
+│       │   ├───🐍prediction_script.py
+│       │   └───🐍prediction.py
+│       ├───⚙scraping
+│       │   ├───🐍mystical_soup.py
+│       │   ├───🐍page_scraper.py
+│       │   ├───🐍scraping_functions.py
+│       │   ├───🐍vin_dataclass.py
+│       │   └───🐍wine_scraper.py
+│       ├───🐍ml_trigger.py
+│       ├───🐍scraping_trigger.py
+│       ├───🐍bear_cleaner.py
+│       └───🐍utils.py
+├───🐳Dockerfile
+├───🧙‍♂️poetry.lock
+├───📍pyproject.toml
+├───📘README.md
+└───🐍streamlit_app.py
+```
+
+::: {.notes}
+**GUILLAUME**
+
+- Le projet commençant a être bien fourni, nécéssité de modulariser le tout pour apporter un peu de clarté pour le développeur.
+:::
+
+## 🐳 Docker, Partie I {.smaller}
+
+**Pourquoi utiliser Docker ?**
+
+**Isolation** : Docker permet d'isoler l'application, ses dépendances et son environnement d'exécution dans un conteneur. Cela signifie que l'application s'exécute avec ses propres ressources et dépendances sans affecter l'environnement hôte.
+
+**Portabilité** : Une fois que l'image Docker est créée, elle peut être exécutée sur n'importe quel système prenant en charge Docker, offrant une portabilité élevée.
+
+<hr>
+
+**Comment ?** $\Rightarrow$ `Dockerfile`
+
+Docker assure la reproductibilité en permettant à n'importe qui de construire et d'exécuter le **même conteneur** à partir des spécifications définies dans le `Dockerfile`.
+
+:::{.notes}
+**CORENTIN**
+
+Le `Dockerfile` spécifie les étapes pour installer les dépendances de l'application (dans ce cas, on va utiliser `poetry` pour gérer les dépendances) et configurer un environnement minimaliste à l'intérieur du conteneur.
+:::
+
+## 🐳 Docker, Partie II {.smaller}
+
+- *Contenu du `Dockerfile` :*
+
+```{.Dockerfile}
+FROM python:3.10-slim-buster
+WORKDIR /app
+
+COPY pyproject.toml poetry.lock ./
+
+RUN pip install poetry \ 
+    && poetry config virtualenvs.create false \
+    && poetry install --no-dev --no-interaction --no-ansi
+
+COPY streamlit_app.py .
+COPY src ./src
+COPY data ./data
+COPY img ./img
+
+RUN addgroup --system app \
+    && adduser --system --group app
+
+USER app
+
+EXPOSE 8501
+
+HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health
+
+ENTRYPOINT ["python", "-m", "streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+```
+
+:::{.notes}
+**CORENTIN**
+
+Regardons plus en détail ce que contient ce `Dockerfile`. 
+
+FROM python:3.10-slim-buster
+
+1. **FROM python:3.10-slim-buster** $\Rightarrow$ spécifie l'image de base à partir de laquelle notre image Docker sera construite. On utilise l'image Python *3.10-slim-buster* comme base. Cette image *slim-buster* est une version réduite plus rapide de l'image complète avec le minimum de dépendances possible.
+2. **WORKDIR /app** $\Rightarrow$ définit le répertoire de travail dans le conteneur. Toutes les instructions suivantes sont exécutées à partir de ce répertoire.
+3. **COPY pyproject.toml poetry.lock ./** $\Rightarrow$ copie les fichiers pyproject.toml et poetry.lock depuis le répertoire local dans le répertoire *app* du conteneur.
+4. **RUN pip install poetry && poetry config virtualenvs.create false && poetry install --no-dev --no-interaction --no-ansi** $\Rightarrow$ Exécute plusieurs commandes en une seule instruction RUN :
+    - On installe `poetry` dans le conteneur via pip.
+    - On configure `poetry` pour ne pas créer d'environnement virtuel.
+    - On Installe les dépendances du projet à partir de poetry.lock, en excluant les dépendances de développement (--no-dev), sans interaction (--no-interaction) et sans afficher de couleurs ANSI (--no-ansi). En effet, on ne copie pas nos tests dans le conteneur, ça alourdirait l'image pour rien.
+5. **COPY streamlit_app.py** $\Rightarrow$ On copie le fichier `streamlit_app.py`, le dossier `src`, `data` et `img` depuis le répertoire local dans le répertoire *app* du conteneur.
+6. **RUN addgroup --system app && adduser --system --group app** $\Rightarrow$ Crée un groupe système appelé app et un utilisateur système également appelé app - **On veut ABSOLUMENT éviter d'utiliser l'utilisateur root donc c'est pas pour ça qu'on configure un utilisateur**
+7. **USER app** $\Rightarrow$ Définit l'utilisateur qui exécutera les commandes suivantes dans le conteneur comme étant l'utilisateur **app**.
+8. **EXPOSE 8501** $\Rightarrow$ Expose le port 8501. Indique simplement quel port qui doit être publié lors de l'exécution de l'image.
+9. **HEALTHCHECK** $\Rightarrow$ Pour tester si le conteneur fonctionne toujours correctement.
+10. **ENTRYPOINT** $\Rightarrow$ Définit la commande d'entrée à exécuter quand le conteneur basé sur l'image est démarré. Dans notre cas, on fait un streamlit run de notre application sur le port 8501.
+:::
+
+## 🏗️ Le conteneur en action ! {.smaller background-image="wine_presentation\imgs\img_docker.webp" background-opacity="0.35"}
+
+Il faut tout d'abord s'assurer d'avoir téléchargé **Docker Desktop** avant toute chose.
+
+Une fois installé, l'image est construite en exécutant la commande suivante dans un terminal :
+
+```powershell
+docker image build . -t "wine_scraping"
+```
+
+Une fois la création de l'image terminée, on peut consulter la taille de celle-ci avec :
+
+```powershell
+docker images
+```
+
+Ensuite, pour lancer le conteneur Docker avec l'utilisateur *app* sur le port initial (8501) de `streamlit`, il suffit de faire :
+
+```powershell
+docker run -u app -p 8501:8501 wine_scraping
+```
+
+🎉 Une fois le conteneur lancé, on le voit apparaitre dans **Docker Desktop**. Pour accéder à l'application, il faut se rendre sur [*http://localhost:8501/*](http://localhost:8501/).
+
+:::{.notes}
+**CORENTIN**
+:::
+
+## Fin {.smaller background-image="wine_presentation\imgs\findumonde.jpeg" background-opacity="0.25"}
+
+> On ne sait pas pourquoi on a fait tout ça, car nous voulions simplement trouver une bouteille pour fêter notre anniversaire, et on se retrouve avec une application d'analyse de données qui ne nous aide en aucun cas à trouver notre breuvage...😵
+
+::: {.notes}
+Je dirais même pour compléter cette conclusion que la création de cette application : **C'est un petit pas pour l'homme mais un grand pas pour l'humanité.**
+:::
+
+## Références
+
+- Images : [**DALL-E**](https://openai.com/dall-e-2)
+- Guide Utilisateur : [`scikit-learn`](https://scikit-learn.org/stable/user_guide.html)

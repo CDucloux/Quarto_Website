@@ -31,5 +31,35 @@
   },
   "sections/projects/presentation.qmd": {
     "presentation.html": "dbb7255e"
+  },
+  "sections/presentations/streamlit_presentation.qmd": {
+    "streamlit_presentation.html": "ef175045"
+  },
+  "sections/presentations/lego_presentation.qmd": {
+    "lego_presentation.html": "33c1dff7"
+  },
+  "sections/presentations/wine_presentation.qmd": {
+    "wine_presentation.html": "2582d5f9"
+  },
+  "sections/tips/tip.qmd": {
+    "tip.html": "b095e7ff"
+  },
+  "sections/projects/bagnoles.ipynb": {
+    "bagnoles.html": "6e7d0cdb"
+  },
+  "sections/projects/voitures.ipynb": {
+    "voitures.html": "1f75818f"
+  },
+  "sections/projects/shinybricks.qmd": {
+    "shinybricks.html": "f03b2c3d"
+  },
+  "sections/projects/vote_dashboard.qmd": {
+    "vote_dashboard.html": "967e6450"
+  },
+  "sections/projects/vote_dashboard.ipynb": {
+    "vote_dashboard.html": "39549b67"
+  },
+  "sections/projects/energy.qmd": {
+    "energy.html": "c782c380"
   }
 }

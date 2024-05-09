@@ -3,6 +3,12 @@
     "sections\\projects.qmd": [
       "B3049D40",
       "projects"
+    ],
+    "sections\\presentations.qmd": [
+      "presentations"
+    ],
+    "sections\\blog.qmd": [
+      "tips"
     ]
   }
 }

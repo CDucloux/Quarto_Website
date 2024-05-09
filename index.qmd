@@ -29,9 +29,9 @@ about:
 
 ## {{< fa briefcase >}} Expérience professionnelle
 
-- [**Data Engineer**]{style="color:#ff7edb;"} *(Avril -- Septembre 2024)* | **EDF**
-- [**Data Analyst & BI Dev.**]{style="color:#ff7edb;"} *(Avril -- Août 2023)* | **Safran Seats**
-- [**Data Analyst**]{style="color:#ff7edb;"} *(Juin -- Août 2022)* | **Crédit Agricole Titres**
+- [**Data Engineer**]{class="shiny-color"} *(Avril -- Septembre 2024)* | **EDF**
+- [**Data Analyst & BI Dev.**]{class="shiny-color"} *(Avril -- Août 2023)* | **Safran Seats**
+- [**Data Analyst**]{class="shiny-color"} *(Juin -- Août 2022)* | **Crédit Agricole Titres**
 
 ***
 

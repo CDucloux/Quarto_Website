@@ -1,0 +1,313 @@
+---
+title: "Shinybricks"
+subtitle: "Découvrez des sets [**LEGO®**](LEGO) brique par brique"
+author: "`Hassan TILKI` et `Corentin DUCLOUX`"
+categories: ["R", "Shiny"]
+description: "Slides de présentation de l'application **LEGO** *ShinyBricks* réalisée sur {{< fa brands r-project >}} dans le cadre du cours de **Big Data** de Master 2."
+date: 03-26-2024
+date-format: DD/MM/YYYY
+image: "LEGO_presentation/imgs/shinybricks.png"
+link-external-icon: true
+title-slide-attributes:
+    data-background-image: ""
+    data-background-size: 50%
+    data-background-opacity: "0.5"
+    data-notes: "Bonjour à tous, on va vous présenter notre projet de Big Data qui n'est autre que la création d'une application Shiny portant sur les LEGO, idée que j'ai gentiment imposée à Hassan et qui m'a dit tkt y'a pas de souci."
+format: 
+    revealjs:
+        theme: [simple, lego_presentation/custom.scss]
+        background-transition: fade
+        incremental: true
+        transition: fade
+        navigation-mode: linear
+        footer: "Présentation de [*ShinyBricks*](https://corentin-ducloux.shinyapps.io/ShinyBricks/)"
+        logo: lego_presentation/imgs/shinybricks.png
+        include-in-header: 
+            - text: | 
+                <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+---
+
+## L'histoire de LEGO
+
+> Création en **1932** par [*Ole Kirk Christiansen*](https://fr.wikipedia.org/wiki/Ole_Kirk_Christiansen) au Danemark
+
+-   **1946** : Du bois au plastique
+-   **1958** : La fameuse *"brique"* **LEGO®**
+-   **1969 – 1977** : Création de la gamme DUPLO et TECHNIC
+-   **1999** : Première gamme (STAR WARS) de produits dérivés
+-   **2000 – 2005** : Les difficultés
+-   **2005 – 2015** : La *Remontada*
+-   **2015 – 2024** : Position incontestée de leader du jouet
+
+::: notes
+*Corentin*
+
+Je vous propose qu'on se plonge d'abord dans l'histoire de LEGO, vous allez voir que c'est assez intéressant.
+
+LEGO, ça a été crée en 1932 par Christiansen au Danemark.
+
+> Pour la petite histoire, Christiansen c'est un charpentier qui a fait faillite pendant la grande dépression des années 30. Il décide de se reconvertir en fabricant de jouets, à l'époque en bois. Pourquoi les jouets vous allez me dire ? En fait, c'est tout bête, mais les coûts de production des jouets en bois sont assez bas et la marge est importante.
+
+1.  Après la seconde guerre mondiale, l'usage du plastique commence à se répandre et à être économiquement viable pour produire des jouets, mais les consommateurs ne sont pas encore vraiment convaincus et préfèrent toujours les jouets en bois, alors LEGO a du mal à décoller à cette époque.
+
+2.  Ce qui va changer la donne c'est le brevet déposé en 1958 sur la brique rectangulaire à cylindres. L'innovation majeure est la possibilité d'imbriquer tous les éléments entre eux et surtout de pouvoir les retirer sans friction pour pouvoir les réutiliser ailleurs $-$ Ils viennent d'inventer ce qu'ils appellent le "LEGO System". C'est assez malin car c'est quasimment les seuls sur le marché des jouets en plastique à ce moment-là.
+
+3.  Dans les années 60-70 et particulièrement, ils diversifient leurs gammes et leur CA augmente considérablement. C'est dans ce contexte qu'apparait la gamme DUPLO, qui grâce à des briques plus grosses permet de conquérir le marché des enfants de moins de 5 ans (pour éviter qu'ils s'étouffent avec les briques) et la gamme TECHNIC, qui permet de solidifier les structures internes des modèles.
+
+4.  Malheureusement, même avec l'arrivée des sets sous licence, le début des années 2000 est difficile financièrement puisque le groupe essuie des pertes de centaines de millions de dollars à cause d'une politique commerciale qui veut instaurer un tarif unique aux distributeurs pour toute l'Europe, ce qui fait réduire drastiquement le référencement des LEGO dans l'ensemble des magasins.
+
+5.  Entre 2005 et 2015, le pari de LEGO ça va être de se recentrer sur son coeur de marché (les briques) et éviter d'aller dans toutes les directions. Ils vont développer de plus en plus de licences avec Disney, Warner et aussi une plateforme participative qui s'appelle Ideas qui va permettre à des créateurs indépendants de proposer des modèles LEGO et les commercialiser si ils atteignent un certain niveau de vote.
+
+6.  Finalement, aujourd'hui et depuis 2015 LEGO c'est le n°1 au niveau des parts de marché dans le secteur du jouet.
+
+**Voilà pour cette présentation de LEGO**
+:::
+
+## Acronymes spécifiques
+
+::: callout-tip
+
+## Définitions
+
+- **Set** : Identifiant unique d'une boîte **LEGO®**
+- **PPP** : Price Per Piece
+- **AFOL** : Adult Fan Of Lego
+- **MOC** : My Own Creation
+- **NPU** : Nice Parts Usage
+- **SNOT** : Studs Not On Top
+- **UCS** : Ultimate Collector Series
+:::
+
+:::{.notes}
+*Corentin*
+
+Avant d'expliquer notre problématique, on va aussi préciser les termes et acronymes utilisés dans le monde LEGO, qui peuvent parfois être assez spécifiques, et qu'on retrouvera tout au long de notre présentation, notamment au niveau des reviews.
+
+1. Un set c'est tout simplement le numéro que vous retrouvez sur une boîte quand vous l'achetez. Ce système d'identifiant unique a été très pratique pour développer notre appli.
+
+2. Le ppp c'est le prix divisé par le nombre de pièces. C'est un indicateur qui est couramment utilisé dans la communauté pour évaluer si le set vaut le coup d'être acheté. Parce que évidemment un prix par pièce très elevé est perçu négativement par les fans.
+
+3. Un **AFOL** c'est un adulte qui collectionne les LEGO, en général pas pour jouer avec mais pour les exposer.
+
+4. Un **MOC** c'est une construction personnalisée qui n'a pas d'instructions et qui n'est pas officiellement vendue par LEGO.
+
+5. Un **NPU** ou *Nice Parts Usage*, c'est une utilisation inventive de briques par les constructeurs officiels qui rend la construction intéressante et innovante.
+
+6. **SNOT** c'est une technique de construction qui permet d'éviter de montrer les studs (les petit ronds LEGO) et notamment dans les sets de collection c'est apprécié parce que ça permet d'avoir un rendu final élégant, et pour 200-300€ c'est assez normal.
+
+7. **UCS** désigne les énormes sets STAR WARS avec plus de 3-4000 pièces comme le Faucon Millenium, le Star Destroyer, etc.
+:::
+
+
+## Shinybricks, c'est quoi ?
+
+> Une plateforme d'analyse **LEGO** sur un ensemble de points :
+
+- Une analyse par thème
+- Une analyse par an
+- Une analyse par set
+- Un aperçu des stratégies de pricing adoptées
+
+:::{.notes}
+*Hassan*
+
+Notamment dans l'analyse par set on va pouvoir comparer les prix de vente à la commercialisation des sets et les prix actuels quand les sets ont été retirés des étagères. 
+
+Vous allez voir d'ailleurs que ces petites briques c'est parfois plus rentable que des placements financiers.
+:::
+
+## Sources de données
+
+|                                                  | Source                                       | Méthode    |
+|--------------------------------------------------|----------------------------------------------|------------|
+| <img src="lego_presentation/imgs/brickset_logo.jpg" width="40" height="40">         | [Brickset](https://brickset.com/)            | `API`      |
+| <img src="lego_presentation/imgs/brickeconomy_logo.jpeg" width="40" height="40"> | [Brickeconomy](https://www.brickeconomy.com) | `Scraping` |
+<hr>
+
+$\Rightarrow$ **Brickset** : récupération de la base de données complète
+
+$\Rightarrow$ **Brickeconomy** : récupération des prix
+
+:::{.notes}
+*Hassan*
+
+Un point positif c'est qu'en fait il y a beaucoup de données qui existent car il y a des fans fous furieux de LEGO qui passent leur vie à actualiser des forums et sites webs quand un nouveau set sort, c'est par exemple le cas du premier site du tableau ; **Brickset**, qui a été crée en 1997 et qui recense les LEGO de 1970 à 2024.
+
+Surtout l'avantage de ce site c'est qu'il dispose d'une API qui renvoie des réponses en JSON et qui est gratuite à utiliser. Il suffit juste de se créer un compte sur le site, remplir un petit formulaire et ensuite on reçoit une clé.
+
+Pour ceux qui n'ont jamais utilisé d'API, en gros c'est juste une manière d'échanger de la donnée entre un client (là en l'occurence le PC) et le serveur (Ici Brickset). On envoie une requête HTTP configurée d'une certaine manière avec une clé et on récupère une réponse dans un format d'échange comme le JSON ou du XML.
+
+Un conseil : toujours vérifier si il existe une API avant de se lancer dans du scraping, c'est quand même mieux et ça fait économiser du temps.
+
+En revanche, le problème de la base de données Brickset c'est qu'il y a très peu de prix disponibles dessus. Etant donné que le prix est une info stratégique, le site n'a pas intérêt à la donner gratuitement grâce à son API.
+
+C'est pour ça qu'on en vient au deuxième site : Brickeconomy. Alors là, y'a pas d'API, on fait le scraping grâce au numéro du set et on récupère le prix de vente, le prix actuel quand le set est fermé et le prix actuel quand le set est ouvert. 
+
+On va vous détailler un petit peu plus tout ça.
+:::
+
+## API Brickset
+
+Grâce au *wrapper* sur <i class="fa-brands fa-r-project"></i> développé par [Jason Bryer](https://github.com/jbryer/brickset), l'utilisation de l'API est encore plus simple !
+
+```r
+library(brickset)
+
+sets_2021 <- brickset::getSets(2021)
+reviews_29830 <- brickset::getReviews(29830)
+instructions_29830 <-brickset::getInstructions(29830)
+```
+
+:::callout-note
+
+Ici, on récupère les sets de l'année **2021**, les reviews du setID **29830** et les instructions du setID **29830** directement dans un dataframe.
+
+:::
+
+:::{.notes}
+*Corentin*
+
+L'avantage c'est qu'il existe déjà un package R pour interagir avec l'API Brickset.
+
+On va s'intéresser aux 3 fonctions qui suivent.
+
+On voulait aussi un système semi-automatique qui nous permette d'extraire de manière optimale les données. 
+:::
+
+## Set Maker
+
+> **CLI** pour extraire les sets par année et les exporter en format parquet grâce à `arrow::write_parquet()`
+
+```r
+── SetMaker ───────────────────────────────────────────────
+
+    “Une petite CLI pour extraire des sets LEGO® vers un format
+    parquet.”
+    — 
+Veuillez entrer une année entre 1970 et 2024 (année actuelle) ⇒ 2018
+```
+
+**Résultat** :
+
+$\Rightarrow$ `sets_2018.parquet` dans le dossier */data*
+
+:::{.notes}
+*Corentin*
+
+Une fois qu'on a nos résultats par année, on peut combiner tous nos fichiers parquet pour avoir un seul dataframe qu'on a appelé **df_sets**.
+:::
+
+## Scraping Brickeconomy
+
+> Utilisation conjointe des packages `{httr2}` et `{rvest}`
+
+- `{httr2}` pour effectuer la requête et changer les *headers*
+- `{rvest}` pour faire le scraping
+
+<u>*Exemple*</u> :
+
+```r
+set_number <- "75573-1"
+
+link <- glue::glue(https://www.brickeconomy.com/set/{set_number}/)
+
+link |> ShinyBricksFuncs::make_request()
+```
+
+:::{.notes}
+*Corentin*
+
+La fonction make_request de notre package ShinyBricksFuncs permet grâce à `httr2`, d'effectuer une requête sur ce lien d'exemple, de lui changer ses headers pour faire passer notre bot pour un utilisateur lambda qui utilise son navigateur, ce qui nous permet de récupérer la page brute et on laisse rvest harvester le résultat, c'est à dire récupérer les prix !
+
+Encore une fois c'est pas tout à fait satisfaisant puisqu'on l'a fait que sur un lien, et on a plus de 10000 pages à aller récupérer.
+:::
+
+## Scraping Launcher
+
+> **CLI** pour extraire les prix par année et les exporter en format feather grâce à `feather::write_feather()`
+
+```r
+── ScrapingLauncher ─────────────────────────────────────
+
+    “Une petite CLI pour lancer le scraping année par année des sets
+    LEGO® présents sur Brickeconomy vers un format feather.”
+    — 
+
+Veuillez entrer une année entre 1994 et 2024 (année actuelle) ⇒ 2018
+```
+
+**Résultat** :
+
+$\Rightarrow$ `scraping_2018.feather` dans le dossier */data*
+
+:::{.notes}
+*Corentin*
+
+En gros le fonctionnement est très similaire à la première CLI à la différence près que ce n'est plus du parquet mais du feather pour des histoires de vitesse de lecture et d'écriture, le feather c'est plus rapide que du parquet parce que ça ne compresse pas, et étant donné que les données sur les prix sont assez petites, pas besoin de parquet, mais c'est vraiment du détail.
+
+Une fois qu'on a nos résultats par année, on peut combiner tous nos fichiers feather pour avoir un seul dataframe qu'on a appelé **df_scrap**
+:::
+
+## Fusion !
+
+![](lego_presentation/imgs/fusion.jpeg){fig-align="center"}
+
+:::{.notes}
+*Hassan*
+
+Une fois qu'on a nos deux dataframes on les fusionne et puis on passe à l'appli non ?
+:::
+
+## Application
+
+**Shinybricks** a été créée avec `{shiny}` et `{bslib}`
+
+:::callout-note
+
+## Pourquoi bslib ?
+
+Le package `{bslib}` permet de créer une **UI** moderne pour Shiny et basée sur la version 5 de *Bootstrap*.
+
+:::
+
+**Pour les autres composants interactifs de l'application** :
+
+- Graphiques réalisés avec `{plotly}`
+- Tableaux réalisés avec `{gt}`
+
+:::{.notes}
+*Hassan*
+
+Alors pourquoi `bslib` ? Honnêtement Shiny tout seul ça piquait les yeux, on avait l'impression d'être retourné en 2009, et `bslib` permet justement de redonner un aspect visuel sympa à l'appli avec des composants comme des cards, des value_boxes, bref des trucs modernes un peu plus sexy que le Shiny de base quoi, que vous avez par exemple vu dans la présentation d'Aybuké et du Guigs.
+
+Pour les graphiques on a utilisé plotly parce qu'on voulait beaucoup personnaliser les traces pour qu'elles soient à la fois informatives et dans le thème.
+
+Enfin pour les tableaux on a utilisé `gt` parce que c'est aujourd'hui la librairie de création de tableaux la plus complète sur **R**.
+
+Je pense qu'on peut passer à la présentation.
+:::
+
+## Conclusion
+
+Application avec de nombreuses fonctionnalités et **UI/UX** moderne.
+
+:::callout-caution
+
+## En cours...
+
+- Pas assez de données pour faire un modèle fiable de séries temporelles.
+- Utilisation du package `{golem}` pour déployer l'application en tant que package avec tests et modules, etc.
+
+:::
+
+:::{.notes}
+*Hassan*
+
+Pour terminer ça a été plutôt une belle aventure de faire cette application, on a un peu sué quand il s'agissait de comprendre les messages d'erreur parfois, mais le rendu est là.
+
+Pour ce qui est des limites du projet on aurait voulu faire un modèle de séries temporelles pour prédire les prix mais ces données là étaient difficiles à scraper sur Brickeconomy. 
+
+Enfin il faut qu'on passe à la partie de déploiement. Si vous avez des questions n'hésitez pas !
+:::
+

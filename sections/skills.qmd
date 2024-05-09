@@ -1,11 +1,12 @@
 ---
 title: "Compétences"
+smooth-scroll: true
 ---
 
 > Vous souhaitez découvrir mes compétences plus en détail ? C'est par ici !
 
 ::: {.chevron-styling}
-{{< iconify pixelarticons:chevron-down size=5x >}}
+[{{< iconify pixelarticons:chevron-down size=5x >}}](#langages)
 :::
 
 ### Langages
@@ -52,19 +53,6 @@ title: "Compétences"
 ***
 
 ::: {.callout-tip icon=false collapse="true"}
-## {{< fa code-compare >}} Git
-
-:::
-
-::: {.callout-tip icon=false collapse="true"}
-## {{< fa book >}} Quarto
-- Production de documents paramétrables et automatisés (HTML, PDF).
-- Création de sites webs.^[J'ai par exemple créé ce site avec **Quarto**, tout en tirant profit de `SASS` et de `CSS` pour en améliorer le rendu.]
-- Documentation de packages.^[🚧 Pas encore fait, mais très prometteur, notamment grâce au package `quartodoc`.]
-- Et surtout, surtout, adieu aux présentations **PowerPoint** grâce à [`reveal.js`](https://revealjs.com/).
-:::
-
-::: {.callout-tip icon=false collapse="true"}
 ## {{< iconify simple-icons:powerbi >}} PowerBI
 - *Data Modeling* -- Star & Snowflake schema.
 - DAX et fonctions de Time Intelligence.
@@ -72,6 +60,20 @@ title: "Compétences"
 - Construction de KPI.
 - Déploiement, gestion et maintenance de rapports sur **PowerBI Report Server**.
 - Report Design. 
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< fa code-compare >}} Git
+- L'ensemble des projets et présentations répertoriés sur mon site utilisent Git de manière sous-jacente.
+- Je l'utilise aussi couplé à [`pre-commit`](https://pre-commit.com/) pour gérer et éxécuter des *hooks*^[Les *hooks* sont des scripts qui s’exécutent automatiquement à des moments précis du workflow sur Git.] avant chaque **commit** pour vérifier les vulnérabilités, reformater le code, etc.
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< fa book >}} Quarto
+- Production de documents paramétrables et automatisés (HTML, PDF).
+- Création de sites webs.^[J'ai par exemple créé ce site avec **Quarto**, tout en tirant profit de `SASS` et de `CSS` pour en améliorer le rendu.]
+- Documentation de packages.^[🚧 Pas encore fait, mais très prometteur, notamment grâce au package `quartodoc`.]
+- Et surtout, adieu aux présentations **PowerPoint** grâce à [`reveal.js`](https://revealjs.com/).
 :::
 
 ::: {.callout-tip icon=false collapse="true"}
@@ -84,33 +86,15 @@ title: "Compétences"
 
 ::: {.callout-tip icon=false collapse="true"}
 ## {{< iconify gravity-ui:logo-mermaid >}} Mermaid
+- Outil très pratique de création de diagrammes avec syntaxe épurée inspirée par du **Markdown**. 
 :::
 
-+ ajouter typst aussi avec le logo !
+## Autres
 
-```{mermaid}
-journey
-    title My working day
-    section Go to work
-      Make tea: 5: Me
-      Go upstairs: 3: Me
-      Do work: 1: Me, Cat
-    section Go home
-      Go downstairs: 5: Me
-      Sit down: 5: Me
+::: {.callout-note icon=false collapse="true"}
 
-```
+## {{< iconify flag:gb-4x3 >}} Anglais
 
+**Score** au Listening and Reading *TOEIC®* : [920/990](https://www.etsglobal.org/fr/en/digital-score-report/D4B5ABF3DBEA351C234C144834847F0B8A0E6C9114584F656B7D23D2D3A6FA56bnc2ZjVpSE1ZNXlnVjFGV2ZWeVI4bE5GYitqL3MvTXFQaUlKb0p0eEVUREcxVk5p).
 
-```{mermaid}
-gantt
-    title A Gantt Diagram
-    %% This is a comment
-    dateFormat YYYY-MM-DD
-    section Section
-        A task          :a1, 2014-01-01, 30d
-        Another task    :after a1, 20d
-    section Another
-        Task in Another :2014-01-12, 12d
-        another task    :24d
-```
+:::

@@ -1,0 +1,14 @@
+---
+title: "{{< iconify ph:lego-smiley-fill >}} ShinyBricks"
+title-block-banner: true
+author: "`Corentin DUCLOUX` et `Hassan TILKI`"
+categories: ["R", "Shiny", "API"]
+description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
+date: 03-26-2024
+date-format: DD/MM/YYYY
+image: shinybricks/table_shinybricks.png
+---
+
+```{=html}
+<iframe width="100%" height="100%" src="https://corentin-ducloux.shinyapps.io/ShinyBricks/" title="Quarto Documentation"></iframe>
+```

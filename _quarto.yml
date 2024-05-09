@@ -5,7 +5,7 @@ lang: fr
 
 website:
   title: "Corentin DUCLOUX"
-  favicon: imgs/fav/favicon_disquette.png
+  favicon: imgs/fav/favicon_floppy.svg
   navbar:
     background: primary
     right:
@@ -24,7 +24,7 @@ website:
     foreground: white
     left:
       - icon: wrench-adjustable
-        text: Créé avec **Quarto**
+        text: 🛠️ Créé avec **Quarto**
         href: https://quarto.org/docs/reference/projects/websites.html
     center:
       - text: "© 2024, Corentin DUCLOUX"

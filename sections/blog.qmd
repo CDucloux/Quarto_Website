@@ -1,12 +1,12 @@
 ---
 title: "Data Tips"
+listing: 
+    contents: tips
+    type: table 
+    categories: true
+    sort:
+        - "date"
+        - "title desc"
 ---
 
-> 🚧 Comming Soon !
-
-:::{.callout-note}
-
-## Un titre
-
-Un callout
-:::
+> 🚧 **Comming Soon** ! Section en construction.

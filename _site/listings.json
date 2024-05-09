@@ -2,8 +2,23 @@
   {
     "listing": "/sections/projects.html",
     "items": [
-      "/sections/projects/presentation.html",
-      "/sections/projects/smart_specs.html"
+      "/sections/projects/voitures.html",
+      "/sections/projects/shinybricks.html",
+      "/sections/projects/energy.html"
+    ]
+  },
+  {
+    "listing": "/sections/presentations.html",
+    "items": [
+      "/sections/presentations/lego_presentation.html",
+      "/sections/presentations/streamlit_presentation.html",
+      "/sections/presentations/wine_presentation.html"
+    ]
+  },
+  {
+    "listing": "/sections/blog.html",
+    "items": [
+      "/sections/tips/tip.html"
     ]
   }
 ]
