@@ -1,0 +1,33 @@
+---
+title: "📱 Smart Specs"
+title-block-banner: true
+author: "`Aybuké BICAT` et `Corentin DUCLOUX`"
+categories: ["R", "Python", "Streamlit", "Econometrics"]
+description: "Smart Specs est une application développée sous {{< fa brands python >}} permettant de comparer des téléphones et d'obtenir leur *efficacité*."
+date: 03-28-2024
+date-format: DD/MM/YYYY
+image: smart_specs/imgs/comparateur_smart_specs.png
+---
+
+## Les origines de **Smart Specs**
+
+La problématique du projet de *Recherche, Réalisation et Restitution* à l'origine de **Smart Specs** est : 
+
+> L'application des modèles **SFA**^[*Stochastic Frontier Analysis*] à l'étude des prix
+
+## Aperçu de l'application
+
+```{=html}
+<iframe 
+    width="100%"
+    src="https://smart-specs.streamlit.app/?embed=true"
+    title="Smart Specs"
+    height="500"
+></iframe>
+```
+
+## En savoir plus
+
+[Télécharger le rapport {{< fa file-pdf >}}](smart_specs/report/report.pdf){.btn .btn-outline-primary .btn role="button" .center}
+
+$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} Smart-Specs](https://github.com/CDucloux/3R)

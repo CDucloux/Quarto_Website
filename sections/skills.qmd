@@ -1,0 +1,100 @@
+---
+title: "Compétences"
+smooth-scroll: true
+---
+
+> Vous souhaitez découvrir mes compétences plus en détail ? C'est par ici !
+
+::: {.chevron-styling}
+[{{< iconify pixelarticons:chevron-down size=5x >}}](#langages)
+:::
+
+### Langages
+
+***
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa brands python >}} PYTHON
+
+- Maîtrise de `streamlit` et `taipy` pour rapidement prototyper puis déployer des applications data.
+- Gestion des dépendances et isolation avec `poetry`, conteneurisation avec {{< fa brands docker >}} **Docker**.
+- *Data Wrangling* avec `polars`, `pandas` ou `duckdb`.
+- Utilisation de `pydantic` pour faire de la validation de données.
+- Orchestration de pipelines avec `airflow`.
+- *Data Visualisation* avec `plotly` et `seaborn`.
+- *Web Scraping* avec `beautifulsoup`.
+- **Développement de code de qualité industrielle** : `mypy` pour le typage statique, `ruff` pour le linting et le formatage du code, `pytest` pour les tests.
+:::
+
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa brands r-project >}} R
+- Maîtrise des packages de *Data Manipulation* du **tidyverse** : `{dplyr}`, `{purrr}`, `{stringr}`, etc.
+- Conception de tableaux statiques ou interactifs *"qui claquent"* avec `{gt}`.
+- *Data Visualisation* avec `{ggplot2}` et `{plotly}`.
+- Création d'applications web modernes et robustes en production avec `{shiny}` + `{bslib}` + `{golem}`.^[`{golem}` est une librairie particulièrement intéressante car elle permet de **packager** une application *Shiny*. Pour plus de détails, je recommande de naviguer vers le projet **ShinyBricks**.]
+- Création de packages sur {{< fa brands r-project >}}.
+- *Machine Learning* avec `{tidymodels}`.
+- Analyse de données exploratoire et analyse factorielle : ACP -- AFC -- ACM -- AFDM.
+- *Toolkit* d'économétrie et de micro-économétrie : `{micEcon}`, `{sfa}`, etc.
+- Utilisation d'outils de formatage, de linting de code et d'automatisation de tâches sur {{< fa brands r-project >}} : `{lintr}`, `{styler}` et `{usethis}`.
+:::
+
+::: {.callout-important icon=false collapse="true"}
+## {{< fa database >}} SQL
+- Window Functions.
+- Common Table Expressions (CTE).
+- Création de vues et procédures stockées.
+- **DBT**.
+:::
+
+### Outils
+
+***
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< iconify simple-icons:powerbi >}} PowerBI
+- *Data Modeling* -- Star & Snowflake schema.
+- DAX et fonctions de Time Intelligence.
+- Manipulation de tables : jointures, pivots et aggrégations avec **PowerQuery**.
+- Construction de KPI.
+- Déploiement, gestion et maintenance de rapports sur **PowerBI Report Server**.
+- Report Design. 
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< fa code-compare >}} Git
+- L'ensemble des projets et présentations répertoriés sur mon site utilisent Git de manière sous-jacente.
+- Je l'utilise aussi couplé à [`pre-commit`](https://pre-commit.com/) pour gérer et éxécuter des *hooks*^[Les *hooks* sont des scripts qui s’exécutent automatiquement à des moments précis du workflow sur Git.] avant chaque **commit** pour vérifier les vulnérabilités, reformater le code, etc.
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< fa book >}} Quarto
+- Production de documents paramétrables et automatisés (HTML, PDF).
+- Création de sites webs.^[J'ai par exemple créé ce site avec **Quarto**, tout en tirant profit de `SASS` et de `CSS` pour en améliorer le rendu.]
+- Documentation de packages.^[🚧 Pas encore fait, mais très prometteur, notamment grâce au package `quartodoc`.]
+- Et surtout, adieu aux présentations **PowerPoint** grâce à [`reveal.js`](https://revealjs.com/).
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< fa file-excel >}} Excel
+- Maîtrise des tableaux et graphiques croisés dynamiques.
+- Automatisation et requêtage avec **PowerQuery**.
+- Listes dynamiques et gestionnaire de noms.
+- `VBA` (Création d'Interfaces Utilisateur avancées et utilisation pour **Outlook** et **Word**).
+:::
+
+::: {.callout-tip icon=false collapse="true"}
+## {{< iconify gravity-ui:logo-mermaid >}} Mermaid
+- Outil très pratique de création de diagrammes avec syntaxe épurée inspirée par du **Markdown**. 
+:::
+
+## Autres
+
+::: {.callout-note icon=false collapse="true"}
+
+## {{< iconify flag:gb-4x3 >}} Anglais
+
+**Score** au Listening and Reading *TOEIC®* : [920/990](https://www.etsglobal.org/fr/en/digital-score-report/D4B5ABF3DBEA351C234C144834847F0B8A0E6C9114584F656B7D23D2D3A6FA56bnc2ZjVpSE1ZNXlnVjFGV2ZWeVI4bE5GYitqL3MvTXFQaUlKb0p0eEVUREcxVk5p).
+
+:::

@@ -1,0 +1,134 @@
+---
+title: "⚡ Moyens de production"
+author: "`Corentin DUCLOUX`"
+categories: ["Python", "Open Data", "Dataviz"]
+description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
+date: 05-09-2024
+date-format: DD/MM/YYYY
+image: energy_dashboard/imgs/main_img.png
+format: dashboard
+execute: 
+    enabled: true
+---
+
+<link rel="stylesheet" href="energy_dashboard/dashboard_styles.css">
+
+# Général
+
+## Row
+
+```{python}
+# | component: valuebox
+# | title: Average Injured
+dict(icon="exclamation-triangle", color="primary", value=10)
+```
+
+```{python}
+# | component: valuebox
+# | title: Average Out
+dict(icon="x-square", color="warning", value=100)
+```
+
+# Nucléaire
+
+## Row {.tabset}
+
+```{python}
+# | output: false
+import polars as pl
+
+
+def get_tranche(df_nucleaire: pl.DataFrame, centrale: str) -> int:
+    return df_nucleaire.filter(pl.col("centrale") == centrale).select(pl.count()).item()
+
+
+def get_mw(df_nucleaire: pl.DataFrame, centrale: str) -> int:
+    return (
+        df_nucleaire.filter(pl.col("centrale") == centrale)
+        .select("puissance_installee")
+        .sum()
+        .item()
+    )
+
+
+def get_contrat_programme(df_nucleaire: pl.DataFrame, centrale: str) -> str:
+    return (
+        df_nucleaire.filter(pl.col("centrale") == centrale)
+        .select("contrat_programme")
+        .unique()
+        .item()
+    )
+
+
+def tooltip_html(df_nucleaire: pl.DataFrame, centrale: str) -> str:
+    html = f"""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    * {{
+    font-family: Montserrat;
+        }}
+    h4 {{
+        color: darkgrey;
+    }}
+    </style>
+    <h4> {centrale} </h4>
+    <li> <b>Nombre de tranches :</b> {get_tranche(df_nucleaire, centrale)}
+    <li> <b>Puissance totale installée :</b> {get_mw(df_nucleaire, centrale)} MW
+    <li> <b>Palier :</b> {get_contrat_programme(df_nucleaire, centrale)}
+    """
+    return html
+
+
+nucleaire = pl.read_json("energy_dashboard/data/nucleaire.json")
+
+nucleaire = nucleaire.with_columns(
+    pl.col("centrale").str.replace("\(.*\)", "").str.strip()
+)
+
+cnpes = (
+    nucleaire.unique(subset="centrale", maintain_order=True)
+    .with_columns(pl.col("point_gps_wsg84"))
+    .unnest("point_gps_wsg84")
+    .select(pl.col("centrale", "lon", "lat"))
+)
+
+centrales = cnpes.select("centrale").to_series().to_list()
+lon = cnpes.select("lon").to_series().to_list()
+lat = cnpes.select("lat").to_series().to_list()
+```
+
+```{python}
+# | output: false
+import folium
+
+nuclear_map = folium.Map(location=[42, 2], zoom_start=4.5)
+
+for centrale, latitude, longitude in zip(centrales, lat, lon):
+    folium.Marker(
+        location=[latitude, longitude],
+        icon=folium.Icon(color="orange", prefix="fa", icon="building"),
+        popup=folium.Popup(tooltip_html(nucleaire, centrale), max_width=600),
+    ).add_to(nuclear_map)
+```
+
+```{python}
+# | title: "Carte des CNPE français"
+# | warning: false
+# | echo: false
+# | padding: 0px
+nuclear_map
+```
+
+::: {.card title="Informations complémentaires"}
+En France, il existe 56 centrales nucléaires (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre National de Production d'Electricité]. 
+
+L'objectif de la carte précédente `leaflet` est de :
+
+- Pouvoir facilement localiser les **CNPE** en France,
+- S'informer sur le nombre de tranches^[Une tranche correspond à une unité de production électrique comportant une chaudière nucléaire + un groupe turbo-alternateur] pour chaque **CNPE**,
+- La puissance totale en Megawatts de chaque **CNPE**.
+
+[Télécharger les données  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
+:::
+
+# Hydroélectrique

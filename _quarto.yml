@@ -1,0 +1,61 @@
+project:
+  type: website
+
+lang: fr    
+
+website:
+  title: "Corentin DUCLOUX"
+  favicon: imgs/fav/favicon_floppy.svg
+  navbar:
+    background: primary
+    right:
+      - href: index.qmd
+        text: "Accueil"
+      - href: sections/skills.qmd
+        text: "Compétences"
+      - href: sections/projects.qmd
+        text: "Projets"
+      - href: sections/presentations.qmd
+        text: "Présentations"
+      - href: sections/blog.qmd
+        text: "Blog"
+  page-footer:
+    background: primary
+    foreground: white
+    left:
+      - icon: wrench-adjustable
+        text: 🛠️ Créé avec **Quarto**
+        href: https://quarto.org/docs/reference/projects/websites.html
+    center:
+      - text: "© 2024, Corentin DUCLOUX"
+    right:
+      - icon: cc-circle
+        href: https://creativecommons.org/licenses/by-nc-sa/4.0/
+        text: "Licence : CC BY-NC-SA"
+  search: 
+    location: navbar
+    type: overlay
+  sidebar:
+      - title: "Projets"
+        style: "docked"
+        background: light
+        contents:
+          - projects.qmd
+          - tutorial-1.qmd
+          - tutorial-2.qmd
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: styles.css
+    toc: true
+    # le paramétrage de la grid permet d'éviter la sidebar et la margin 
+    grid:
+      sidebar-width: 0px
+      body-width: 1200px
+      margin-width: 200px
+      gutter-width: 1.5rem
+      
+
+
+
