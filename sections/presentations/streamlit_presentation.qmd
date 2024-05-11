@@ -15,7 +15,7 @@ title-slide-attributes:
     data-notes: "Bonjour à tous, on va vous présenter Streamlit"
 format: 
     revealjs:
-        theme: [simple, streamlit_presentation/custom.scss]
+        theme: [simple, streamlit_presentation/streamlit_custom.scss]
         background-transition: fade
         incremental: true
         transition: fade
