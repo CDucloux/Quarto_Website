@@ -6,7 +6,7 @@ categories: ["Python", "Streamlit","Machine Learning", "Docker", "DuckDB"]
 description: "Wine Scraping est une application développée sous {{< fa brands python >}} permettant de prédire les prix des vins."
 date: 01-06-2024
 date-format: DD/MM/YYYY
-image: wine_scraping/imgs/wine_scraping.png
+image: wine_scraping\imgs\wine_scraping.png
 ---
 
 ## Problématique

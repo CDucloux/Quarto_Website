@@ -6,7 +6,7 @@ categories: ["R", "Python", "Streamlit", "Econometrics"]
 description: "Smart Specs est une application développée sous {{< fa brands python >}} permettant de comparer des téléphones et d'obtenir leur *efficacité*."
 date: 03-28-2024
 date-format: DD/MM/YYYY
-image: smart_specs/imgs/comparateur_smart_specs.png
+image: smart_specs\imgs\comparateur_smart_specs.png
 ---
 
 ## Les origines de **Smart Specs**
