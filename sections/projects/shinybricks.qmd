@@ -1,7 +1,7 @@
 ---
 title: "{{< iconify ph:lego-smiley-fill >}} ShinyBricks"
 title-block-banner: true
-author: "`Corentin DUCLOUX` et `Hassan TILKI`"
+author: "`Hassan TILKI` et `Corentin DUCLOUX`"
 categories: ["R", "Shiny", "API"]
 description: "ShinyBricks est une plateforme d'analyse **LEGO** construite sur {{< fa brands r-project >}} disposant de nombreuses fonctionnalités."
 date: 03-26-2024
