@@ -2,3 +2,7 @@
 title: "Guide Git"
 author: "`Corentin DUCLOUX`"
 ---
+
+- `git flow init`
+
+- `git tag`
