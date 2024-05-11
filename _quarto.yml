@@ -15,10 +15,10 @@ website:
         text: "Compétences"
       - href: sections/projects.qmd
         text: "Projets"
-      - href: sections/blog.qmd
-        text: "Blog"
       - href: sections/presentations.qmd
         text: "Présentations"
+      - href: sections/blog.qmd
+        text: "Blog"
   page-footer:
     background: primary
     foreground: white

@@ -5,6 +5,8 @@ listing:
     type: grid 
     categories: true
     sort:
-        - "date"
+        - "date desc"
         - "title desc"
 ---
+
+***

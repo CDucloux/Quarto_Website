@@ -16,8 +16,7 @@ span.menu-text {
     text-transform: uppercase;
 }
 
-
-/* Crée une classe span pour la couleur flashy de mes expériences pro.*/
+/* Crée une classe span pour la couleur flashy de mes expériences pro. */
 span.shiny-color {
     color: #ff7edb;
     transition: text-shadow 0.3s ease;
@@ -51,6 +50,24 @@ a.nav-link:hover {
 .quarto-category:hover {
     background-color: #ff8b39;
     color: white !important;
+}
+
+/* Ajoute de la marge en haut du footer central (copyright) */
+.nav-footer-center {
+    margin-top: 1em;
+}
+
+/* Permet de styliser la div wine-scraping-intro ;) */
+.wine-scraping-intro {
+    background-color: black;
+    text-align: justify;
+    text-justify: distribute;
+    padding-top: 4em;
+    padding-bottom: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    color: #ffdb00;
+    border-radius: 10px;
 }
 
 /* Gère l'animation de la main */
@@ -114,5 +131,29 @@ a.nav-link:hover {
 
     100% {
         transform: translateY(0);
+    }
+}
+
+/* ---- MEDIA QUERIES ---- */
+
+/* Ajoute de la margin-top à ma tronche quand le contenu est visualisé sur un écran de - de 1000px */
+@media only screen and (max-width: 992px) {
+    img.about-image.round {
+        margin-top: 2.5em;
+    }
+}
+
+/* Overwrite une media query bootstrap pour mon footer */
+@media (max-width: 767.98px) {
+    .nav-footer-center {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+}
+
+/* Réduit la taille de la police de mon nom et prénom quand écran < 650px */
+@media (max-width: 650px) {
+    span.navbar-title {
+        font-size: 1.25rem;
     }
 }

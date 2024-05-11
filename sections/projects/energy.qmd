@@ -1,10 +1,11 @@
 ---
 title: "⚡ Moyens de production"
 author: "`Corentin DUCLOUX`"
-categories: ["Python", "Open Data"]
+categories: ["Python", "Open Data", "Dataviz"]
 description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
 date: 05-09-2024
 date-format: DD/MM/YYYY
+image: energy_dashboard/imgs/main_img.png
 format: dashboard
 execute: 
     enabled: true

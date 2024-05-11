@@ -1,0 +1,119 @@
+---
+title: "🍷 Wine Scraping"
+title-block-banner: true
+author: "`Guillaume DEVANT` et `Corentin DUCLOUX`"
+categories: ["Python", "Streamlit","Machine Learning", "Docker", "DuckDB"]
+description: "Wine Scraping est une application développée sous {{< fa brands python >}} permettant de prédire les prix des vins."
+date: 01-06-2024
+date-format: DD/MM/YYYY
+image: wine_scraping/imgs/wine_scraping.png
+---
+
+## Problématique
+
+::: {.wine-scraping-intro}
+
+![](wine_scraping/imgs/wine_scraping_logo.png){width=70% fig-align="center"}
+
+*Le terroir est en guerre ! Menant une lutte acharnée pour l'information viticole, une bataille épique se déroule entre les données dissimulées et les amateurs assoiffés de connaissances sur le vin. Le chaos règne alors que les sources d'informations viticoles sont assaillies par des obstacles inattendus.*
+
+*Avec une audace stupéfiante, les sites de revente de vin ont érigé des barrières insurmontables, empêchant l'accès aux détails les plus précieux sur les cépages, les millésimes et les appellations. La quête de ces informations devient une mission désespérée, une véritable lutte pour la liberté de l'information œnologique.*
+
+*Face à cette situation, deux valeureux Chevaliers de la programmation Python s'élèvent pour secourir les amateurs de vin, menant une mission périlleuse pour libérer les données captives. Avec bravoure, ils s'attaquent aux défenses numériques pour délivrer les précieuses informations contenues dans les pages web tentaculaires ...*
+:::
+
+## Aperçu de l'application
+
+```{=html}
+<iframe 
+    width="100%"
+    src="https://wine-scraping.streamlit.app/?embed=true"
+    title="Wine Scraping"
+    height="650"
+></iframe>
+```
+
+## Description du projet
+
+L'objectif est de récupérer des données sur un site web, les stocker, les transformer puis les exploiter pour faire des modèles de **Machine Learning** ainsi qu'une application.
+
+Le projet, dans les grandes lignes :
+
+1. Scraping des données avec `requests` et `beautifulsoup4` {{< iconify material-symbols:soup-kitchen >}}
+2. Restructuration des données avec `polars` {{< iconify openmoji:polar-bear >}}
+3. Création de pipelines de Machine Learning avec `scikit-learn` 🤖
+4. Alimentation d'une base de données contenant les prédictions des modèles avec `duckdb` {{< fa database >}}
+5. Création d'une application pour visualiser les résultats avec `streamlit` et `plotly` 📊
+
+## Machine Learning
+
+Que prédire ? Avec quoi le prédire ? Comment utiliser les résultats ? Les réponses sont ci-dessous :
+
+1. Deux variables à prédire : *unit_price* & *type*
+2. Nous utiliserons 6 modèles de **Machine Learning**
+3. ➶ Optimisation des hyperparamètres par Cross-Validation avec `models.py`
+4. 🏹 Prédiction sur les données de test avec `prediction.py`
+5. 🧪 Utilisation d'un **pipeline** `sklearn`
+    - Evite le Data Leakage.
+    - Procédure standardisée pour l'ensemble des modèles.
+
+
+::: {.callout-note collapse="true"}
+
+## Variables Explicatives
+
+| Variable        | Type | Description                                                 |
+| ------------------- | -------- | --------------------------------------------------------------- |
+| `name`              | str      | _Nom du vin_                                                    |
+| `capacity`          | float    | _Capacité en litres du vin_                                     |
+| `millesime`         | int      | _Année de vendange des raisins_                                 |
+| `cepage`            | str      | _Type de raisin utilisé pour confectionner le vin_              |
+| `par_gouts`         | str      | _Classification par goûts du vin_                               |
+| `service`           | str      | _Comment se sert le vin_                                        |
+| `avg_temp`          | float    | _Température moyenne de conservation du vin_                    |
+| `conservation_date` | int      | _Date de conservation maximale du vin après achat_              |
+| `bio`               | bool     | _Indique si le vin est issu de l'agriculture biologique_        |
+| `customer_fav`      | bool     | _Indique si le vin est un coup de coeur client_                 |
+| `is_new`            | bool     | _Indique si le vin est une nouveauté sur le site_               |
+| `top_100`           | bool     | _Indique si le vin fait partie d'un classement dans le top 100_ |
+| `destock`           | bool     | _Indique si le vin est en déstockage_                           |
+| `sulphite_free`     | bool     | _Indique si le vin est sans sulfites_                           |
+| `alcohol_volume`    | float    | _Degré de concentration d'alcool_                               |
+| `country`           | str      | _Pays d'origine du vin_                                         |
+| `bubbles`           | bool     | _Indique si le vin a des bulles_                                |
+| `wine_note`         | float    | _Indique la note sur 5 du vin_                                  |
+| `nb_reviews`        | int      | _Nombre de commentaires_                                        |
+| `conservation_time` | float    | _Durée de conservation du vin en années_                        |
+| `cru`               | bool     | _Indique si le vin est un grand cru_                            |
+
+:::
+
+## Résultats du Machine Learning
+
+5 tables de résultats de Machine Learning sont obtenues grâce à l'éxéuction de `ml_trigger` qui se charge d'éxécuter l'ensemble des scripts d'export. Mais plutôt que d'utiliser chaque csv indépendamment ou de tenter de concaténer les résultats, nous avons préféré utiliser une base de données pour l'implémentation dans notre application.
+
+`duckdb` est une base de données particulière en ce sens qu'elle n'est pas *Client-Server*, mais *in-memory*. Cela permet d’obtenir des temps de réponse minimaux en éliminant le besoin d'accéder à des unités de disque standard (SSD). Une base de données *in-memory* est donc idéale pour une application effectuant de l’analyse de données en temps réel.
+
+*Voici un schéma du processus d'ingestion des tables :*
+
+```{mermaid}
+%%| fig-align: center
+graph LR;
+A("👨‍🔬 pred_classification")-->F;
+B("👨‍🔬 pred_regression")-->F;
+C("👩‍🏫 result_ml_regression")-->F;
+D("👩‍🏫 result_ml_classification")-->F;
+E("🕵️‍♂️ importance")-->F[("🦆 In Memory Database")];
+
+style A stroke:#adbac7,stroke-width:3px;
+style B stroke:#adbac7,stroke-width:3px;
+style C stroke:#adbac7,stroke-width:3px;
+style D stroke:#adbac7,stroke-width:3px;
+style E stroke:#adbac7,stroke-width:3px;
+style F stroke:#fff100,stroke-width:3px;
+```
+
+
+## En savoir plus
+
+$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} Wine-Scraping](https://github.com/CDucloux/Wine-Scraping)

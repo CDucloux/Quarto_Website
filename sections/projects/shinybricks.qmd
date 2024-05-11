@@ -3,12 +3,48 @@ title: "{{< iconify ph:lego-smiley-fill >}} ShinyBricks"
 title-block-banner: true
 author: "`Corentin DUCLOUX` et `Hassan TILKI`"
 categories: ["R", "Shiny", "API"]
-description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
+description: "ShinyBricks est une plateforme d'analyse **LEGO** construite sur {{< fa brands r-project >}} disposant de nombreuses fonctionnalités."
 date: 03-26-2024
 date-format: DD/MM/YYYY
-image: shinybricks/table_shinybricks.png
+image: shinybricks/imgs/table_shinybricks.png
 ---
 
+## Aperçu de l'application
+
 ```{=html}
-<iframe width="100%" height="100%" src="https://corentin-ducloux.shinyapps.io/ShinyBricks/" title="Quarto Documentation"></iframe>
+<iframe 
+    width="100%"
+    src="https://corentin-ducloux.shinyapps.io/ShinyBricks/"
+    title="ShinyBricks"
+    height="650"
+></iframe>
 ```
+
+## Récupération des données
+
+Grâce à de nombreux fans qui ne dorment que très peu la nuit et qui scrutent chaque nouvelle sortie de set **LEGO**, obtenir des données s'est révelé beaucoup plus simple que ce que nous avions initialement imaginé.
+
+|                                                  | Source                                       | Méthode    | Données récoltées |
+|--------------------------------------------------|----------------------------------------------|------------|-------------------|
+| [<img src="shinybricks/imgs/brickset_logo.jpg" width="40" height="40">](https://brickset.com/)         | [Brickset](https://brickset.com/)            | `API`      | Informations sur tous les sets |
+| [<img src="shinybricks/imgs/brickeconomy_logo.jpeg" width="40" height="40">](https://www.brickeconomy.com) | [Brickeconomy](https://www.brickeconomy.com) | `Scraping` | Prix actuel des sets |
+
+Par exemple, le site [Brickset](https://brickset.com/) dispose d'une base de données complète des sets de 1970 à nos jours, avec de nombreux avis d'utilisateurs, des images, le nombre de minifigurines, etc. Une **API** gratuite est par ailleurs mise à disposition pour récupérer ces données.
+
+Néanmoins, le prix, donnée la plus stratégique, n'est pas disponible dans l'**API**, d'où notre recours au *scraping* qui nous a permis non seulement d'obtenir le prix de vente, mais aussi le prix actuel moyen de revente sur le marché de l'occasion selon l'état, information Ô combien plus précieuse.
+
+*Note* : Toutes ces données sont récupérées par an dans les formats `parquet` et `feather`, dérivés d'**Apache Arrow**, et sont ensuite agrégées au sein d'un *dataframe* sur {{< fa brands r-project >}}.
+
+## Le comment de l'application
+
+Les *Building Blocks* de l'application sont :
+
+- `{shiny}`
+- `{bslib}`
+- `{golem}`
+
+
+## En savoir plus
+
+$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} ShinyBricks](https://github.com/CDucloux/ShinyBricksApp)
+
