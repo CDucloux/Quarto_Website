@@ -29,16 +29,16 @@ about:
 
 ## {{< fa briefcase >}} Expérience professionnelle
 
-- [**Data Engineer**]{class="shiny-color"} *(Avril -- Septembre 2024)* | **EDF**
-- [**Data Analyst & BI Dev.**]{class="shiny-color"} *(Avril -- Août 2023)* | **Safran Seats**
-- [**Data Analyst**]{class="shiny-color"} *(Juin -- Août 2022)* | **Crédit Agricole Titres**
+- [**Data Engineer**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Avril -- Septembre 2024)*  [ | **EDF**]{class="company"}
+- [**Data Analyst & BI Dev.**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Avril -- Août 2023)* [ | **Safran Seats**]{class="company"}
+- [**Data Analyst**]{class="shiny-color"} [|]{class="toggle-invisibility"} *(Juin -- Août 2022)* [ | **Crédit Agricole Titres**]{class="company"}
 
 ***
 
 ## {{< fa graduation-cap >}} Education
 
-- **Master Data Science / Business Econ.** *(2022 -- 2024)* <br> *Université de Tours*
+- **Master Data Science / Business Econ.** [*(2022 -- 2024)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
 
-- **Licence d'économie d'entreprise** *(2018 -- 2022)* <br> *Université de Tours*
+- **Licence d'économie d'entreprise** [*(2018 -- 2022)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
 
-- **Baccalauréat S, section Edifice** *(2015 -- 2018)* <br> *Lycée Pothier, Orléans*
+- **Baccalauréat S, section Edifice** [*(2015 -- 2018)*]{class="education-dates"} [*Lycée Pothier, Orléans*]{class="education-location"}

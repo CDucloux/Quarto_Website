@@ -7,28 +7,20 @@ description: "Slides de présentation de l'application **LEGO** *ShinyBricks* r�
 date: 03-26-2024
 date-format: DD/MM/YYYY
 image: "LEGO_presentation/imgs/shinybricks.png"
-link-external-icon: true
 title-slide-attributes:
-    data-background-image: ""
-    data-background-size: 50%
-    data-background-opacity: "0.5"
     data-notes: "Bonjour à tous, on va vous présenter notre projet de Big Data qui n'est autre que la création d'une application Shiny portant sur les LEGO, idée que j'ai gentiment imposée à Hassan et qui m'a dit tkt y'a pas de souci."
 format: 
     revealjs:
-        theme: [simple, lego_presentation/custom.scss]
         background-transition: fade
         incremental: true
         transition: fade
         navigation-mode: linear
         footer: "Présentation de [*ShinyBricks*](https://corentin-ducloux.shinyapps.io/ShinyBricks/)"
         logo: lego_presentation/imgs/shinybricks.png
-        include-in-header: 
-            - text: | 
-                <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        css: lego_presentation/custom_styles.css
 ---
 
-## L'histoire de LEGO
+## L'histoire de LEGO {.smaller}
 
 > Création en **1932** par [*Ole Kirk Christiansen*](https://fr.wikipedia.org/wiki/Ole_Kirk_Christiansen) au Danemark
 
@@ -102,7 +94,7 @@ Avant d'expliquer notre problématique, on va aussi préciser les termes et acro
 
 ## Shinybricks, c'est quoi ?
 
-> Une plateforme d'analyse **LEGO** sur un ensemble de points :
+> Une plateforme d'analyse **LEGO** sur un ensemble de points
 
 - Une analyse par thème
 - Une analyse par an

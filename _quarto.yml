@@ -1,7 +1,12 @@
 project:
   type: website
 
+# Configuration du langage
 lang: fr    
+
+# Fait en sorte que le code R et Python soient exécutés uniquement en local
+execute:
+  freeze: auto
 
 website:
   title: "Corentin DUCLOUX"
@@ -55,7 +60,6 @@ format:
       body-width: 1200px
       margin-width: 200px
       gutter-width: 1.5rem
-      
 
 
 

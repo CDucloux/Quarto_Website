@@ -20,6 +20,22 @@ span.menu-text {
 span.shiny-color {
     color: #ff7edb;
     transition: text-shadow 0.3s ease;
+    display: inline;
+}
+
+/* Ce span est par défaut non visible, et devient visible sur les téléphones */
+span.toggle-invisibility {
+    display: none;
+}
+
+/* Ce span est par défaut inline mais devient block grâce à une media query */
+span.education-dates {
+    display: inline;
+}
+
+/* Ce span permet de faire en sorte que les lieux de mes études soient automatiquement mis à la ligne */
+span.education-location {
+    display: block;
 }
 
 /* Quand l'utilisateur hover, petit effet de surbrillance */
@@ -152,8 +168,26 @@ a.nav-link:hover {
 }
 
 /* Réduit la taille de la police de mon nom et prénom quand écran < 650px */
+/* Permet de gérer la responsiveness des expériences pros quand l'écran est < 650px */
+/* Même chose pour la partie Education */
 @media (max-width: 650px) {
     span.navbar-title {
         font-size: 1.25rem;
+    }
+
+    span.toggle-invisibility {
+        display: inline;
+    }
+
+    span.shiny-color {
+        display: block;
+    }
+
+    span.education-dates {
+        display: block;
+    }
+
+    span.company {
+        display: block;
     }
 }

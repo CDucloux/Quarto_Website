@@ -89,12 +89,36 @@ smooth-scroll: true
 - Outil très pratique de création de diagrammes avec syntaxe épurée inspirée par du **Markdown**. 
 :::
 
-## Autres
+## Soft Skills
+
+::: {.callout-note icon=false collapse="true"}
+
+## {{< iconify ri:presentation-fill >}} Capacités de présentation et de vulgarisation
+
+Que ce soit durant mes études en master ou au cours de mes expériences professionnelles antérieures, j'ai toujours pris plaisir à exposer les aspects techniques des projets auxquels j'ai participé dans le cadre de présentations à divers auditoires.
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## {{< iconify mingcute:schedule-fill >}} Capacités organisationnelles
+
+
+
+:::
+
+::: {.callout-note icon=false collapse="true"}
+
+## {{< iconify iconoir:learning >}} Veille technologique
+
+Faire de la veille est essentiel dans tous les domaines, mais l'est particulèrement dans le domaine de la *data* où de nouvelles technologies émergent tous les jours. Les objectifs sont donc d'identifier les tendances émergentes pour gagner du temps sur des tâches de plus en plus automatisables et se concentrer sur les tâches à forte valeur ajoutée.
+
+:::
 
 ::: {.callout-note icon=false collapse="true"}
 
 ## {{< iconify flag:gb-4x3 >}} Anglais
 
-**Score** au Listening and Reading *TOEIC®* : [920/990](https://www.etsglobal.org/fr/en/digital-score-report/D4B5ABF3DBEA351C234C144834847F0B8A0E6C9114584F656B7D23D2D3A6FA56bnc2ZjVpSE1ZNXlnVjFGV2ZWeVI4bE5GYitqL3MvTXFQaUlKb0p0eEVUREcxVk5p).
+Niveau C1 | **Score** au Listening and Reading *TOEIC®* : [920/990](https://www.etsglobal.org/fr/en/digital-score-report/D4B5ABF3DBEA351C234C144834847F0B8A0E6C9114584F656B7D23D2D3A6FA56bnc2ZjVpSE1ZNXlnVjFGV2ZWeVI4bE5GYitqL3MvTXFQaUlKb0p0eEVUREcxVk5p).
 
 :::
