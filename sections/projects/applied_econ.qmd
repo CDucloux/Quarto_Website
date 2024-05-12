@@ -9,7 +9,7 @@ categories: ["R", "Econometrics", "Dataviz"]
 description: "Analyse économétrique du profit, des coûts et de la production des producteurs français de pommes sur {{< fa brands r-project >}}."
 date: 03-15-2024
 date-format: DD/MM/YYYY
-image: applied_econ\imgs\apple_project.png
+image: applied_econ\imgs\applied_econ_main_img.png
 author: "`Guillaume DEVANT` et `Corentin DUCLOUX`"
 format:
     html:

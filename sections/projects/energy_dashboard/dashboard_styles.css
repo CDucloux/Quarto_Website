@@ -52,3 +52,10 @@ a.nav-link:hover {
     background-color: #ff8b39;
     color: white !important;
 }
+
+/* Réduit la taille de la police de mon nom et prénom quand écran < 650px */
+@media (max-width: 650px) {
+    span.navbar-title {
+        font-size: 1.25rem;
+    }
+}

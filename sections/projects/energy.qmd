@@ -31,11 +31,28 @@ dict(icon="x-square", color="warning", value=100)
 
 # Nucléaire
 
-## Row {.tabset}
-
 ```{python}
+# | label: data_import
 # | output: false
 import polars as pl
+
+
+def particule_remover(df_energy: pl.DataFrame) -> pl.DataFrame:
+    """Permet de retirer les (LE), (LA), (LES) de la colonne 'centrale'."""
+    return df_energy.with_columns(
+        pl.col("centrale").str.replace("\(.*\)", "").str.strip_chars()
+    )
+
+
+nucleaire = particule_remover(pl.read_json("energy_dashboard/data/nucleaire.json"))
+hydraulique = particule_remover(pl.read_json("energy_dashboard/data/hydraulique.json"))
+
+# idée faire des group by par régions
+```
+
+```{python}
+# | label: nuclear_funcs
+# | output: false
 
 
 def get_tranche(df_nucleaire: pl.DataFrame, centrale: str) -> int:
@@ -63,11 +80,13 @@ def get_contrat_programme(df_nucleaire: pl.DataFrame, centrale: str) -> str:
 def tooltip_html(df_nucleaire: pl.DataFrame, centrale: str) -> str:
     html = f"""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
     * {{
-    font-family: Montserrat;
+    font-family: "Montserrat";
         }}
     h4 {{
+        font-family: "Freeman";
         color: darkgrey;
     }}
     </style>
@@ -79,12 +98,6 @@ def tooltip_html(df_nucleaire: pl.DataFrame, centrale: str) -> str:
     return html
 
 
-nucleaire = pl.read_json("energy_dashboard/data/nucleaire.json")
-
-nucleaire = nucleaire.with_columns(
-    pl.col("centrale").str.replace("\(.*\)", "").str.strip()
-)
-
 cnpes = (
     nucleaire.unique(subset="centrale", maintain_order=True)
     .with_columns(pl.col("point_gps_wsg84"))
@@ -92,9 +105,9 @@ cnpes = (
     .select(pl.col("centrale", "lon", "lat"))
 )
 
-centrales = cnpes.select("centrale").to_series().to_list()
-lon = cnpes.select("lon").to_series().to_list()
-lat = cnpes.select("lat").to_series().to_list()
+centrales_nucleaire = cnpes.select("centrale").to_series().to_list()
+lon_nucleaire = cnpes.select("lon").to_series().to_list()
+lat_nucleaire = cnpes.select("lat").to_series().to_list()
 ```
 
 ```{python}
@@ -103,7 +116,7 @@ import folium
 
 nuclear_map = folium.Map(location=[42, 2], zoom_start=4.5)
 
-for centrale, latitude, longitude in zip(centrales, lat, lon):
+for centrale, latitude, longitude in zip(centrales_nucleaire, lat_nucleaire, lon_nucleaire):
     folium.Marker(
         location=[latitude, longitude],
         icon=folium.Icon(color="orange", prefix="fa", icon="building"),
@@ -119,7 +132,95 @@ for centrale, latitude, longitude in zip(centrales, lat, lon):
 nuclear_map
 ```
 
-::: {.card title="Informations complémentaires"}
+# Hydroélectrique
+
+```{python}
+# | output: false
+
+
+def get_category_hydraulique(df_hydraulique: pl.DataFrame, centrale: str) -> str:
+    return (
+        df_hydraulique.filter(pl.col("centrale") == centrale)
+        .select("categorie_centrale")
+        .item()
+    )
+
+
+def get_mw_hydraulique(df_hydraulique: pl.DataFrame, centrale: str) -> int:
+    return (
+        df_hydraulique.filter(pl.col("centrale") == centrale)
+        .select("puissance_installee")
+        .item()
+    )
+
+
+def get_construction_hydraulique(df_hydraulique: pl.DataFrame, centrale: str) -> str:
+    return (
+        df_hydraulique.filter(pl.col("centrale") == centrale)
+        .select("annee_de_mise_en_service")
+        .item()
+    )
+
+
+def tooltip_html_hydraulique(df_hydraulique: pl.DataFrame, centrale: str) -> str:
+    html = f"""
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    * {{
+    font-family: "Montserrat";
+        }}
+    h4 {{
+        font-family: "Freeman";
+        color: darkgrey;
+    }}
+    </style>
+    <h4> {centrale} </h4>
+    <li> <b>Catégorie :</b> {get_category_hydraulique(df_hydraulique, centrale)}
+    <li> <b>Puissance installée :</b> {get_mw_hydraulique(df_hydraulique, centrale)} MW
+    <li> <b>Mise en service :</b> {get_construction_hydraulique(df_hydraulique, centrale)}
+    """
+    return html
+```
+
+```{python}
+# | output: false
+
+centrales_hydraulique = hydraulique.select("centrale").to_series().to_list()
+
+lat_hydraulique = (
+    hydraulique.select("coordonnees_x_wgs").cast(pl.Float64).to_series().to_list()
+)
+lon_hydraulique = (
+    hydraulique.select("coordonnees_y_wgs").cast(pl.Float64).to_series().to_list()
+)
+
+hydraulic_map = folium.Map(location=[42, 2], zoom_start=4.5)
+
+for centrale, latitude, longitude in zip(
+    centrales_hydraulique, lat_hydraulique, lon_hydraulique
+):
+    folium.Marker(
+        location=[latitude, longitude],
+        icon=folium.Icon(color="blue", prefix="fa", icon="tint"),
+        popup=folium.Popup(
+            tooltip_html_hydraulique(hydraulique, centrale), max_width=600
+        ),
+    ).add_to(hydraulic_map)
+```
+
+```{python}
+# | title: "Carte des centrales hydroéléctriques françaises"
+# | warning: false
+# | echo: false
+# | padding: 0px
+hydraulic_map
+```
+
+# Thermique
+
+# Informations complémentaires
+
 En France, il existe 56 centrales nucléaires (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre National de Production d'Electricité]. 
 
 L'objectif de la carte précédente `leaflet` est de :
@@ -129,6 +230,4 @@ L'objectif de la carte précédente `leaflet` est de :
 - La puissance totale en Megawatts de chaque **CNPE**.
 
 [Télécharger les données  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
-:::
 
-# Hydroélectrique
