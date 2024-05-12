@@ -16,6 +16,10 @@ span.menu-text {
     text-transform: uppercase;
 }
 
+code {
+    color: #ff7edb;
+}
+
 
 /* Crée une classe span pour la couleur flashy de mes expériences pro.*/
 span.shiny-color {

@@ -1,11 +1,11 @@
 ---
-title: "⚡ Moyens de production"
+title: "⚡ Moyens de production d'EDF"
 author: "`Corentin DUCLOUX`"
 categories: ["Python", "Open Data", "Dataviz"]
 description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
 date: 05-09-2024
 date-format: DD/MM/YYYY
-image: energy_dashboard\imgs\main_img.png
+image: energy_dashboard\imgs\energy_dashboard_main_img.png
 format: dashboard
 execute: 
     enabled: true
@@ -16,20 +16,6 @@ execute:
 # Général
 
 ## Row
-
-```{python}
-# | component: valuebox
-# | title: Average Injured
-dict(icon="exclamation-triangle", color="primary", value=10)
-```
-
-```{python}
-# | component: valuebox
-# | title: Average Out
-dict(icon="x-square", color="warning", value=100)
-```
-
-# Nucléaire
 
 ```{python}
 # | label: data_import
@@ -47,8 +33,75 @@ def particule_remover(df_energy: pl.DataFrame) -> pl.DataFrame:
 nucleaire = particule_remover(pl.read_json("energy_dashboard/data/nucleaire.json"))
 hydraulique = particule_remover(pl.read_json("energy_dashboard/data/hydraulique.json"))
 
-# idée faire des group by par régions
+thermique = particule_remover(pl.read_json("energy_dashboard/data/thermique.json"))
+
+nb_card_nucleaire = nucleaire.select(pl.col("centrale").count()).item()
+nb_card_hydraulique = hydraulique.select(pl.col("centrale").count()).item()
+nb_card_thermique = thermique.select(pl.col("centrale").count()).item()
+
+puissance_card_nucleaire = (
+    nucleaire.select(pl.col("puissance_installee").sum().truediv(1000).round(1))
+    .cast(pl.Utf8)
+    .item()
+    + " GW"
+)
+
+puissance_card_hydraulique = (
+    hydraulique.select(pl.col("puissance_installee").sum().truediv(1000).round(1))
+    .cast(pl.Utf8)
+    .item()
+    + " GW"
+)
+
+puissance_card_thermique = (
+    thermique.select(pl.col("puissance_installee").sum().truediv(1000).round(1))
+    .cast(pl.Utf8)
+    .item()
+    + " GW"
+)
+
+# idée faire des group by par régions dans des tableaux
 ```
+
+```{python}
+# | component: valuebox
+# | title: Nombre de centrales nucléaires
+dict(icon="buildings", color="warning", value=nb_card_nucleaire)
+```
+
+```{python}
+# | component: valuebox
+# | title: Nombre de centrales hydroélectriques
+dict(icon="droplet", color="primary", value=nb_card_hydraulique)
+```
+
+```{python}
+# | component: valuebox
+# | title: Nombre de centrales thermiques
+dict(icon="fire", color="red", value=nb_card_thermique)
+```
+
+## Row
+
+```{python}
+# | component: valuebox
+# | title: Puissance installée
+dict(icon="buildings", color="warning", value=puissance_card_nucleaire)
+```
+
+```{python}
+# | component: valuebox
+# | title: Puissance installée
+dict(icon="droplet", color="primary", value=puissance_card_hydraulique)
+```
+
+```{python}
+# | component: valuebox
+# | title: Puissance installée
+dict(icon="fire", color="red", value=puissance_card_thermique)
+```
+
+# Nucléaire
 
 ```{python}
 # | label: nuclear_funcs
@@ -116,10 +169,12 @@ import folium
 
 nuclear_map = folium.Map(location=[42, 2], zoom_start=4.5)
 
-for centrale, latitude, longitude in zip(centrales_nucleaire, lat_nucleaire, lon_nucleaire):
+for centrale, latitude, longitude in zip(
+    centrales_nucleaire, lat_nucleaire, lon_nucleaire
+):
     folium.Marker(
         location=[latitude, longitude],
-        icon=folium.Icon(color="orange", prefix="fa", icon="building"),
+        icon=folium.Icon(color="orange", prefix="fa", icon="industry"),
         popup=folium.Popup(tooltip_html(nucleaire, centrale), max_width=600),
     ).add_to(nuclear_map)
 ```
@@ -221,13 +276,33 @@ hydraulic_map
 
 # Informations complémentaires
 
-En France, il existe 56 centrales nucléaires (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre National de Production d'Electricité]. 
+::: {.callout-warning icon=false}
 
-L'objectif de la carte précédente `leaflet` est de :
+## Nucléaire
 
-- Pouvoir facilement localiser les **CNPE** en France,
-- S'informer sur le nombre de tranches^[Une tranche correspond à une unité de production électrique comportant une chaudière nucléaire + un groupe turbo-alternateur] pour chaque **CNPE**,
-- La puissance totale en Megawatts de chaque **CNPE**.
+La carte `leaflet` de l'onglet **Nucléaire** présente la localisation et la puissance installée de l'ensemble des centrales nucléaires en exploitation en France. Il en existe actuellement 56 (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre National de Production d'Electricité]. 
 
-[Télécharger les données  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
+Pour s'informer sur le nombre de tranches^[Une tranche correspond à une unité de production électrique comportant une chaudière nucléaire + un groupe turbo-alternateur], il suffit de cliquer sur un repère de la carte.
+
+[Données issues de la plateforme **EDF Open Data**  {{< fa arrow-up-right-from-square >}}](https://opendata.edf.fr/explore/dataset/centrales-de-production-nucleaire-edf/information/?disjunctive.centrale&disjunctive.tranche&disjunctive.sous_filiere&sort=-tri)
+
+:::
+
+***
+
+::: {.callout-note icon=false}
+
+## Hydroélectrique
+
+La carte `leaflet` de l'onglet **Hydroélectrique** présente la localisation et la puissance installée des centrales hydroélectriques en France. 
+
+⚠ **Sur les plus de 400 installations hydrauliques exploitées par EDF, seules les centrales d’une puissance supérieure à 100 MW sont présentes.**
+
+[Données issues de la plateforme **EDF Open Data**  {{< fa arrow-up-right-from-square >}}](https://opendata.edf.fr/explore/dataset/centrales-de-production-hydraulique-de-edf-sa/information/?disjunctive.centrale&disjunctive.categorie_centrale&disjunctive.departement&disjunctive.commune&sort=-tri)
+
+:::
+
+***
+
+
 

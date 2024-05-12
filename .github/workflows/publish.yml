@@ -1,6 +1,8 @@
 on:
   workflow_dispatch:
   push:
+  # permet à chaque push vers la branche develop ou main de lancer une action
+  # qui va publier le website automatiquement.
     branches: 
       - develop
       - main
