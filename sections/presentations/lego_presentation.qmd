@@ -15,9 +15,9 @@ format:
         incremental: true
         transition: fade
         navigation-mode: linear
-        footer: "Présentation de [*ShinyBricks*](https://corentin-ducloux.shinyapps.io/ShinyBricks/)"
+        footer: "[<i class='fa-solid fa-right-from-bracket fa-flip-horizontal'></i> Retourner vers mon site web](https://cducloux.quarto.pub/sections/presentations.html)"
         logo: lego_presentation/imgs/shinybricks.png
-        css: lego_presentation/custom_styles.css
+        css: lego_presentation/lego_custom_styles.css
 ---
 
 ## L'histoire de LEGO {.smaller}

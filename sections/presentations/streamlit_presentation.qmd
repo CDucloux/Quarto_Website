@@ -7,7 +7,6 @@ description: "Présentation du package `streamlit` et de ses fonctionnalités à
 date: 03-20-2024
 date-format: DD/MM/YYYY
 image: "streamlit_presentation/imgs/streamlit_mark.png"
-link-external-icon: true
 title-slide-attributes:
     data-background-image: "streamlit_presentation/imgs/streamlit_mark.png"
     data-background-size: 50%
@@ -15,16 +14,13 @@ title-slide-attributes:
     data-notes: "Bonjour à tous, on va vous présenter Streamlit"
 format: 
     revealjs:
-        theme: [simple, streamlit_presentation/streamlit_custom.scss]
         background-transition: fade
         incremental: true
         transition: fade
         navigation-mode: linear
-        footer: "Présentation de [*Streamlit*](https://streamlit.io/)"
-        logo: https://corentinducloux.fr/dossier_img/mecen_transparent.png
-        include-in-header: 
-            - text: | 
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        footer: "[<i class='fa-solid fa-right-from-bracket fa-flip-horizontal'></i> Retourner vers mon site web](https://cducloux.quarto.pub/sections/presentations.html)"
+        logo: streamlit_presentation/imgs/mecen_logo.png
+        css: streamlit_presentation/streamlit_custom_styles.css
 ---
 
 ## Présentation
@@ -570,10 +566,10 @@ if not check_password():
 *Hassan*
 :::
 
-## Exemples d'appli complètes
+## Exemples concrets
 
-- 🍷 Projet de Machine Learning du `Coc's` & du `Guig's` : [Wine Scraping](https://wine-scraping.streamlit.app/)
-- 🚗 Projet de Machine Learning de `Buk` & du `H` : [Esti*my*Car](https://estimycar.streamlit.app/)
+- 🍷 Projet de Machine Learning : [Wine Scraping](https://wine-scraping.streamlit.app/)
+- 🚗 Projet de Machine Learning : [Esti*my*Car](https://estimycar.streamlit.app/)
 
 <hr>
 

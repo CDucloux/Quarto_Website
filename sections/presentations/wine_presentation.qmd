@@ -11,16 +11,12 @@ title-slide-attributes:
     data-notes: "Ce projet de Machine Learning est l'aboutissement de plus de 3 mois de travail sur un sujet éminemment important à nos yeux : le vin. Il y a de cela plus de 2 millénaires, **Aristote** éclairait déjà l'antiquité avec sa philosophie en énonçant : **L’art et le vin sont les joies supérieures des hommes libres.** Une citation qui, il faut le dire, a résonné en nous. Mais pourquoi en sommes-nous arrivé là *Guillaume* ?"
 format: 
     revealjs:
-        theme: [serif, wine_presentation/custom.scss]
         background-transition: fade
         transition: slide
         navigation-mode: linear
-        footer: "**Machine Learning**"
-        logo: https://corentinducloux.fr/dossier_img/mecen_transparent.png
-        include-in-header: 
-            - text: | 
-                <link href='https://fonts.googleapis.com/css?family=Fira Code' rel='stylesheet'>
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        footer: "[<i class='fa-solid fa-right-from-bracket fa-flip-horizontal'></i> Retourner vers mon site web](https://cducloux.quarto.pub/sections/presentations.html)"
+        logo: wine_presentation/imgs/mecen_logo.png
+        css: wine_presentation/wine_custom_styles.css
 ---
 
 ## Le *Pourquoi* du *Comment* {background-image="wine_presentation\imgs\bouteille_dieu.png" background-opacity="0.5"}
