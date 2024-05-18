@@ -23,6 +23,8 @@ about:
 
 **Data Engineer**, jeune diplômé, et adepte de *Python*, {{< fa brands r-project >}} et *SQL*, je suis passionné par l'ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l'ingénierie logicielle et l'intégration continue. 
 
+Quand je ne suis pas caché derrière un écran, vous me trouverez probablement occupé à explorer d'étranges contrées sonores avec des synthétiseurs et ma basse électrique ...
+
 [Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
 
 ***

@@ -58,13 +58,15 @@ a.nav-link:hover {
 
 /* Gère le comportement on hover des listings de langages et technos */
 .listing-category:hover {
-    background-color: #ff8b39;
+    background-color: #72f1b8;
+    border-color: #72f1b8 !important;
     color: white !important;
 }
 
 /* Gère le comportement on hover des listings de langages et technos */
 .quarto-category:hover {
-    background-color: #ff8b39;
+    background-color: #72f1b8;
+    border-color: #72f1b8 !important;
     color: white !important;
 }
 
@@ -93,6 +95,21 @@ a.nav-link:hover {
     animation-iteration-count: infinite;
     transform-origin: 70% 70%;
     display: inline-block;
+}
+
+/* Change mon image de côté */
+.about-image.round {
+    transform: scaleX(-1);
+}
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top {
+    transition: transform 0.25s ease-in-out;
+}
+
+/* Permet de gérer un léger effet de zoom sur les images des projets */
+.card-img-top:hover {
+    transform: scale(1.05);
 }
 
 /* Gère l'animation du chevron */

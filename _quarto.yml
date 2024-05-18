@@ -35,7 +35,7 @@ website:
       - text: "© 2024, Corentin DUCLOUX"
     right:
       - icon: cc-circle
-        href: https://creativecommons.org/licenses/by-nc-sa/4.0/
+        href: license.qmd
         text: "Licence : CC BY-NC-SA"
   search: 
     location: navbar
@@ -46,13 +46,12 @@ website:
         background: light
         contents:
           - projects.qmd
-          - tutorial-1.qmd
-          - tutorial-2.qmd
 
 format:
   html:
-    theme: [cosmo, custom.scss]
-    css: styles.css
+    theme: [cosmo, assets/custom.scss]
+    css: assets/styles.css
+    # highlight-style: radical # ça pourrait etre sympa mais y'a pas mal de choses à retravailler 
     toc: true
     # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:

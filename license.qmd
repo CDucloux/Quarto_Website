@@ -1,0 +1,20 @@
+---
+title: "Licence"
+toc: false
+---
+
+&#169; 2024 -- *Corentin DUCLOUX*
+
+Le contenu de mon site web est publié sous licence [Creative Commons Attribution 4.0 International (CC BY-NC-SA)](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+{{< fa brands creative-commons size=2x >}} {{< fa brands creative-commons-by size=2x >}} {{< fa brands creative-commons-nc size=2x >}} {{< fa brands creative-commons-sa size=2x >}}
+
+> Vous êtes autorisés à copier, distribuer et communiquer le matériel par tous moyens et sous tous formats. Vous devez créditer l'Œuvre, intégrer un lien vers la licence et indiquer si des modifications ont été effectuées. Vous n'êtes pas autorisé à faire un usage commercial de cette Oeuvre, tout ou partie du matériel la composant. 
+
+## Logiciels utilisés
+
+Le code source ainsi que l'ensemble des fichiers hostés sur mon site web sont disponibles sur {{< fa brands github >}} **GitHub**.
+
+**Icônes** : [{{< fa brands font-awesome >}} FontAwesome](https://fontawesome.com/).
+
+**Polices** : [{{< fa brands google >}} Google Fonts](https://fonts.google.com/).
