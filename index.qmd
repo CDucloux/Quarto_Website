@@ -1,5 +1,6 @@
 ---
 title: "Corentin Ducloux"
+back-to-top-navigation: false
 toc: false
 about:
     id: hero-heading

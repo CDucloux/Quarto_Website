@@ -1,4 +1,4 @@
 ---
-title: "Les tableaux `{gt}`"
+title: "{{< fa table >}} Les tableaux `{gt}`"
 author: "`Corentin DUCLOUX`"
 ---

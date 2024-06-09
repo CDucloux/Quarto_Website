@@ -1,8 +1,19 @@
 ---
-title: "Guide Git"
+title: "{{< fa brands git-alt >}} Git' it"
 author: "`Corentin DUCLOUX`"
 ---
 
+## Pourquoi Git ?
+
 - `git flow init`
 
-- `git tag`
+- `git tag` $\Rightarrow$ Pour faire des versions
+
+```{mermaid}
+%%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'rotateCommitLabel': true}} }%%
+gitGraph
+    commit id: "initial commit"
+    branch develop
+    commit id: "feat(modules): ..."
+
+```

@@ -1,6 +1,7 @@
 ---
 title: "Licence"
 toc: false
+back-to-top-navigation: false
 ---
 
 &#169; 2024 -- *Corentin DUCLOUX*

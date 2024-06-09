@@ -11,6 +11,7 @@ execute:
 website:
   title: "Corentin DUCLOUX"
   favicon: imgs/fav/favicon_floppy.svg
+  back-to-top-navigation: true
   navbar:
     background: primary
     right:
@@ -53,6 +54,7 @@ format:
     css: assets/styles.css
     # highlight-style: radical # ça pourrait etre sympa mais y'a pas mal de choses à retravailler 
     toc: true
+    pagetitle: "Corentin Ducloux | {{< meta title >}}"
     # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:
       sidebar-width: 0px
