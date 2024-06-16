@@ -2,7 +2,7 @@
 title: "⚡ Moyens de production d'EDF"
 author: "`Corentin DUCLOUX`"
 categories: ["Python", "Open Data", "Dataviz"]
-description: "ShinyBricks est une plateforme d'analyse LEGO construite sur {{< fa brands r-project >}}."
+description: "Dashboard sur la localisation des moyens de production d'électricité d'**EDF**. Construit avec {{< fa brands python >}} et la plateforme *Open Data* d'**EDF**."
 date: 05-09-2024
 date-format: DD/MM/YYYY
 image: energy_dashboard\imgs\energy_dashboard_main_img.png
@@ -280,7 +280,7 @@ hydraulic_map
 
 ## Nucléaire
 
-La carte `leaflet` de l'onglet **Nucléaire** présente la localisation et la puissance installée de l'ensemble des centrales nucléaires en exploitation en France. Il en existe actuellement 56 (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre National de Production d'Electricité]. 
+La carte `leaflet` de l'onglet **Nucléaire** présente la localisation et la puissance installée de l'ensemble des centrales nucléaires en exploitation en France. Il en existe actuellement 56 (à date du 8 mai 2024) réparties sur 18 **CNPE**^[Centre Nucléaire de Production d'Electricité]. 
 
 Pour s'informer sur le nombre de tranches^[Une tranche correspond à une unité de production électrique comportant une chaudière nucléaire + un groupe turbo-alternateur], il suffit de cliquer sur un repère de la carte.
 
