@@ -9,6 +9,13 @@ author: "`Corentin DUCLOUX`"
 
 - `git tag` $\Rightarrow$ Pour faire des versions
 
+⚠ En pratique on ne code JAMAIS sur la branche `develop`. On ouvre des branches de features puis on les ferme. 
+
+Extensions VSCODE :
+
+- Git Graph
+- Conventional Commits
+
 ```{mermaid}
 %%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'rotateCommitLabel': true}} }%%
 gitGraph

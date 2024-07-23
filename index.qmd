@@ -23,11 +23,11 @@ about:
 
 ## [👋]{.wave} Bonjour, et bienvenue !
 
-**Data Engineer**, jeune diplômé, et adepte de *Python*, {{< fa brands r-project >}} et *SQL*, je suis passionné par l'ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l'ingénierie logicielle et l'intégration continue. 
+**Data Analyst**, jeune diplômé, et adepte de *Python*, {{< fa brands r-project >}} et *SQL*, je suis passionné par l'ensemble des sujets touchant de près ou de loin à la donnée, et porte également un intérêt spécifique pour l'ingénierie logicielle et l'intégration continue. 
 
 Quand je ne suis pas caché derrière un écran, vous me trouverez probablement occupé à explorer d'étranges contrées sonores avec des synthétiseurs et ma basse électrique ...
 
-[Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](assets/en_cv.pdf){.btn .btn-outline-primary .btn role="button" .center}
+[Télécharger mon CV  {{< fa arrow-up-right-from-square >}}](assets/CV.pdf){.btn .btn-outline-primary .btn role="button" .center}
 
 ***
 
@@ -46,3 +46,7 @@ Quand je ne suis pas caché derrière un écran, vous me trouverez probablement 
 - **Licence d'économie d'entreprise** [*(2018 -- 2022)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
 
 - **Baccalauréat S, section Edifice** [*(2015 -- 2018)*]{class="education-dates"} [*Lycée Pothier, Orléans*]{class="education-location"}
+
+***
+
+## {{< fa thumbs-up >}} Recommandations

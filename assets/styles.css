@@ -1,8 +1,62 @@
 /* css styles */
 
-/* Change la couleur du texte mis en surbrillance de bleu vers gris */
+/* Change la couleur du texte mis en surbrillance de bleu vers vert retro */
 ::selection {
-    background: rgb(232, 231, 229);
+    background: #72f1b8;
+}
+
+/* Retire l'underline sous "Gérer les cookies" */
+a#open_preferences_center {
+    text-decoration: none;
+}
+
+/* On hover, change la couleur vers le vert retro */
+a#open_preferences_center:hover {
+    color: #72f1b8;
+}
+
+/* Changement de la couleur du bouton Accept cookies */
+button.cc-nb-okagree {
+    background-color: #241b2f !important;
+}
+
+/* Changement de la couleur du boutons Reject cookies */
+button.cc-nb-reject {
+    background-color: #241b2f !important;
+}
+
+/* Changement de la couleur du boutons Save Changes cookies */
+button.cc-cp-foot-save {
+    background-color: #241b2f !important;
+}
+
+button.cc-nb-changep:hover {
+    filter: brightness(85%);
+}
+
+button.cc-nb-reject:hover {
+    filter: brightness(85%);
+    color: #72f1b8;
+}
+
+button.cc-nb-okagree:hover {
+    filter: brightness(85%);
+    color: #72f1b8;
+}
+
+button.cc-pc-head-close:focus {
+    border-color: #72f1b8 !important;
+}
+
+/* Réduction du padding pour la boite de dialogue des cookies et changement de la font family */
+.termsfeed-com---nb .cc-nb-main-container {
+    padding: 1rem;
+    font-family: 'Montserrat';
+}
+
+/* Changement de la font family pour la boite de dialogue des cookies */
+div.cc-pc-container {
+    font-family: 'Montserrat';
 }
 
 /* Modification de la border-radius pour les code blocks */
@@ -13,7 +67,7 @@ code {
 /* Transforme en majuscule mon nom et prénom */
 span.navbar-title {
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 /* Transforme en majuscule le texte des menus de navigation */
@@ -95,6 +149,7 @@ a#quarto-back-to-top:hover {
     background-color: #72f1b8;
     border-color: #72f1b8 !important;
     color: white !important;
+    opacity: 0.8 !important;
 }
 
 /* Ajoute de la marge en haut du footer central (copyright) */

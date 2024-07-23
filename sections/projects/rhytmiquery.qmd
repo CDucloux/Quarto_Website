@@ -1,0 +1,173 @@
+---
+title: "🎶 RhythmiQuery" 
+title-block-banner: true
+author: "`Corentin DUCLOUX`"
+categories: ["SQL", "Python"]
+description: "RhythmiQuery utilise la base de données musicale **Chinook** pour effectuer diverses requêtes SQL et visualiser les résultats."
+date: 03-20-2024
+date-format: DD/MM/YYYY
+image: rhytmiquery/imgs/rhytmiquery_main_img.png
+highlight-style: pygments
+filters:
+    - include-code-files
+---
+
+```{python}
+from itables import init_notebook_mode
+from pathlib import Path
+import polars as pl
+import sqlite3
+
+init_notebook_mode(all_interactive=True)
+conn = sqlite3.connect("rhytmiquery/chinook.db")
+```
+
+```{python}
+# | code-fold: true
+# | code-summary: "Code de la fonction"
+def table_query_results(query_file: str, conn: sqlite3.Connection):
+    """
+    Exécute une requête SQL à partir d'un fichier et retourne les résultats sous forme de tableau.
+
+    Args:
+        query_file (str): Chemin vers le fichier contenant la requête SQL.
+    """
+    query_path = Path(query_file)
+    with query_path.open("r", encoding="utf-8") as file:
+        query = file.read()
+
+    results = conn.execute(query)
+    column_names = [col[0] for col in results.description]
+    dataframe = pl.DataFrame(results.fetchall(), schema=column_names)
+
+    return dataframe
+```
+
+## ERD 
+
+```{mermaid}
+erDiagram
+    ARTISTS {
+        ArtistID INTEGER PK
+        Name VARCHAR
+    }
+    ALBUMS {
+        ArtistID INTEGER FK
+        AlbumID INTEGER PK
+        Title VARCHAR
+    }
+    TRACKS {
+        TrackID INTEGER PK
+        Name VARCHAR 
+        AlbumID INTEGER FK
+        MediaTypeID INTEGER FK
+        GenreID INTEGER FK
+        Composer VARCHAR
+        Milliseconds INTEGER
+        Bytes INTEGER
+        UnitPrice NUMERIC
+    }
+    INVOICE_ITEMS{
+        InvoiceLineID INTEGER PK
+        InvoiceID INTEGER FK
+        TrackID INTEGER FK
+        UnitPrice NUMERIC
+        Quantity INTEGER
+    }
+    PLAYLIST_TRACK {
+        PlaylistID INTEGER FK
+        TrackID INTEGER FK
+    }
+    MEDIA_TYPES{
+        MediaTypeID INTEGER PK
+        Name VARCHAR
+    }
+    PLAYLISTS {
+        PlaylistID INTEGER PK
+        Name VARCHAR 
+    }
+    GENRES {
+        GenreID INTEGER PK
+        Name VARCHAR
+    }
+    INVOICES {
+        InvoiceID INTEGER PK
+        CustomerID INTEGER FK
+        InvoiceDate DATETIME
+        BillingAddress VARCHAR
+        BillingState VARCHAR
+        BillingCountry VARCHAR
+        BillingPostalCode VARCHAR
+        Total NUMERIC
+    }
+    CUSTOMERS {
+        CustomerID INTEGER PK
+        FirstName VARCHAR
+        LastName VARCHAR
+        Company VARCHAR
+        Address VARCHAR
+        City VARCHAR
+        State VARCHAR
+        Country VARCHAR
+        PostalCode VARCHAR
+        Phone VARCHAR
+        Fax VARCHAR
+        Email VARCHAR
+        SupportRepID INTEGER FK
+    }
+    EMPLOYEES {
+        EmployeeID INTEGER PK
+        LastName VARCHAR
+        FirstName VARCHAR
+        Title VARCHAR
+        ReportsTo INTEGER FK
+        BirthDate DATETIME
+        HireDate DATETIME
+        Address VARCHAR
+        City VARCHAR
+        State VARCHAR
+        Country VARCHAR
+        PostalCode VARCHAR
+        Phone VARCHAR
+        Fax VARCHAR
+        Email VARCHAR
+    }
+    ARTISTS ||--|{ ALBUMS: "ArtistID"
+    TRACKS |{--|| ALBUMS: "AlbumID"
+    TRACKS ||--|{ PLAYLIST_TRACK: "TrackID"
+    PLAYLISTS ||--|{ PLAYLIST_TRACK :"PlaylistID"
+    TRACKS |{--|| MEDIA_TYPES:"MediaTypeID"
+    TRACKS |{--|| GENRES:"GenreID"
+    TRACKS ||--|{ INVOICE_ITEMS:"TrackID"
+    INVOICE_ITEMS |{--|| INVOICES:"InvoiceID"
+    CUSTOMERS ||--|{ INVOICES:"CustomerID"
+    CUSTOMERS |{--|| EMPLOYEES:""
+```
+
+
+## Requete 1
+
+```{.sql include="rhytmiquery/queries/tracks.sql"}
+```
+
+```{python}
+table_query_results("rhytmiquery/queries/tracks.sql", conn=conn)
+```
+
+## Requete 2
+
+```{.sql include="rhytmiquery/queries/test.sql"}
+```
+
+```{python}
+table_query_results("rhytmiquery/queries/test.sql", conn=conn)
+```
+
+## Nombre d'albums par artiste
+
+```{.sql include="rhytmiquery/queries/albums_by_artist.sql"}
+```
+
+```{python}
+table_query_results("rhytmiquery/queries/albums_by_artist.sql", conn=conn)
+```

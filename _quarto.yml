@@ -8,10 +8,21 @@ lang: fr
 execute:
   freeze: auto
 
+include-in-header:
+  file: header.html
+
 website:
   title: "Corentin DUCLOUX"
   favicon: imgs/fav/favicon_floppy.svg
   back-to-top-navigation: true
+  cookie-consent:
+    type: express # GDPR Compliant - Bloque les cookies jusqu'à ce que l'utilisateur les accepte, ou non
+    style: simple
+    palette: light
+    prefs-text: "🍪 Gérer les cookies"
+  google-analytics:
+    tracking-id: "G-TT3F5VPBE3"
+    anonymize-ip: true
   navbar:
     background: primary
     right:
@@ -52,7 +63,6 @@ format:
   html:
     theme: [cosmo, assets/custom.scss]
     css: assets/styles.css
-    # highlight-style: radical # ça pourrait etre sympa mais y'a pas mal de choses à retravailler 
     toc: true
     pagetitle: "Corentin Ducloux | {{< meta title >}}"
     # le paramétrage de la grid permet d'éviter la sidebar et la margin 
