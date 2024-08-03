@@ -48,5 +48,3 @@ Quand je ne suis pas caché derrière un écran, vous me trouverez probablement 
 - **Baccalauréat S, section Edifice** [*(2015 -- 2018)*]{class="education-dates"} [*Lycée Pothier, Orléans*]{class="education-location"}
 
 ***
-
-## {{< fa thumbs-up >}} Recommandations

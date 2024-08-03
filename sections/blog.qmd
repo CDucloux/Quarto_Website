@@ -4,6 +4,7 @@ listing:
     contents: tips
     type: table 
     categories: true
+    fields: [title, author, date, reading-time]
     sort:
         - "date"
         - "title desc"

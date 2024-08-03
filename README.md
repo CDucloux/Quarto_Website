@@ -12,7 +12,7 @@ quarto render
 - [ ] Finir le projet Carte EDF
 - [ ] Faire un projet avec FastAPI + Pydantic
 - [ ] Faire un projet avec Amazon Redshift, dbt-core, etc.
-- [ ] Faire un projet avec Airflow
+- [ ] Faire un projet avec Airflow / Dagster
 - [ ] Finir la section blog avec le guide Git
 - [x] Personnaliser CSS cookie consent 
 

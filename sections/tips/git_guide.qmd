@@ -1,13 +1,160 @@
 ---
 title: "{{< fa brands git-alt >}} Git' it"
 author: "`Corentin DUCLOUX`"
+include-in-header: 
+  text: |
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 ---
 
-## Pourquoi Git ?
+## Contexte
+
+:::: {layout="[ 50, 50 ]"}
+
+::: {#first-column}
+
+![🧽 Bob se met à **Git**](imgs/spongebob_confused.jpg){.lightbox}
+
+:::
+
+::: {#second-column}
+
+Pour impressionner son patron, *Bob* souhaite inventer une nouvelle recette de pâté de crabe™ révolutionnaire (dit-il).
+
+Malheureusement, *Bob* change très souvent d'avis : au fur et à mesure de ses expérimentations culinaires, il ajoute et retire un grand nombre d'ingrédients dans sa recette.
+
+De plus, *Bob* n'est pas très assidu et oublie de noter l'ensemble des changements d'une version de recette à l'autre. Finalement, il ne retrouve plus sa recette préférée dans ses notes...
+
+Par chance, *Bob* se souvient d'avoir entendu son ami *Patrick* raconter tout un tas de belles histoires sur **Git**, un "système de contrôle de version" (honnêtement, *Bob* ne sait pas du tout ce que ça veut dire).
+
+Avec une grande présence d'esprit, *Bob* décide alors de jeter toutes ses expérimentations à la poubelle, et de repartir sur de bonnes bases.
+:::
+
+::::
+
+## Le contrôle de version
+
+
+::: {.callout-note}
+
+Un système de contrôle de version permet d'enregistrer les modifications apportées à un fichier ou un ensemble de fichiers au fil du temps pour pouvoir éventuellement revenir à des versions spécifiques ultérieurement, comparer des modifications, voir qui a introduit un problème et quand, etc. 
+
+:::
+
+Le contrôle de version le plus utilisé est aussi le plus intuitif : copier des fichiers dans un autre répertoire. Cette approche simple est particulièrement sujette aux erreurs, comme *Bob* l'a démontré.
+
+Dans ce guide, *Patrick* va donc aider *Bob* à faire du contrôle de version pour son projet de recette.
+
+## L'histoire de Git
+
+**Git** est un DVCS^[Système de contrôle de version distribué.] open source créé par *Linus Torvalds* en 2005 pour remplacer **BitKeeper** en tant que  système de contrôle de version du kernel {{< fa brands linux >}} [Linux](https://fr.wikipedia.org/wiki/Linux).
+
+## Architecure d'un repository Git
+
+Un repository ou dépôt **Git** contient 3 zones principales :
+
+1. **Working Directory** : Espace de travail classique
+2. **Staging Area** : Espace de transit des fichiers *(Index)*
+3. **Local Repository** : Historique de commits Git  
+
+```{mermaid}
+%%| fig-align: center
+graph LR;
+    A["fa:fa-folder-tree Working Directory"]:::wd
+    B["fa:fa-copy Staging Area"]:::staging
+    C["fa:fa-database Local Repository"]:::repo
+    A -. <code>git add</code> .-> B
+    B -. <code>git commit</code> .-> C
+
+    classDef wd fill:#f54d27, color:#fff
+    classDef staging fill:#ffc500, color:#fff
+    classDef repo fill:#00909a, color:#fff
+```
+
+## Utilisation de Git
+
+### Initialisation d'un repository
+
+Après avoir préalablement crée un dossier vide pour sa recette, *Bob* doit se positionner dedans. *Patrick* lui explique qu'il faut utiliser la commande `cd` (change directory), puis `git init` pour initialiser le **repository**. 
+
+```bash
+cd "C:/Users/Bob/recipe"
+```
+
+```bash
+git init
+```
+Une fois cette commande éxécutée, *Bob* constate l'apparition d'un nouveau sous-répertoire *.git* caché qui contient tous les fichiers nécessaires pour le repository. 
+
+### Clonage de repository
+
+Même si cette option n'intéresse pas *Bob*, *Patrick* lui explique qu'il est même possible de cloner un projet existant, par exemple : 
+
+```bash
+git clone "https://github.com/CDucloux/Quarto_Website.git"
+```
+
+### Ajout de fichiers et validation des changements 
+
+Après cette légère partie de configuration, *Bob* commence à écrire sa recette dans le fichier `recipe.txt`, et finit par être plutôt satisfait du résultat.
+
+Il ajoute donc le fichier à la **Staging Area** avec la commande suivante :
+
+```bash
+git add "recipe.txt"
+```
+
+::: {.callout-tip}
+
+## Ajout en masse
+
+Si *Bob* possède aussi d'autres fichiers dans son repository, et qu'il n'a pas envie de faire la même manipulation fichier par fichier, il peut utiliser `git add .` pour tout 
+
+```bash
+git add . 
+```
+
+:::
+
+Changements des Etats de fichiers : 
+
+Untracked (U) $\Rightarrow$ Non suivi (pour les nouveaux fichiers)
+
+Index Added (A) $\Rightarrow$ means that you have marked a modified file in its current version to go into your next commit snapshot
+
+Modified (M) $\Rightarrow$ Modifié mais pas ajouté à l'index
+
+```bash
+git reset
+```
+
+git rm --cached
+
+```bash
+git commit -m ""
+```
+
+```bash
+git status *
+```
+secrets ingrédients => gitignore
+
+
+- .gitignore
+
+### Plus tard
+
+
+- explication stratégie de branches ,etc
+
+git reflog
 
 - `git flow init`
 
 - `git tag` $\Rightarrow$ Pour faire des versions
+
+git hooks
+
+pipeline github actions, gitlab actions
 
 ⚠ En pratique on ne code JAMAIS sur la branche `develop`. On ouvre des branches de features puis on les ferme. 
 

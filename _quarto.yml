@@ -64,6 +64,7 @@ format:
     theme: [cosmo, assets/custom.scss]
     css: assets/styles.css
     toc: true
+    title-prefix: ""
     pagetitle: "Corentin Ducloux | {{< meta title >}}"
     # le paramétrage de la grid permet d'éviter la sidebar et la margin 
     grid:

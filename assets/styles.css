@@ -70,6 +70,11 @@ span.navbar-title {
     font-size: 1.75rem;
 }
 
+/* Chaque lettre de mon nom prenom change de couleur quand on hover dessus */
+.navbar-title span:hover {
+    color: #ffdb00;
+}
+
 /* Transforme en majuscule le texte des menus de navigation */
 span.menu-text {
     text-transform: uppercase;
@@ -179,9 +184,11 @@ a#quarto-back-to-top:hover {
     display: inline-block;
 }
 
-/* Change mon image de côté */
+/* Change mon image de côté et ajoute une bordure et effet de transparence */
 .about-image.round {
     transform: scaleX(-1);
+    box-shadow: 0 5px 15px 0px;
+    border: 5px solid transparent;
 }
 
 /* Permet de gérer un léger effet de zoom sur les images des projets */
