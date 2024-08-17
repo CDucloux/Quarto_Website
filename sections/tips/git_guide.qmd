@@ -107,7 +107,7 @@ git add "recipe.txt"
 
 ## Ajout en masse
 
-Si *Bob* possède aussi d'autres fichiers dans son repository, et qu'il n'a pas envie de faire la même manipulation fichier par fichier, il peut utiliser `git add .` pour tout 
+Si *Bob* possède aussi d'autres fichiers dans son repository, et qu'il n'a pas envie de faire la même manipulation pour chaque fichier, il peut utiliser `git add .` pour tout ajouter.
 
 ```bash
 git add . 
@@ -121,17 +121,19 @@ Untracked (U) $\Rightarrow$ Non suivi (pour les nouveaux fichiers)
 
 Index Added (A) $\Rightarrow$ means that you have marked a modified file in its current version to go into your next commit snapshot
 
+Index Modified
+
 Modified (M) $\Rightarrow$ Modifié mais pas ajouté à l'index
+
+```bash
+git commit -m "Recette de Bob, beta"
+```
 
 ```bash
 git reset
 ```
 
 git rm --cached
-
-```bash
-git commit -m ""
-```
 
 ```bash
 git status *
@@ -141,27 +143,21 @@ secrets ingrédients => gitignore
 
 - .gitignore
 
-### Plus tard
-
+### Branches
 
 - explication stratégie de branches ,etc
 
 git reflog
 
+## Pour aller plus loin
+
+### GitFlow
+
 - `git flow init`
 
 - `git tag` $\Rightarrow$ Pour faire des versions
 
-git hooks
-
-pipeline github actions, gitlab actions
-
 ⚠ En pratique on ne code JAMAIS sur la branche `develop`. On ouvre des branches de features puis on les ferme. 
-
-Extensions VSCODE :
-
-- Git Graph
-- Conventional Commits
 
 ```{mermaid}
 %%{init: { 'logLevel': 'debug', 'theme': 'base', 'gitGraph': {'rotateCommitLabel': true}} }%%
@@ -171,3 +167,17 @@ gitGraph
     commit id: "feat(modules): ..."
 
 ```
+
+### Hooks
+
+- git hooks
+
+### Pipeline CI
+
+- Github actions, gitlab quick actions
+
+
+Extensions VSCODE :
+
+- Git Graph
+- Conventional Commits

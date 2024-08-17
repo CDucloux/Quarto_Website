@@ -113,6 +113,32 @@ span.shiny-color:hover {
     border-radius: 75%;
 }
 
+a {
+    position: relative;
+    /* Nécessaire pour positionner le ::after correctement */
+}
+
+a.footnote-back {
+    text-decoration: none;
+}
+
+a.about-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.2em;
+    background-color: #ff8b39;
+    transition: transform 0.3s ease;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+}
+
 /* Gère le soulignement du texte des menus de navigation (1) */
 a.nav-link {
     text-decoration: underline 0.15em rgba(0, 0, 0, 0);

@@ -1,0 +1,31 @@
+name: Get Last Git Tag
+
+on:
+  push:
+    branches:
+      - develop
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Get the latest Git tag
+        id: get_tag
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Latest Tag: $TAG"
+          echo "LAST_TAG=$TAG" >> $GITHUB_ENV
+
+      - name: Write the tag to version.yml
+        run: |
+          echo "version: ${{ env.LAST_TAG }}" > version.yml
+
+      - name: Use the tag in another step
+        run: |
+          echo "The last tag is ${{ env.LAST_TAG }}"
