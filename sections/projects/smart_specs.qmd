@@ -17,6 +17,28 @@ La problématique du projet de *Recherche, Réalisation et Restitution* à l'ori
 
 ## Aperçu de l'application
 
+::: {.callout-important}
+
+## Attention
+
+Si jamais le message suivant apparaît :
+
+***
+
+|        😴
+
+|        **Zzzz**
+
+|        This app has gone to sleep due to inactivity. Would you like to wake it back up?
+
+***
+
+$\Rightarrow$ **N'essayez pas de relancer l'application à partir de mon site web** ! 
+
+Suivez plutôt ce lien : [https://smart-specs.streamlit.app](https://smart-specs.streamlit.app/){.external target="_blank"}
+
+:::
+
 ```{=html}
 <iframe 
     width="100%"
@@ -28,6 +50,6 @@ La problématique du projet de *Recherche, Réalisation et Restitution* à l'ori
 
 ## En savoir plus
 
-[Télécharger le rapport {{< fa file-pdf >}}](smart_specs/report/report.pdf){.btn .btn-outline-primary .btn role="button" .center}
+[Télécharger le rapport {{< fa file-pdf >}}](smart_specs/report/Smart_Specs_SFA.pdf){.btn .btn-outline-primary .btn role="button" .center}
 
-$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} Smart-Specs](https://github.com/CDucloux/3R)
+{{< fa brands github >}} **Github** : [Smart-Specs](https://github.com/CDucloux/3R){.external target="_blank"}

@@ -1,0 +1,118 @@
+h1.title {
+    border: 4px solid #003871;
+    background-color: white;
+    color: #003871;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1em;
+}
+
+h1 {
+    background-color: #4aa027;
+    padding: 0.5em;
+}
+
+h2 {
+    color: #003871 !important;
+    position: relative;
+    /* Nécessaire pour le positionnement absolu de l'élément ::after */
+}
+
+h2::after {
+    content: "";
+    /* Nécessaire pour générer le pseudo-élément */
+    display: block;
+    width: 90px;
+    /* Longueur de la ligne */
+    height: 6px;
+    /* Hauteur de la ligne, ajustez selon vos besoins */
+    background-color: #003871;
+    /* Couleur de la ligne */
+    position: absolute;
+    bottom: -5px;
+    /* Ajuste l'espacement vertical entre le titre et la ligne */
+    left: 0;
+    /* Aligne la ligne à gauche du titre */
+}
+
+/* Crée un joli divider pour la title slide */
+hr.divider {
+    margin-top: -2.5%;
+    border: 1.5px solid gray;
+}
+
+hr.special-blue {
+    width: 90px;
+    border: 3.5px solid #003871;
+    color: #003871;
+    text-align: right;
+    margin-right: 0;
+}
+
+/* Crée un système de caption centré pour les figures */
+div.caption {
+    text-align: center;
+    margin-top: -2.5%;
+}
+
+/* Crée un système de caption centré pour les figures, avec adaptation font size */
+div.caption-long {
+    text-align: center;
+    margin-top: -6.5%;
+    font-size: 0.8em;
+}
+
+/* Crée un système de caption divider pour les figures multiples */
+div.caption-long-2 {
+    text-align: left;
+    margin-top: -2.5%;
+    font-size: 0.8em;
+}
+
+div.i-c-level-3 {
+    margin: 10px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: #7892b4;
+}
+
+div.i-c-level-2 {
+    margin: 10px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: #fbe6a9;
+}
+
+div.i-c-level-1 {
+    margin: 10px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: #cff4b8;
+}
+
+div.i-c-level-0 {
+    margin: 10px;
+    text-align: center;
+    padding: 1%;
+    border-radius: 5px;
+    background-color: #c9e1f9;
+}
+
+.shiny-allura {
+    font-family: "Allura";
+}
+
+p.date {
+    font-size: 0.75em;
+}
+
+.no-color {
+    color: black !important;
+}
+
+.fragment-center-item {
+    text-align: center;
+}

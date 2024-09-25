@@ -157,10 +157,15 @@ a.nav-link:hover {
     padding-top: 35%;
 }
 
-/* Customisation du back-to-top */
+/* Customisation du back-to-top on hover */
 a#quarto-back-to-top:hover {
     background-color: #241b2f;
     color: white;
+}
+
+/* Retire le border radius ignoble du bouton back-to-top */
+a#quarto-back-to-top {
+    border-radius: 0em;
 }
 
 /* Ajout d'une plus grande marge entre le titre des projets et les catégories */
@@ -233,6 +238,13 @@ a#quarto-back-to-top:hover {
     animation: chevron-animation 2s ease-in-out infinite;
 }
 
+/* Génère une bordure dans les présentations revealjs embed avec ifame */
+.slide-deck {
+    border: 3px solid #dee2e6;
+    width: 100%;
+    height: 475px;
+}
+
 /* Définition des keyframes */
 @keyframes wave-animation {
     0% {
@@ -291,6 +303,13 @@ a#quarto-back-to-top:hover {
     }
 }
 
+/* Change la hauteur de la classe slide-deck (pour visualiser les presentations reveal.js) sur téléphone */
+@media only screen and (max-width: 600px) {
+    .slide-deck {
+        height: 400px;
+    }
+}
+
 /* Overwrite une media query bootstrap pour mon footer */
 @media (max-width: 767.98px) {
     .nav-footer-center {
@@ -304,7 +323,7 @@ a#quarto-back-to-top:hover {
 /* Même chose pour la partie Education */
 @media (max-width: 650px) {
     span.navbar-title {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
 
     span.toggle-invisibility {

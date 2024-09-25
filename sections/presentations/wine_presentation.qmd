@@ -19,7 +19,7 @@ format:
         css: wine_presentation/wine_custom_styles.css
 ---
 
-## Le *Pourquoi* du *Comment* {background-image="wine_presentation\imgs\bouteille_dieu.png" background-opacity="0.5"}
+## Le *Pourquoi* du *Comment* {background-image="wine_presentation/imgs/bouteille_dieu.png" background-opacity="0.5"}
 
 - Le 18 janvier approche, une date en apparence anodine mais très importante pour nos deux compères.
 - Pour cette journée festive, nos 2 protagonistes se rendirent sur `vinatis.com` pour trouver un breuvage.
@@ -27,7 +27,7 @@ format:
 
 ::: {.fragment}
 ::: {.fragment .grow}
-![](wine_presentation\imgs\racine.jpg){fig-align="center" height="120"}
+![](wine_presentation/imgs/racine.jpg){fig-align="center" height="120"}
 :::
 ::: {.fragment}
 **On parle de moi ?**
@@ -40,7 +40,7 @@ format:
 - Nous avons commencé à rechercher notre proie dès fin septembre pour faire quelques tests, notamment sur la partie scraping.
 :::
 
-## Scraping {background-image="wine_presentation\imgs\bouteille_scrap.png" background-opacity="0.5"}
+## Scraping {background-image="wine_presentation/imgs/bouteille_scrap.png" background-opacity="0.5"}
 
 > *“Pour savoir qu'un verre était de trop, encore faut-il avoir scrapé son vin !”* $-$ **Inconnu**
 

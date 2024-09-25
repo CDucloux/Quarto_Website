@@ -4,6 +4,8 @@ listing:
     contents: projects
     type: grid 
     categories: true
+    exclude: 
+        author: "**Corentin Ducloux** -- Master 2 Mécen"
     sort:
         - "date desc"
         - "title desc"

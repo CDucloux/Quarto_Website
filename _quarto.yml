@@ -28,6 +28,8 @@ website:
     right:
       - href: index.qmd
         text: "Accueil"
+      - href: sections/xp.qmd
+        text: "Parcours"
       - href: sections/skills.qmd
         text: "Compétences"
       - href: sections/projects.qmd

@@ -5,7 +5,7 @@ categories: ["Python", "Open Data", "Dataviz"]
 description: "Dashboard sur la localisation des moyens de production d'électricité d'**EDF**. Construit avec {{< fa brands python >}} et la plateforme *Open Data* d'**EDF**."
 date: 05-09-2024
 date-format: DD/MM/YYYY
-image: energy_dashboard\imgs\energy_dashboard_main_img.png
+image: energy_dashboard/imgs/energy_dashboard_main_img.png
 format: dashboard
 execute: 
     enabled: true
@@ -298,7 +298,7 @@ La carte `leaflet` de l'onglet **Hydroélectrique** présente la localisation et
 
 ⚠ **Sur les plus de 400 installations hydrauliques exploitées par EDF, seules les centrales d’une puissance supérieure à 100 MW sont présentes.**
 
-[Données issues de la plateforme **EDF Open Data**  {{< fa arrow-up-right-from-square >}}](https://opendata.edf.fr/explore/dataset/centrales-de-production-hydraulique-de-edf-sa/information/?disjunctive.centrale&disjunctive.categorie_centrale&disjunctive.departement&disjunctive.commune&sort=-tri)
+[Données issues de la plateforme **EDF Open Data** {{< fa arrow-up-right-from-square >}}](https://opendata.edf.fr/explore/dataset/centrales-de-production-hydraulique-de-edf-sa/information/?disjunctive.centrale&disjunctive.categorie_centrale&disjunctive.departement&disjunctive.commune&sort=-tri)
 
 :::
 

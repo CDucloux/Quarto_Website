@@ -24,6 +24,30 @@ image: wine_scraping\imgs\wine_scraping_main_img.png
 
 ## Aperçu de l'application
 
+::: {.callout-important}
+
+## Attention
+
+Si jamais le message suivant apparaît :
+
+***
+
+|        😴
+
+|        **Zzzz**
+
+|        This app has gone to sleep due to inactivity. Would you like to wake it back up?
+
+***
+
+$\Rightarrow$ **N'essayez pas de relancer l'application à partir de mon site web** ! 
+
+Suivez plutôt ce lien : [https://wine-scraping.streamlit.app](https://wine-scraping.streamlit.app/){.external target="_blank"}
+
+:::
+
+
+
 ```{=html}
 <iframe 
     width="100%"
@@ -116,4 +140,4 @@ style F stroke:#fff100,stroke-width:3px;
 
 ## En savoir plus
 
-$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} Wine-Scraping](https://github.com/CDucloux/Wine-Scraping)
+{{< fa brands github >}} **Github** : [Wine-Scraping](https://github.com/CDucloux/Wine-Scraping){.external target="_blank"}

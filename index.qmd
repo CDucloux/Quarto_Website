@@ -46,5 +46,3 @@ Quand je ne suis pas caché derrière un écran, vous me trouverez probablement 
 - **Licence d'économie d'entreprise** [*(2018 -- 2022)*]{class="education-dates"} [*Université de Tours*]{class="education-location"}
 
 - **Baccalauréat S, section Edifice** [*(2015 -- 2018)*]{class="education-dates"} [*Lycée Pothier, Orléans*]{class="education-location"}
-
-***

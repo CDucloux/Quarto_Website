@@ -19,3 +19,80 @@ $primary: #241b2f;
 $navbar-fg: white;
 $link-color: #ff8b39;
 $code-color: #ff7edb;
+
+.timeline {
+    position: relative;
+    margin: 0 auto;
+    width: 90%;
+    padding-left: 15px;
+}
+
+.timeline-event {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.timeline-point {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background-color: #333;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    /* Pour que le point soit devant la ligne */
+    left: -13.7px;
+    /* Centrage du point sur la ligne */
+}
+
+
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #ccc;
+}
+
+.timeline-content {
+    display: flex;
+    margin-left: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.timeline-border {
+    color: white;
+    width: 40px;
+    padding: 10px;
+    display: flex;
+}
+
+.timeline-description {
+    margin-top: -5px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+    flex-grow: 1;
+}
+
+.bg_1 {
+    background-color: #f8d65c;
+}
+
+.bg_2 {
+    background-color: #ff8b39;
+}
+
+.bg_3 {
+    background-color: #2fe8f0;
+}
+
+.bg_4 {
+    background-color: #72f1b8;
+}

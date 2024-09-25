@@ -11,6 +11,7 @@ quarto render
 - [ ] Finir le projet SQL
 - [ ] Inclure date de publication sur le site et version
 - [ ] Finir le projet Carte EDF
+- [ ] Taipy + SQLPage
 - [ ] Faire un projet avec FastAPI + Pydantic
 - [ ] Faire un projet avec Amazon Redshift, dbt-core, etc.
 - [ ] Faire un projet avec Airflow / Dagster
@@ -18,7 +19,28 @@ quarto render
 
 ## Soldé
 
+- [x] Timeline
 - [x] Personnaliser CSS cookie consent 
+
+## Timeline
+
+::: {.timeline-event}
+::: {.timeline-point .bg_1}
+:::
+::: {.timeline-content}
+::: {.timeline-border .bg_1}
+:::
+::: {.timeline-description}
+
+## Data Engineer `@Edvance`
+
+{{< fa calendar-days >}} 10/2024 -- Aujourd'hui
+
+{{< fa location-dot >}} Lyon, France
+
+:::
+:::
+:::
 
 ### Section Recommandation
 

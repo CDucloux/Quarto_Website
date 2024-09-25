@@ -26,8 +26,8 @@ Grâce à de nombreux fans qui ne dorment que très peu la nuit et qui scrutent 
 
 |                                                  | Source                                       | Méthode    | Données récoltées |
 |--------------------------------------------------|----------------------------------------------|------------|-------------------|
-| [<img src="shinybricks/imgs/brickset_logo.jpg" width="40" height="40">](https://brickset.com/)         | [Brickset](https://brickset.com/)            | `API`      | Informations sur tous les sets |
-| [<img src="shinybricks/imgs/brickeconomy_logo.jpeg" width="40" height="40">](https://www.brickeconomy.com) | [Brickeconomy](https://www.brickeconomy.com) | `Scraping` | Prix actuel des sets |
+| [<img src="shinybricks/imgs/brickset_logo.jpg" width="40" height="40">](https://brickset.com/)         | [Brickset](https://brickset.com/){.external target="_blank"}            | `API`      | Informations sur tous les sets |
+| [<img src="shinybricks/imgs/brickeconomy_logo.jpeg" width="40" height="40">](https://www.brickeconomy.com) | [Brickeconomy](https://www.brickeconomy.com){.external target="_blank"} | `Scraping` | Prix actuel des sets |
 
 Par exemple, le site [Brickset](https://brickset.com/) dispose d'une base de données complète des sets de 1970 à nos jours, avec de nombreux avis d'utilisateurs, des images, le nombre de minifigurines, etc. Une **API** gratuite est par ailleurs mise à disposition pour récupérer ces données.
 
@@ -46,5 +46,4 @@ Les *Building Blocks* de l'application sont :
 
 ## En savoir plus
 
-$\Rightarrow$ *Repo* **Github** : [{{< fa brands github >}} ShinyBricks](https://github.com/CDucloux/ShinyBricksApp)
-
+{{< fa brands github >}} **Github** : [ShinyBricks](https://github.com/CDucloux/ShinyBricksApp){.external target="_blank"}
