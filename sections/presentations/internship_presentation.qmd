@@ -1,6 +1,6 @@
 ---
 title: "**Pertes d'armoire de contrôle-commande et post-traitement de résultats de simulation**"
-subtitle: "![](assets/images/UT_logo.jpg){width=45%} ![](assets/images/MECEN_logo.png){width=23%} <hr class='divider'>"
+subtitle: "![](edf_internship/assets/images/UT_logo.jpg){width=45%} ![](edf_internship/assets/images/MECEN_logo.png){width=23%} <hr class='divider'>"
 author: "**Corentin Ducloux** -- Master 2 Mécen"
 title-slide-attributes: 
     data-notes: "Bonjour à tous, je vais vous présenter une version synthétisée de mes travavaux chez EDF au sein du groupe Fonctionnement Général et Performance dans le cadre de mon stage de fin d'études. Pendant ce stage j'ai eu deux sujets principaux à aborder : un qui traite de problématiques de **controle-commande** et l'autre qui est plus axé **simulateur**. Si ces termes vous font un petit peu peur pour l'instant, il seront explicités par la suite. Je tiens à remercier mes deux tuteurs chez EDF, Alexandre Padet et Grégoire Bouvet pour leur accompagnement et M. Perrollaz, mon tuteur universitaire, pour nos échanges."
@@ -10,17 +10,16 @@ format:
     revealjs:
         reference-location: document
         lang: fr
-        theme: [assets/custom_style.scss]
+        theme: [edf_internship/assets/custom_style.scss]
         controls: true
         background-transition: fade
-        highlight-style: dracula
         incremental: false
         transition: fade
         slide-number: true
         navigation-mode: linear
         footer: "`EDF` | `DISC` | `CNEPE`"
-        logo: assets/images/edf_logo.png
-        css: assets/styles.css
+        logo: edf_internship/assets/images/edf_logo.png
+        css: edf_internship/assets/styles.css
 ---
 
 ```{r}
@@ -95,7 +94,7 @@ Et puis enfin je concluerai en partageant mon retour d'expérience sur le stage.
 
 <br>
 
-![](assets/images/edf_logo.PNG){.lightbox width=50% fig-align=center}
+![](edf_internship/assets/images/edf_logo.PNG){.lightbox width=50% fig-align=center}
 
 
 :::{.notes}
@@ -112,7 +111,7 @@ Alors c'est une Société Anonyme mais, aujourd'hui, 100% du capital est détenu
 
 ## Quelques chiffres clés (2023) {.smaller}
 
-![](assets/images/edf_kpi.PNG){.lightbox width=80% fig-align=center}
+![](edf_internship/assets/images/edf_kpi.PNG){.lightbox width=80% fig-align=center}
 
 :::{.caption}
 **Source :** [EDF en bref -- EDF {{< iconify fa6-solid link >}}](https://www.edf.fr/groupe-edf/edf-en-bref)
@@ -128,7 +127,7 @@ Que ce soit le Chiffre d'affaires : 140 milliards, ou l'effectif : 180000 person
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/fr_edf_twh.png){.lightbox width=90% fig-align=center}
+![](edf_internship/assets/images/fr_edf_twh.png){.lightbox width=90% fig-align=center}
 :::
 
 ::: {.column width="50%"}
@@ -165,7 +164,7 @@ Dans le mix eléctrique français on voit surtout l'importance considérable de 
 
 :::: {.columns}
 ::: {.column width="60%"}
-![](assets/images/carte_centrales.jpg){.lightbox width=130% fig-align=center}
+![](edf_internship/assets/images/carte_centrales.jpg){.lightbox width=130% fig-align=center}
 :::
 
 ::: {.column width="40%"}
@@ -208,7 +207,7 @@ Le CNEPE ^[<u>C</u>entre <u>N</u>ational d'<u>E</u>quipements de <u>P</u>roducti
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/ilot.jpg){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/ilot.jpg){.lightbox width=100% fig-align=center}
 :::
 
 ::: {.column width="50%"}
@@ -301,7 +300,7 @@ Tous ces moyens de pilotage sont réunis dans ce qu'on appelle une architecture 
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/hpc_construction.jpg){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/hpc_construction.jpg){.lightbox width=100% fig-align=center}
 :::
 
 ::: {.column width="50%"}
@@ -345,19 +344,19 @@ Pour toutes ces raisons, l'idée d'un de mes collègues a été d'automatiser la
 
 ## {{< iconify fa home >}} Accueil
 
-![](assets/images/home_tab.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/home_tab.PNG){.lightbox width=100% fig-align=center}
 
 ##  {{< iconify fa6-solid folder-open >}} Table
 
-![](assets/images/table_tab.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/table_tab.PNG){.lightbox width=100% fig-align=center}
 
 ## {{< iconify fa6-solid file-word >}} Export
 
-![](assets/images/export_tab.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/export_tab.PNG){.lightbox width=100% fig-align=center}
 
 ## {{< iconify fa6-solid circle-info >}} Information
 
-![](assets/images/info_tab.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/info_tab.PNG){.lightbox width=100% fig-align=center}
 
 :::
 
@@ -387,11 +386,11 @@ Et enfin l'onglet **Information** a pour but de recenser les données qui ont é
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/sheet_ic_loss.png){.lightbox width=90% fig-align=center}
+![](edf_internship/assets/images/sheet_ic_loss.png){.lightbox width=90% fig-align=center}
 :::
 
 ::: {.column width="50%"}
-![](assets/images/report_detailed_loss.PNG){.lightbox width=85% fig-align=center}
+![](edf_internship/assets/images/report_detailed_loss.PNG){.lightbox width=85% fig-align=center}
 :::
 
 ::::
@@ -598,29 +597,29 @@ Maintenant la question après cet aparté c'est qu'est ce que ViZiR permet de fa
 
 ## {{< iconify fa6-solid chart-line >}} Grapheur
 
-![](assets/images/vizir_graphing.png){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/vizir_graphing.png){.lightbox width=100% fig-align=center}
 
 ## {{< iconify gravity-ui chart-line >}} Sous-graphique
 
-![](assets/images/subgraph_vizir.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/subgraph_vizir.PNG){.lightbox width=100% fig-align=center}
 
 ## {{< iconify tabler dots >}} Graphique à points
 
 <br>
 
-![](assets/images/vizir_points.PNG){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/vizir_points.PNG){.lightbox width=100% fig-align=center}
 
 ## {{< iconify mdi graph-box-plus-outline >}} Multi-grapheur
 
-![](assets/images/vizir_multigraph.png){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/vizir_multigraph.png){.lightbox width=100% fig-align=center}
 
 ## {{< iconify mdi paint-outline >}} Personnalisation
 
-![](assets/images/settable_params_vizir_slides.png){.lightbox width=100% fig-align=center}
+![](edf_internship/assets/images/settable_params_vizir_slides.png){.lightbox width=100% fig-align=center}
 
 ## {{< iconify ant-design reload-time-outline >}} Rechargement d'une étude
 
-![](assets/images/vizir_graph_params.PNG){.lightbox width=90% fig-align=center}
+![](edf_internship/assets/images/vizir_graph_params.PNG){.lightbox width=90% fig-align=center}
 
 
 :::
@@ -649,7 +648,7 @@ Initialement, chaque capteur a son propre axe des ordonnées dédié, mais on pe
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/aero_1.jpg){.lightbox width=80% fig-align=center}
+![](edf_internship/assets/images/aero_1.jpg){.lightbox width=80% fig-align=center}
 :::
 
 ::: {.column width="50%"}
@@ -681,12 +680,12 @@ Et pour finir, j'ai aussi eu l'occasion d'aller à la Centrale de Dampierre, c'e
 
 :::: {.columns}
 ::: {.column width="50%"}
-![](assets/images/aero_inside.jpg){.lightbox width=85% fig-align=center}
+![](edf_internship/assets/images/aero_inside.jpg){.lightbox width=85% fig-align=center}
 :::
 
 ::: {.column width="50%"}
-![](assets/images/sdm.jpg){.lightbox width=65% fig-align=center}
-![](assets/images/turbine_bp.jpg){.lightbox width=65% fig-align=center}
+![](edf_internship/assets/images/sdm.jpg){.lightbox width=65% fig-align=center}
+![](edf_internship/assets/images/turbine_bp.jpg){.lightbox width=65% fig-align=center}
 :::
 
 ::::

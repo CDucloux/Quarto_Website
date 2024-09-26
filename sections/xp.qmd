@@ -21,24 +21,15 @@ smooth-scroll: true
 
 {{< fa location-dot >}} *Tours, France*
 
-> Au sein du groupe Fonctionnement Général et Performance du CNEPE
+Développement de *ViZiR*, une application **python** (`streamlit`) de Data Visualisation et de post-traitement de résultats de simulation. Multi-formats et utilisée en production par plus d'une centaine d'ingénieurs, *ViZiR* permet d'analyser à la volée et de manière dynamique les résultats de simulation, tout en permettant une personnalisation sauvegardable poussée $\rightarrow$ **ViZiR facilite les tests de non-régression pour le développement du simulateur EPR2 et contribue à alimenter de nombreuses études au quotidien.**
 
-- Développement de *ViZiR*, une application **python** (`streamlit`) de Data Visualisation et de post-traitement de résultats de simulation. Multi-formats et utilisée en production par plus d'une centaine d'ingénieurs, *ViZiR* permet d'analyser à la volée et de manière dynamique les résultats de simulation, tout en permettant une personnalisation sauvegardable poussée $\rightarrow$ **ViZiR facilite les tests de non-régression pour le développement du simulateur EPR2 et contribue à alimenter de nombreuses études au quotidien.**
+Développement d'une application {{< fa brands r-project >}} Shiny générant des rapports automatisés sur les impacts fonctionnels et les impacts sûretés liés à la perte d'armoires de contrôle-commande pour l'EPR d'Hinkley Point C $\rightarrow$ **Cet outil a permis d'économiser environ 4400 heures de travail et 330k€, en plus d'améliorer la qualité du livrable final.**
 
-- Développement d'une application {{< fa brands r-project >}} Shiny générant des rapports automatisés sur les impacts fonctionnels et les impacts sûretés liés à la perte d'armoires de contrôle-commande pour l'EPR d'Hinkley Point C $\rightarrow$ **Cet outil a permis d'économiser environ 4400 heures de travail et 330k€, en plus d'améliorer la qualité du livrable final.**
+Création de Data Pipelines utilisant `duckdb` et `polars`, `pydantic` pour la Data Validation.
 
-- Creation of data pipelines using duckdb + polars, pydantic for data validation.
-
-- Organisation de présentations et sensibilisation autour des bonnes pratiques de développement sur **python** et R.
+Organisation de présentations et sensibilisation autour des bonnes pratiques de développement sur **python** et R.
 
 [Découvrir mon rapport {{< fa arrow-up-right-from-square >}}](assets/Internship_Report_EDF.pdf){.btn .btn-outline-primary .btn role="button" .center}
-
-<details>
-<iframe
-    class="slide-deck"
-    src="projects/edf_internship"
-></iframe>
-</details>
 
 :::
 :::
@@ -60,15 +51,15 @@ smooth-scroll: true
 
 {{< fa location-dot >}} *Issoudun, France*
 
-- Solution **python** (créée avec `typer`) permettant d'analyser la qualité et la cohérence des données entre différentes bases de données (logiciel SIRH, ERP, PLM), destiné à l'usage de l'équipe *Data* pour des sujets de gouvernance de données.
+Solution **python** (créée avec `typer`) permettant d'analyser la qualité et la cohérence des données entre différentes bases de données (logiciel SIRH, ERP, PLM), destiné à l'usage de l'équipe *Data* pour des sujets de gouvernance de données.
 
-- Migration de tables, vues et procédures stockées de SQL Server vers Snowflake dans le cadre de la nouvelle infrastructure de **Data Warehousing**.
+Migration de tables, vues et procédures stockées de SQL Server vers Snowflake dans le cadre de la nouvelle infrastructure de **Data Warehousing**.
 
-- Création d'un Dashboard PowerBI d'analyse du *lead time* et de suivi des ordres de fabrication pour la Supply Chain $\rightarrow$ **Ce rapport a notamment permis d'identifier les ordres de fabrication bloqués et les a considérablement réduit.**
+Création d'un Dashboard PowerBI d'analyse du *lead time* et de suivi des ordres de fabrication pour la Supply Chain $\rightarrow$ **Ce rapport a notamment permis d'identifier les ordres de fabrication bloqués et les a considérablement réduit.**
 
-- Elaboration d'un dashboard pour le service HSE permettant de suivre le taux de fréquence des accidents sur site, entre autres KPI $\rightarrow$ **Ce rapport a permis d'éviter une trentaine d'heures par mois de traitement manuel, en plus d'en faciliter la diffusion.**
+Elaboration d'un dashboard pour le service HSE permettant de suivre le taux de fréquence des accidents sur site, entre autres KPI $\rightarrow$ **Ce rapport a permis d'éviter une trentaine d'heures par mois de traitement manuel, en plus d'en faciliter la diffusion.**
 
-- Déploiement, suivi et gestion des demandes d'évolution de plus de 4 tableaux de bord sur le PowerBI Report Server de Safran. 
+Déploiement, suivi et gestion des demandes d'évolution de plus de 4 tableaux de bord sur le PowerBI Report Server de Safran. 
 
 :::
 :::
@@ -90,11 +81,50 @@ smooth-scroll: true
 
 {{< fa location-dot >}} *Mer, France*
 
-- Dashboard to manage banking mobility activity using PowerQuery & PowerBI.
+Création d'un Dashboard pour le service de Mobilité Bancaire.
 
-- Development of a prioritization system for processing shared email inboxes using VBA.
+Développement d'un système de priorisation des boîtes mail partagées en utilisant `VBA`.
 
-- Automation of multi-file Word exports to PDF
+Automatisation d'exports multi-fichiers Word vers du PDF.
+
+:::
+:::
+:::
+
+::: {.timeline-event}
+::: {.timeline-point .bg_5}
+:::
+::: {.timeline-content}
+::: {.timeline-border .bg_5}
+:::
+::: {.timeline-description}
+
+## {{< fa graduation-cap >}} Master Data Science / Business Econ. (Mécen)
+
+{{< fa calendar-days >}} 2022 -- 2024
+
+{{< fa location-dot >}} *Université de Tours, France*
+
+
+:::
+:::
+:::
+
+
+::: {.timeline-event}
+::: {.timeline-point .bg_6}
+:::
+::: {.timeline-content}
+::: {.timeline-border .bg_6}
+:::
+::: {.timeline-description}
+
+## {{< fa graduation-cap >}} Licence d'économie
+
+{{< fa calendar-days >}} 2018 -- 2022
+
+{{< fa location-dot >}} *Université de Tours, France*
+
 
 :::
 :::

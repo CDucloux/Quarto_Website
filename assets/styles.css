@@ -310,6 +310,22 @@ a#quarto-back-to-top {
     }
 }
 
+/* Change l'affichage de la timeline sur téléphone */
+@media only screen and (max-width: 600px) {
+    .timeline-description {
+        font-size: 0.8em;
+    }
+
+    .timeline-description p a.btn.btn-outline-primary.center {
+        font-size: 0.95em;
+        padding: 3%;
+    }
+
+    .timeline-description p {
+        margin-bottom: 0.6rem;
+    }
+}
+
 /* Overwrite une media query bootstrap pour mon footer */
 @media (max-width: 767.98px) {
     .nav-footer-center {
