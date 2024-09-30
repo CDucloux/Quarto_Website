@@ -3,6 +3,13 @@ title: "Corentin Ducloux"
 pagetitle: "Corentin Ducloux"
 back-to-top-navigation: false
 toc: false
+format: 
+  html:
+    grid:
+        sidebar-width: 0px
+        body-width: 1200px
+        margin-width: 200px
+        gutter-width: 1.5rem
 about:
     id: hero-heading
     template: trestles
