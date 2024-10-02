@@ -23,9 +23,10 @@ jobs:
           echo "Latest Tag: $TAG"
           echo "LAST_TAG=$TAG" >> $GITHUB_ENV
 
-      - name: Write the tag to version.yml
+      - name: Write the tag as an environment variable
         run: |
-          echo "version: ${{ env.LAST_TAG }}" > version.yml
+          echo "version: ${{ env.LAST_TAG }}"
+          export LAST_TAG
 
       - name: Use the tag in another step
         run: |

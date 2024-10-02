@@ -21,3 +21,11 @@ Le code source ainsi que l'ensemble des fichiers hostés sur mon site web sont d
 **Polices** : [{{< fa brands google >}} Google Fonts](https://fonts.google.com/).
 
 **Thème** : https://github.com/robb0wen/synthwave-vscode
+
+```{python}
+import os
+
+last_tag = os.environ.get("LAST_TAG")
+
+print(last_tag)
+```
