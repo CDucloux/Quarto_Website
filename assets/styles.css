@@ -80,11 +80,16 @@ span.menu-text {
     text-transform: uppercase;
 }
 
-/* Crée une classe span pour la couleur flashy de mes expériences pro. */
+/* Couleur flashy pour mes expériences pro. sur la page d'accueil */
 span.shiny-color {
     color: #ff7edb;
     transition: text-shadow 0.3s ease;
     display: inline;
+}
+
+/* Couleur de Snowflake */
+span.snowflake-color {
+    color: #249edc;
 }
 
 /* Ce span est par défaut non visible, et devient visible sur les téléphones */

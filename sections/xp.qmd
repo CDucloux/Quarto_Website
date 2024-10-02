@@ -1,6 +1,13 @@
 ---
 title: "Mon parcours"
 smooth-scroll: true
+format: 
+    html:
+        grid:
+            sidebar-width: 0px
+            body-width: 1200px
+            margin-width: 0px
+            gutter-width: 1.5rem
 ---
 
 ::: {.timeline}
@@ -53,7 +60,7 @@ Organisation de présentations et sensibilisation autour des bonnes pratiques de
 
 Solution **python** (créée avec `typer`) permettant d'analyser la qualité et la cohérence des données entre différentes bases de données (logiciel SIRH, ERP, PLM), destiné à l'usage de l'équipe *Data* pour des sujets de gouvernance de données.
 
-Migration de tables, vues et procédures stockées de SQL Server vers Snowflake dans le cadre de la nouvelle infrastructure de **Data Warehousing**.
+Migration de tables, vues et procédures stockées de SQL Server vers [**Snowflake**]{class="snowflake-color"} dans le cadre de la nouvelle infrastructure de **Data Warehousing**.
 
 Création d'un Dashboard PowerBI d'analyse du *lead time* et de suivi des ordres de fabrication pour la Supply Chain $\rightarrow$ **Ce rapport a notamment permis d'identifier les ordres de fabrication bloqués et les a considérablement réduit.**
 
