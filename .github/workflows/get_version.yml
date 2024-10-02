@@ -18,7 +18,8 @@ jobs:
       - name: Get the latest Git tag
         id: get_tag
         run: |
-          TAG=$(git fetch --prune --unshallow --tags)
+          git fetch --prune --unshallow --tags
+          TAG=$(git describe --tags)
           echo "Latest Tag: $TAG"
           echo "LAST_TAG=$TAG" >> $GITHUB_ENV
 
