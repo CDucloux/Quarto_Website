@@ -19,7 +19,7 @@ jobs:
         id: get_tag
         run: |
           git fetch --prune --unshallow --tags
-          TAG=$(git describe --tags)
+          TAG=$(git describe --tags --abbrev=0)
           echo "Latest Tag: $TAG"
           echo "LAST_TAG=$TAG" >> $GITHUB_ENV
 
@@ -37,7 +37,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add version.yml
-          git commit -m "Update website version to: ${{ env.LAST_TAG }}."
+          git commit -m "🔄 Update website version to: ${{ env.LAST_TAG }}."
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
         env:
