@@ -27,7 +27,13 @@ jobs:
         run: |
           echo "date: ${{ env.CURRENT_DATE }}" > date.yml
 
+      - name: Check if there are changes
+        id: check_changes
+        run: |
+          git diff --quiet || echo "changes"
+        
       - name: Commit date.yml
+        if: steps.check_changes.outputs.changes == 'changes'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
