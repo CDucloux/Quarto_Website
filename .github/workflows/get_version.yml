@@ -27,7 +27,18 @@ jobs:
         run: |
           echo "version: ${{ env.LAST_TAG }}"
           export LAST_TAG
-
-      - name: Use the tag in another step
+      
+      - name: Write the tag to version.yml
         run: |
-          echo "The last tag is ${{ env.LAST_TAG }}"
+          echo "version: ${{ env.LAST_TAG }}" > version.yml
+
+      - name: Commit version.yml
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add version.yml
+          git commit -m "Update website version to: ${{ env.LAST_TAG }}."
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
