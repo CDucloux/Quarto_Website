@@ -9,8 +9,6 @@ quarto render
 ## Ajouts
 
 - [ ] Finir le projet SQL
-- [ ] Inclure date de publication sur le site et version
-- [ ] Finir le projet Carte EDF
 - [ ] Taipy + SQLPage
 - [ ] Faire un projet avec FastAPI + Pydantic
 - [ ] Faire un projet avec Amazon Redshift, dbt-core, etc.
@@ -20,7 +18,11 @@ quarto render
 ## Soldé
 
 - [x] Timeline
-- [x] Personnaliser CSS cookie consent 
+- [x] Personnaliser CSS cookie consent
+- [x] Carte EDF
+- [x] Inclure date de publication sur le site et version
+
+<details>
 
 ## Timeline
 
@@ -32,7 +34,7 @@ quarto render
 :::
 ::: {.timeline-description}
 
-## Data Engineer `@Edvance`
+## Data Engineer `@New Company`
 
 {{< fa calendar-days >}} 10/2024 -- Aujourd'hui
 
@@ -41,11 +43,17 @@ quarto render
 :::
 :::
 :::
+  
+</details>
+
+<details>
 
 ### Section Recommandation
 
-**Nicolas LEPOUTRE**, Safran Seats -- Chief Data Officer
+**XXX XXXXX**, Safran Seats -- Chief Data Officer
 
-> *"Travailler avec Corentin blablabla"*
+> *"blablabla"*
 
-**Sébastien DUTOT**, Safran Seats -- Data Architect
+**XXX XXXXX**, Safran Seats -- Data Architect
+
+</details>
