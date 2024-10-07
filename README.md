@@ -1,6 +1,8 @@
-# Mon site web Quarto
+# `corentin-ducloux.netlify.app`
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/acea2e55-b890-4471-bf1a-d62a6996dde9/deploy-status?branch=develop)](https://app.netlify.com/sites/corentin-ducloux/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/acea2e55-b890-4471-bf1a-d62a6996dde9/deploy-status)](https://app.netlify.com/sites/corentin-ducloux/deploys)
+
+> Repository **Github** de mon site web **Quarto** : https://corentin-ducloux.netlify.app
 
 ## Commandes à éxécuter avant de commit
 
@@ -8,7 +10,11 @@
 quarto render
 ```
 
-## Ajouts
+```powershell
+quarto publish netlify
+```
+
+## 📌 TODO
 
 - [ ] Finir le projet SQL
 - [ ] Taipy + SQLPage
@@ -17,7 +23,7 @@ quarto render
 - [ ] Faire un projet avec Airflow / Dagster
 - [ ] Finir la section blog avec le guide Git
 
-## Soldé
+## ✔️ Soldé
 
 - [x] Timeline
 - [x] Personnaliser CSS cookie consent
