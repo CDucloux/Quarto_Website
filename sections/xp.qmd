@@ -55,9 +55,9 @@ Solution **python** (créée avec `typer`) permettant d'analyser la qualité et 
 
 Migration de tables, vues et procédures stockées de SQL Server vers [**Snowflake**]{class="snowflake-color"} dans le cadre de la nouvelle infrastructure de **Data Warehousing**.
 
-Création d'un Dashboard PowerBI d'analyse du *lead time* et de suivi des ordres de fabrication pour la Supply Chain $\rightarrow$ **Ce rapport a notamment permis d'identifier les ordres de fabrication bloqués et les a considérablement réduit.**
+Création d'un Dashboard PowerBI d'analyse du *lead time* et de suivi des ordres de fabrication pour la Supply Chain $\rightarrow$ **Ce rapport a notamment permis d'identifier les ordres de fabrication bloqués et a permis d'empêcher leur réapparition.**
 
-Elaboration d'un dashboard pour le service HSE permettant de suivre le taux de fréquence des accidents sur site, entre autres KPI $\rightarrow$ **Ce rapport a permis d'éviter une trentaine d'heures par mois de traitement manuel, en plus d'en faciliter la diffusion.**
+Elaboration d'un dashboard pour le service HSE permettant de suivre le taux de fréquence des accidents sur site, entre autres KPI $\rightarrow$ **Ce rapport a permis d'éviter une trentaine d'heures par mois de traitement manuel, en plus de faciliter la diffusion des indicateurs.**
 
 Déploiement, suivi et gestion des demandes d'évolution de plus de 4 tableaux de bord sur le PowerBI Report Server de Safran. 
 

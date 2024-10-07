@@ -1,4 +1,4 @@
 - source: project
-  quarto-pub:
-    - id: 8b4bcb45-2120-45c7-b642-b252973139d5
-      url: 'https://cducloux.quarto.pub/corentin-ducloux'
+  netlify:
+    - id: acea2e55-b890-4471-bf1a-d62a6996dde9
+      url: 'https://corentin-ducloux.netlify.app'

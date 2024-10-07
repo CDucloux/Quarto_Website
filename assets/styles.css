@@ -178,6 +178,31 @@ a#quarto-back-to-top {
     margin-bottom: 0.5em;
 }
 
+div#print_version.cell-output.cell-output-display.cell-output-markdown p {
+    background-color: #72f1b8;
+    color: #064126;
+    padding: 10px;
+    font-size: small;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+}
+
+div#print_date.cell-output.cell-output-display.cell-output-markdown p {
+    background-color: #ff7edb;
+    color: #4c0037;
+    padding: 10px;
+    font-size: small;
+    border-radius: 50px;
+    display: inline-block;
+    margin: 0;
+}
+
+div.website-infos {
+    display: flex;
+    gap: 10px;
+}
+
 /* Gère le comportement on hover des listings de langages et technos */
 .listing-category:hover {
     background-color: #72f1b8;
