@@ -68,7 +68,7 @@ def load_yaml(file_path: str, key: str) -> Dict[str, Any]:
 # | label: print_version
 # | echo: false
 
-version = load_yaml("version.yml", "version")
+version = load_yaml("utils/version.yml", "version")
 Markdown(f"Version {version}")
 ```
 
@@ -76,7 +76,7 @@ Markdown(f"Version {version}")
 # | label: print_date
 # | echo: false
 
-date = load_yaml("date.yml", "date")
+date = load_yaml("utils/date.yml", "date")
 Markdown(f"Publié le {date}")
 ```
 

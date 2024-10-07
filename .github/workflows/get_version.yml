@@ -30,7 +30,7 @@ jobs:
       
       - name: Write the tag to version.yml
         run: |
-          echo "version: ${{ env.LAST_TAG }}" > version.yml
+          echo "version: ${{ env.LAST_TAG }}" > utils/version.yml
 
       - name: Check if there are changes
         id: check_changes
@@ -42,7 +42,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add version.yml
+          git add utils/version.yml
           git commit -m "🔄 Update website version to: ${{ env.LAST_TAG }}."
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git push
